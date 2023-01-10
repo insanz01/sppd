@@ -33,73 +33,47 @@
           </a>
         </li>
 
+        <li class="nav-item">
+          <a href="<?= base_url('log/pinjam') ?>" class="nav-link">
+            <i class="nav-icon fas fa-upload"></i>
+            <p>Log Peminjaman</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="<?= base_url('log/kembali') ?>" class="nav-link">
+            <i class="nav-icon fas fa-download"></i>
+            <p>Log Buku Kembali</p>
+          </a>
+        </li>
+
         <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-globe-asia"></i>
             <p>
-              Kelola Modul
+              Master Data
               <i class="right fas fa-angle-left"></i>
             </p>
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="<?= base_url('menu') ?>" class="nav-link">
+              <a href="<?= base_url('buku') ?>" class="nav-link">
                 <i class="far fa-circle nav-icon ml-3"></i>
-                <p>Manajemen Menu</p>
+                <p>Buku Pustaka</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="<?= base_url('objective') ?>" class="nav-link">
+              <a href="<?= base_url('membership') ?>" class="nav-link">
                 <i class="far fa-circle nav-icon ml-3"></i>
-                <p>Tujuan</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="<?= base_url('glossary') ?>" class="nav-link">
-                <i class="far fa-circle nav-icon ml-3"></i>
-                <p>Glosarium</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="<?= base_url('indicator') ?>" class="nav-link">
-                <i class="far fa-circle nav-icon ml-3"></i>
-                <p>Indikator</p>
-              </a>
-            </li>
-            <li class="nav-item has-treeview">
-              <a href="#" class="nav-link">
-                <i class="far fa-circle nav-icon ml-3"></i>
-                <p>Uji Kompetensi</p>
-                <i class="right fas fa-angle-left"></i>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="<?= base_url('competence/questions') ?>" class="nav-link">
-                    <i class="fas fa-chevron-circle-right nav-icon ml-4"></i>
-                    <p>Soal Kompetensi</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="<?= base_url('competence/responses') ?>" class="nav-link">
-                    <i class="fas fa-chevron-circle-right nav-icon ml-4"></i>
-                    <p>Responden</p>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a href="<?= base_url('bibliography') ?>" class="nav-link">
-                <i class="far fa-circle nav-icon ml-3"></i>
-                <p>Daftar Pustaka</p>
+                <p>Membership</p>
               </a>
             </li>
           </ul>
         </li>
 
         <li class="nav-item">
-          <a href="<?= base_url('apk') ?>" class="nav-link">
-            <i class="nav-icon fab fa-android"></i>
-            <p>Download APK</p>
+          <a href="<?= base_url('buku_tamu') ?>" class="nav-link">
+            <i class="nav-icon fas fa-book"></i>
+            <p>Buku Tamu</p>
           </a>
         </li>
 

@@ -52,3 +52,22 @@ defined('BASEPATH') or exit('No direct script access allowed');
 $route['default_controller'] = 'AppController/index';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+$route['visitor'] = 'VisitorController/guest';
+$route['visitor/do_submit'] = 'VisitorController/guest_record';
+$route['visitor/member'] = 'VisitorController/member';
+$route['visitor/member/do_submit'] = 'VisitorController/member_record';
+
+$route['log/pinjam'] = 'LogController/log_keluar';
+$route['log/pinjam/add'] = 'LogController/add_log_keluar';
+
+$route['log/kembali'] = 'LogController/log_masuk';
+$route['log/kembali/add'] = 'LogController/add_log_masuk';
+
+$route['membership'] = 'MembershipController/index';
+$route['membership/add'] = 'MembershipController/add_membership';
+$route['membership/do_add'] = 'MembershipController/do_add_membership';
+$route['membership/edit/(:any)'] = 'MembershipController/edit_membership/$1';
+$route['membership/do_edit'] = 'MembershipController/do_update_membership';
+
+$route['test'] = 'MembershipController/test';

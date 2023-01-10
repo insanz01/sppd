@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Memofy Modul | Console</title>
+  <title>SISTEM PERPUSTAKAAN | Console</title>
   <link rel="icon" type="image/x-icon" href="<?= base_url() ?>assets/bahan/icon.png" />
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
