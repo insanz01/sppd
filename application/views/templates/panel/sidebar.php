@@ -101,11 +101,52 @@
         </li>
 
 
-        <li class="nav-item">
-          <a href="#!" download class="nav-link">
-            <i class="nav-icon fas fa-book"></i>
-            <p>Laporan</p>
+        <li class="nav-item has-treeview">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-globe-asia"></i>
+            <p>
+              Laporan
+              <i class="right fas fa-angle-left"></i>
+            </p>
           </a>
+          <ul class="nav nav-treeview">
+            <!-- <li class="nav-item">
+              <a href="<?= base_url('buku') ?>" class="nav-link">
+                <i class="far fa-circle nav-icon ml-3"></i>
+                <p>Buku Pustaka</p>
+              </a>
+            </li> -->
+            <li class="nav-item">
+              <a href="#!" class="nav-link">
+                <i class="far fa-circle nav-icon ml-3"></i>
+                <p>Daftar Permintaan</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#!" class="nav-link">
+                <i class="far fa-circle nav-icon ml-3"></i>
+                <p>NPPD</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#!" class="nav-link">
+                <i class="far fa-circle nav-icon ml-3"></i>
+                <p>Surat Perintah Tugas</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#!" class="nav-link">
+                <i class="far fa-circle nav-icon ml-3"></i>
+                <p>Rincian Biaya</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#!" class="nav-link">
+                <i class="far fa-circle nav-icon ml-3"></i>
+                <p>Hasil Perjalanan Dinas</p>
+              </a>
+            </li>
+          </ul>
         </li>
         <li class="nav-item">
           <a href="<?= base_url('downloads/document/SPPD 2022.docx') ?>" download class="nav-link">
