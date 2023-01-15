@@ -103,7 +103,7 @@
 
         <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-globe-asia"></i>
+            <i class="nav-icon fas fa-book"></i>
             <p>
               Laporan
               <i class="right fas fa-angle-left"></i>
@@ -150,7 +150,7 @@
         </li>
         <li class="nav-item">
           <a href="<?= base_url('downloads/document/SPPD 2022.docx') ?>" download class="nav-link">
-            <i class="nav-icon fas fa-book"></i>
+            <i class="nav-icon fas fa-download"></i>
             <p>Download Template</p>
           </a>
         </li>
