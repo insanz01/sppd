@@ -24,8 +24,22 @@
       <div class="row">
         <div class="col-12">
           <h1 class="text-center">
-            Halo Dunia
+            Selamat Datang di SPPD
           </h1>
+        </div>
+        <div class="col-6">
+          <div class="card bg-primary">
+            <div class="card-body">
+              SURAT MASUK
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card bg-danger">
+            <div class="card-body">
+              SURAT KELUAR
+            </div>
+          </div>
         </div>
       </div>
     </div>
