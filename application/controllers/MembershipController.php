@@ -75,9 +75,11 @@ class MembershipController extends CI_Controller
     redirect('membership');
   }
 
-  public function delete_membership()
+
+
+  public function delete_membership($id)
   {
-    $id = $this->input->post('id');
+    // $id = $this->input->post('id');
 
     if ($this->membership_m->delete_membership($id)) {
       $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Berhasil menghapus data membership</div>');

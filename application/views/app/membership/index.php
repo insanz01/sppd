@@ -50,6 +50,7 @@
                           <td><?= $membership['email'] ?></td>
                           <td>
                             <a href="<?= base_url('membership/edit/') . $membership['id'] ?>" class="badge badge-sm badge-info badge-pill">edit</a>
+                            <a href="<?= base_url('membership/delete/') . $membership['id'] ?>" class="badge badge-sm badge-danger badge-pill">hapus</a>
                           </td>
                         </tr>
                       <?php endforeach; ?>

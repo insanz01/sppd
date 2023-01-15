@@ -69,6 +69,7 @@ $route['membership/add'] = 'MembershipController/add_membership';
 $route['membership/do_add'] = 'MembershipController/do_add_membership';
 $route['membership/edit/(:any)'] = 'MembershipController/edit_membership/$1';
 $route['membership/do_edit'] = 'MembershipController/do_update_membership';
+$route['membership/delete/(:any)'] = 'MembershipController/delete_membership/$1';
 
 $route['buku'] = 'BookController/index';
 $route['buku/add'] = 'BookController/add_book';
