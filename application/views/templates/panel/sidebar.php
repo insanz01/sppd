@@ -64,16 +64,16 @@
             <li class="nav-item">
               <a href="<?= base_url('membership') ?>" class="nav-link">
                 <i class="far fa-circle nav-icon ml-3"></i>
-                <p>Membership</p>
+                <p>Karyawan</p>
               </a>
             </li>
           </ul>
         </li>
 
         <li class="nav-item">
-          <a href="<?= base_url('buku_tamu') ?>" class="nav-link">
+          <a href="<?= base_url('downloads/document/SPPD 2022.docx') ?>" download class="nav-link">
             <i class="nav-icon fas fa-book"></i>
-            <p>Buku Tamu</p>
+            <p>Download Template</p>
           </a>
         </li>
 
