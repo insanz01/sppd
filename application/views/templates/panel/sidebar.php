@@ -33,7 +33,7 @@
           </a>
         </li>
 
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a href="<?= base_url('log/pinjam') ?>" class="nav-link">
             <i class="nav-icon fas fa-upload"></i>
             <p>Log Peminjaman</p>
@@ -44,7 +44,7 @@
             <i class="nav-icon fas fa-download"></i>
             <p>Log Buku Kembali</p>
           </a>
-        </li>
+        </li> -->
 
         <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
@@ -55,12 +55,12 @@
             </p>
           </a>
           <ul class="nav nav-treeview">
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a href="<?= base_url('buku') ?>" class="nav-link">
                 <i class="far fa-circle nav-icon ml-3"></i>
                 <p>Buku Pustaka</p>
               </a>
-            </li>
+            </li> -->
             <li class="nav-item">
               <a href="<?= base_url('membership') ?>" class="nav-link">
                 <i class="far fa-circle nav-icon ml-3"></i>

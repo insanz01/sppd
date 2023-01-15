@@ -22,7 +22,7 @@
   <section class="content">
     <div class="container">
       <div class="row">
-        <div class="col-12">
+        <div class="col-12 mb-4">
           <h1 class="text-center">
             Selamat Datang di SPPD
           </h1>
@@ -30,14 +30,18 @@
         <div class="col-6">
           <div class="card bg-primary">
             <div class="card-body">
-              SURAT MASUK
+              <h3 class="text-center text-white">
+                SURAT MASUK
+              </h3>
             </div>
           </div>
         </div>
         <div class="col-6">
           <div class="card bg-danger">
             <div class="card-body">
-              SURAT KELUAR
+              <h3 class="text-center text-white">
+                SURAT KELUAR
+              </h3>
             </div>
           </div>
         </div>
