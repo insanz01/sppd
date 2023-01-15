@@ -13,7 +13,7 @@
         <img src="<?= base_url() ?>assets/image/profile/user.png" class="objectPicture" alt="User Image">
       </div>
       <div class="info">
-        <a href="<?= base_url('profile') ?>" class="d-block"><?= 'Administrator' ?> </a>
+        <a href="<?= base_url() ?>" class="d-block"><?= 'Administrator' ?> </a>
       </div>
     </div>
 
@@ -24,7 +24,7 @@
                with font-awesome or any other icon font library -->
         <!-- tambah class menu-open untuk secara otomatis membuka -->
         <li class="nav-item">
-          <a href="<?= base_url('profile') ?>" class="nav-link">
+          <a href="<?= base_url() ?>" class="nav-link">
             <i class="nav-icon fas fa-home"></i>
             <p>
               Dashboard
