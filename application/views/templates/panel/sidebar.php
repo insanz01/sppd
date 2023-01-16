@@ -70,7 +70,7 @@
             <li class="nav-item">
               <a href="#!" class="nav-link">
                 <i class="far fa-circle nav-icon ml-3"></i>
-                <p>NDDP</p>
+                <p>NPPD</p>
               </a>
             </li>
             <li class="nav-item">
