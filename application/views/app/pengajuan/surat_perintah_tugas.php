@@ -25,7 +25,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-body">
-              <form action="<?= base_url('pengajuan/spt') ?>" method="post">
+              <form action="<?= base_url('surat/spt') ?>" method="post">
                 <div class="form-group">
                   <label for="nomor_sppd">Nomor SPPD</label>
                   <input type="text" name="nomor_sppd" class="form-control" id="nomor_sppd" required>
