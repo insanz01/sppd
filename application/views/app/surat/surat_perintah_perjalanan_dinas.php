@@ -16,78 +16,78 @@
         <tr>
           <td>1.</td>
           <td>Pejabat yang berwenang Memberi Perintah</td>
-          <td><?= $author ?></td>
+          <td><?= $surat['author'] ?></td>
         </tr>
         <tr>
           <td>2.</td>
           <td>Nama / NIP Pegawai yang diperintahkan</td>
-          <td><?= $nama_NIP ?></td>
+          <td><?= $surat['nama_karyawan'] ?> / <?= $surat['nip_karyawan'] ?></td>
         </tr>
         <tr>
           <td rowspan="3">3.</td>
           <td>
             a. Pangkat dan Golongan Ruang Gaji menurut PP. NO. 11 Tahun 2003
           </td>
-          <td><?= $pangkat_golongan ?></td>
+          <td><?= $surat['pangkat'] ?>(<?= $surat['golongan'] ?>)</td>
         </tr>
         <tr>
           <!-- <td></td> -->
           <td>
             b. Jabatan / Instansi
           </td>
-          <td><?= $jabatan ?></td>
+          <td><?= $surat['jabatan'] ?></td>
         </tr>
         <tr>
           <td>
             c. Tingkat menurut peraturan perjalanan Dinas
           </td>
-          <td><?= $tingkat_perjalanan_dinas ?></td>
+          <td><?= $surat['tingkat_perjalanan_dinas'] ?></td>
         </tr>
         <tr>
           <td>4.</td>
           <td>
             Maksud Perjalanan Dinas
           </td>
-          <td><?= $maksud_perjalanan_dinas ?></td>
+          <td><?= $surat['maksud_perjalanan_dinas'] ?></td>
         </tr>
         <tr>
           <td>5.</td>
           <td>
             Alat angkutan yang diperlukan
           </td>
-          <td><?= $alat_angkutan ?></td>
+          <td><?= $surat['alat_angkutan'] ?></td>
         </tr>
         <tr>
           <td rowspan="2">6.</td>
           <td>
             a. Tempat Berangkat
           </td>
-          <td><?= $tempat_berangkat ?></td>
+          <td><?= $surat['tempat_berangkat'] ?></td>
         </tr>
         <tr>
           <td>
             b. Tempat Tujuan
           </td>
-          <td><?= $tempat_tujuan ?></td>
+          <td><?= $surat['tempat_tujuan'] ?></td>
         </tr>
         <tr>
           <td rowspan="3">7.</td>
           <td>
             a. Lamanya Perjalanan Dinas
           </td>
-          <td><?= $lama_dinas ?></td>
+          <td><?= $surat['lama_dinas'] ?></td>
         </tr>
         <tr>
           <td>
             b. Tanggal Berangkat
           </td>
-          <td><?= $tanggal_berangkat ?></td>
+          <td><?= $surat['tanggal_berangkat'] ?></td>
         </tr>
         <tr>
           <td>
             c. Tanggal harus kembali / tiba di tempat baru
           </td>
-          <td><?= $tanggal_kembali ?></td>
+          <td><?= $surat['tanggal_kembali'] ?></td>
         </tr>
         <tr>
           <td>8.</td>
@@ -121,16 +121,16 @@
         </tr>
         <tr>
           <td>a. Instansi</td>
-          <td><?= $beban_anggaran_instansi ?></td>
+          <td><?= $surat['beban_anggaran_instansi'] ?></td>
         </tr>
         <tr>
           <td>b. Mata Anggaran</td>
-          <td><?= $beban_anggaran_mata_anggaran ?></td>
+          <td><?= $surat['beban_anggaran_mata_anggaran'] ?></td>
         </tr>
         <tr>
           <td>10.</td>
           <td>Keterangan Lain-lain</td>
-          <td><?= $keterangan_lainnya ?></td>
+          <td><?= $surat['keterangan_lainnya'] ?></td>
         </tr>
       </tbody>
     </table>

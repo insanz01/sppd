@@ -53,6 +53,10 @@ $route['default_controller'] = 'AppController/index';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+$route['auth'] = "AuthController/index";
+$route['auth/do_login'] = "AuthController/do_login";
+$route['auth/logout'] = "AuthController/do_logout";
+
 $route['karyawan'] = "KaryawanController/index";
 $route['karyawan/add'] = "KaryawanController/add_karyawan";
 $route['karyawan/do_add'] = "KaryawanController/do_add_karyawan";
@@ -69,6 +73,6 @@ $route['pengajuan/add_spt'] = "PengajuanController/add_surat_perintah_tugas";
 $route['pengajuan/lpd'] = "PengajuanController/laporan_perjalanan_dinas";
 $route['pengajuan/add_lpd'] = "PengajuanController/add_laporan_perjalanan_dinas";
 
-$route['surat/sppd'] = "SuratController/surat_perintah_perjalanan_dinas";
+$route['surat/sppd/(:any)'] = "SuratController/surat_perintah_perjalanan_dinas/$1";
 $route['surat/spt/(:any)'] = "SuratController/surat_perintah_tugas/$1";
 $route['surat/lpd/(:any)'] = "SuratController/laporan_perjalanan_dinas/$1";

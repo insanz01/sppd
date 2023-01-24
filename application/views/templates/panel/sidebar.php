@@ -111,7 +111,7 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="<?= base_url('surat/sppd') ?>" class="nav-link">
+              <a href="<?= base_url('pengajuan/sppd') ?>" class="nav-link">
                 <i class="far fa-circle nav-icon ml-3"></i>
                 <p>SPPD</p>
               </a>

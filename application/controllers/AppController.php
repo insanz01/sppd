@@ -6,6 +6,10 @@ class AppController extends CI_Controller
   public function __construct()
   {
     parent::__construct();
+
+    if(!$this->session->userdata('SESS_SPPD_USERID')) {
+      redirect('auth');
+    }
   }
 
   public function index()
