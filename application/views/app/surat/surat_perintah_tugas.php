@@ -22,13 +22,13 @@
     <h4 class="text-center">SPPD NOMOR : 520.4/237b-KP.Luh/Distankan</h4>
 
     <div class="row mt-4">
-      <div class="col-7 mx-auto">
+      <div class="col-9 mx-auto">
         <p>Kepala Dinas Pertanian dan Perikanan Kota Banjarmasin memerintahkan kepada :</p>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-7 mx-auto">
+      <div class="col-9 mx-auto">
         <table class="table custom-table" style="width: 100%">
           <tr>
             <td width="30%">Nama  / NIP</td>
@@ -45,7 +45,7 @@
         </table>
       </div>
 
-      <div class="col-7 mx-auto">
+      <div class="col-9 mx-auto">
         <p>Untuk melaksanakan perjalanan dinas :</p>
         <table class="table custom-table" style="width: 100%">
           <tr>
@@ -67,7 +67,7 @@
         </table>
       </div>
 
-      <div class="col-7 mx-auto">
+      <div class="col-9 mx-auto">
         <p>Demikian Surat Perintah Tugas ini diberikan untuk dilaksanakan dengan penuh tanggung jawab.</p>
       </div>
     </div>
@@ -77,6 +77,12 @@
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+    <script>
+      window.addEventListener('load', () => {
+        window.print();
+      });
+    </script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--

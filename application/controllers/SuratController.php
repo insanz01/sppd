@@ -54,4 +54,8 @@ class SuratController extends CI_Controller {
   public function surat_perintah_tugas() {
     $this->load->view("app/surat/surat_perintah_tugas");
   }
+
+  public function laporan_perjalanan_dinas() {
+    $this->load->view("app/surat/laporan_perjalanan_dinas");
+  }
 }
