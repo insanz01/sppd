@@ -25,19 +25,19 @@
         <table class="table custom-table" style="width: 100%">
           <tr>
             <td width="30%">Kepada Yth</td>
-            <td width="70%">Kepala Dinas Ketahanan Pangan, Pertanian dan Perikanan</td>
+            <td width="70%"><?= $surat['penerima_surat'] ?></td>
           </tr>
           <tr>
             <td width="30%">Dari</td>
-            <td width="70%">Kabid Ketersediaan dan Distribusi Pangan</td>
+            <td width="70%"><?= $surat['pengirim_surat'] ?></td>
           </tr>
           <tr>
             <td width="30%">Tanggal</td>
-            <td width="70%">19 Mei 2023</td>
+            <td width="70%"><?= date('d M Y', strtotime($surat['tanggal_kegiatan'])) ?></td>
           </tr>
           <tr>
             <td width="30%">Hal</td>
-            <td width="70%">Undangan Rapat Koordinasi Pendataan Ketersediaan Pangan</td>
+            <td width="70%"><?= $surat['perihal'] ?></td>
           </tr>
         </table>
       </div>
@@ -45,8 +45,7 @@
       <div class="col-9 mx-auto my-3">
         <h5>A. DASAR</h5>
         <div class="pl-4">
-          <p>1. Nota  Dinas Sekretaris Daerah Kota Banjarmasin  Nomor : 520.4 / 057 - KDP/DKP3/2022 tanggal  17  Mei  2022, Tentang menghadiri undangan Rapat Koordinasi Pendataan Ketersediaan Pangan.</p>
-          <p>2. Surat dari Kepala Dinas  Ketahanan Pangan Provinsi Kalimantan Selatan ,Nomor: 005/502B/DisKP tanggal  11 Mei  2022  Perihal Undangan Rapat Koordinasi Pendataan Ketersediaan Pangan.</p>
+          <?= $surat['poin_dasar'] ?>
         </div>
       </div>
 
@@ -57,15 +56,15 @@
             <tbody>
               <tr>
                 <td width="30%">Kegiatan</td>
-                <td width="70%">Rapat Koordinasi Pendataan Ketersediaan Pangan.</td>
+                <td width="70%"><?= $surat['kegiatan'] ?></td>
               </tr>
               <tr>
                 <td width="30%">Waktu Pelaksanaan</td>
-                <td width="70%">Rabu 18 Mei  2022</td>
+                <td width="70%"><?= $surat['waktu_pelaksanaan'] ?></td>
               </tr>
               <tr>
                 <td width="30%">Tempat Pelaksanaan</td>
-                <td width="70%">Aula Dinas Ketahanan Pangan Provinsi Kalimantan Selatan Jl. Panglima Batur Banjarbaru.</td>
+                <td width="70%"><?= $surat['tempat_pelaksanaan'] ?></td>
               </tr>
             </tbody>
           </table>
@@ -75,15 +74,14 @@
       <div class="col-9 mx-auto my-3">
         <h5>C. HASIL KEGIATAN</h5>
         <div class="pl-4">
-          <p>1. Terbentuk Berita Acara Kesepakanan Rapat seperti terlampir.</p>
-          <p>2. Meningkatnya koordinasi dan menjalin kerjasama antar instansi dengan Dinas Ketahanan Pangan Provinsi  Kalimantan Selatan dalam hal kegiatan pelaporan data Ketersediaan dan Kebutuhan Pangan.</p>
+        <?= $surat['poin_hasil_kegiatan'] ?>
         </div>
       </div>
 
       <div class="col-9 mx-auto my-3">
         <h5>D. KESIMPULAN DAN SARAN</h5>
         <div class="pl-4">
-          <p>1. Dalam pelaksanaan kegiatan lebih banyak berkoordinasi dengan Dinas terkait seperti BPS , Perdagin, Bidang Konsumsi Pangan, Bidang Pertanian dan Dinas Ketahanan  Pangan Provinsi Kalimantan Selatan.</p>
+          <?= $surat['poin_kesimpulan_saran'] ?>
         </div>
       </div>
     </div>
