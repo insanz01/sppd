@@ -19,7 +19,8 @@
   <body class="container-fluid">
     
     <h1 class="text-center">SURAT PERINTAH TUGAS</h1>
-    <h4 class="text-center">SPPD NOMOR : 520.4/237b-KP.Luh/Distankan</h4>
+    <h4 class="text-center">SPPD NOMOR : <?= $surat['
+    nomor_sppd'] ?></h4>
 
     <div class="row mt-4">
       <div class="col-9 mx-auto">
@@ -32,15 +33,20 @@
         <table class="table custom-table" style="width: 100%">
           <tr>
             <td width="30%">Nama  / NIP</td>
-            <td width="70%">Syamsuri,  S. Pt /  19660127 199103 1 005</td>
+            <td width="70%"><?= $surat['
+    nama_karyawan'] ?> /  <?= $surat['
+    nip_karyawan'] ?></td>
           </tr>
           <tr>
             <td width="30%">Pangkat / Gol</td>
-            <td width="70%">Penata  Tk.  I  ( III d)</td>
+            <td width="70%"><?= $surat['
+    pangkat'] ?>  (<?= $surat['
+    golongan'] ?>)</td>
           </tr>
           <tr>
             <td width="30%">Jabatan</td>
-            <td width="70%">Koordinator BPP B. Masin Timur</td>
+            <td width="70%"><?= $surat['
+    jabatan'] ?></td>
           </tr>
         </table>
       </div>
@@ -50,19 +56,23 @@
         <table class="table custom-table" style="width: 100%">
           <tr>
             <td width="30%">Dalam Rangka</td>
-            <td width="70%">Monitoring  dan Evaluasi Pelaksanaan  Kegiatan  PUAP dan Kaji Teraf Tanaman Bawang merah</td>
+            <td width="70%"><?= $surat['
+    rangka_acara'] ?></td>
           </tr>
           <tr>
             <td width="30%">Tujuan</td>
-            <td width="70%">Kel. Pemurus Luar,  Kel. Sungai Lulut dan Kel. Benua Anyar</td>
+            <td width="70%"><?= $surat['
+    tujuan'] ?></td>
           </tr>
           <tr>
             <td width="30%">Pada tanggal</td>
-            <td width="70%">17, 18 dan 19  Nopember 2014</td>
+            <td width="70%"><?= $surat['
+    tanggal_kegiatan'] ?></td>
           </tr>
           <tr>
             <td width="30%">Atas Beban</td>
-            <td width="70%">Program Pengembangan SDM  Pertanian dan Kelembagaan Petani Provinsi Kalimantan Selatan  Tahun 2014	</td>
+            <td width="70%"><?= $surat['
+    atas_beban'] ?></td>
           </tr>
         </table>
       </div>
