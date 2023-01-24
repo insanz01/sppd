@@ -6,7 +6,9 @@ class PengajuanModel extends CI_Model {
   }
 
   public function insert_laporan_perjalanan_dinas($data) {
-    $data['hash_id'] = password_hash(time(), PASSWORD_DEFAULT);
+    $hash_id = password_hash(time(), PASSWORD_DEFAULT);
+
+    $data['hash_id'] = base64_encode($hash_id);
 
     $this->db->insert('laporan_perjalanan_dinas', $data);
     return $data['hash_id'];
@@ -17,7 +19,9 @@ class PengajuanModel extends CI_Model {
   }
 
   public function insert_surat_perintah_tugas($data) {
-    $data['hash_id'] = password_hash(time(), PASSWORD_DEFAULT);
+    $hash_id = password_hash(time(), PASSWORD_DEFAULT);
+
+    $data['hash_id'] = base64_encode($hash_id);
 
     $this->db->insert('surat_perintah_tugas', $data);
     return $data['hash_id'];
@@ -28,7 +32,9 @@ class PengajuanModel extends CI_Model {
   }
   
   public function insert_surat_perintah_perjalanan_dinas($data) {
-    $data['hash_id'] = password_hash(time(), PASSWORD_DEFAULT);
+    $hash_id = password_hash(time(), PASSWORD_DEFAULT);
+
+    $data['hash_id'] = base64_encode($hash_id);
 
     $this->db->insert('surat_perintah_perjalanan_dinas', $data);
     return $data['hash_id'];
