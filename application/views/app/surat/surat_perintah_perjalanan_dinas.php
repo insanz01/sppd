@@ -103,8 +103,8 @@
                 </thead>
               <tbody>
                 <?php $nomor = 1; ?>
-                <?php if($pengikut): ?>
-                  <?php foreach ($pengikut as $p):?>
+                <?php if($surat['pengikut']): ?>
+                  <?php foreach ($surat['pengikut'] as $p):?>
                     <tr>
                       <td><?= $nomor++ ?></td>
                       <td><?= $p['nama'] ?></td>
