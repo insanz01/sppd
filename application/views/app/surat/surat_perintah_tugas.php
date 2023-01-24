@@ -17,9 +17,6 @@
     <title>Surat Perintah Tugas</title>
   </head>
   <body class="container-fluid">
-
-      <?php var_dump($surat); ?>
-      <?php var_dump($nomor_sppd); ?>
     
     <h1 class="text-center">SURAT PERINTAH TUGAS</h1>
     <h4 class="text-center">SPPD NOMOR : <?= $surat['
