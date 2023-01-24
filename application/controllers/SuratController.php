@@ -60,7 +60,7 @@ class SuratController extends CI_Controller {
   }
 
   public function laporan_perjalanan_dinas($hash_id) {
-    $data['surat'] = $this->pengajuan_m->get_surat_perintah_tugas($hash_id);
+    $data['surat'] = $this->pengajuan_m->get_laporan_perjalanan_dinas($hash_id);
 
     $this->load->view("app/surat/laporan_perjalanan_dinas", $data);
   }
