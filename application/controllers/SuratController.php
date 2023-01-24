@@ -56,8 +56,6 @@ class SuratController extends CI_Controller {
   public function surat_perintah_tugas($hash_id) {
     $data['surat'] = $this->pengajuan_m->get_surat_perintah_tugas($hash_id);
 
-    var_dump($data['surat']['nomor_sppd']); die;
-
     $this->load->view("app/surat/surat_perintah_tugas", $data);
   }
 

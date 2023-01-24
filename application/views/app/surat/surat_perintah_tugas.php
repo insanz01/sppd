@@ -19,8 +19,7 @@
   <body class="container-fluid">
     
     <h1 class="text-center">SURAT PERINTAH TUGAS</h1>
-    <h4 class="text-center">SPPD NOMOR : <?= $surat['
-    nomor_sppd'] ?></h4>
+    <h4 class="text-center">SPPD NOMOR : <?= $surat['nomor_sppd']; ?></h4>
 
     <div class="row mt-4">
       <div class="col-9 mx-auto">
@@ -33,20 +32,15 @@
         <table class="table custom-table" style="width: 100%">
           <tr>
             <td width="30%">Nama  / NIP</td>
-            <td width="70%"><?= $surat['
-    nama_karyawan'] ?> /  <?= $surat['
-    nip_karyawan'] ?></td>
+            <td width="70%"><?= $surat['nama_karyawan']; ?> / <?= $surat['nip_karyawan']; ?></td>
           </tr>
           <tr>
             <td width="30%">Pangkat / Gol</td>
-            <td width="70%"><?= $surat['
-    pangkat'] ?>  (<?= $surat['
-    golongan'] ?>)</td>
+            <td width="70%"><?= $surat['pangkat']; ?>  (<?= $surat['golongan']; ?>)</td>
           </tr>
           <tr>
             <td width="30%">Jabatan</td>
-            <td width="70%"><?= $surat['
-    jabatan'] ?></td>
+            <td width="70%"><?= $surat['jabatan']; ?></td>
           </tr>
         </table>
       </div>
@@ -56,23 +50,19 @@
         <table class="table custom-table" style="width: 100%">
           <tr>
             <td width="30%">Dalam Rangka</td>
-            <td width="70%"><?= $surat['
-    rangka_acara'] ?></td>
+            <td width="70%"><?= $surat['rangka_acara']; ?></td>
           </tr>
           <tr>
             <td width="30%">Tujuan</td>
-            <td width="70%"><?= $surat['
-    tujuan'] ?></td>
+            <td width="70%"><?= $surat['tujuan'] ?></td>
           </tr>
           <tr>
             <td width="30%">Pada tanggal</td>
-            <td width="70%"><?= $surat['
-    tanggal_kegiatan'] ?></td>
+            <td width="70%"><?= $surat['tanggal_kegiatan'] ?></td>
           </tr>
           <tr>
             <td width="30%">Atas Beban</td>
-            <td width="70%"><?= $surat['
-    atas_beban'] ?></td>
+            <td width="70%"><?= $surat['atas_beban'] ?></td>
           </tr>
         </table>
       </div>
