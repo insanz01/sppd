@@ -103,14 +103,16 @@
                 </thead>
               <tbody>
                 <?php $nomor = 1; ?>
-                <?php foreach ($pengikut as $p):?>
-                  <tr>
-                    <td><?= $nomor++ ?></td>
-                    <td><?= $p['nama'] ?></td>
-                    <td><?= $p['tanggal_lahir'] ?></td>
-                    <td><?= $p['keterangan'] ?></td>
-                  </tr>
-                <?php endforeach; ?>
+                <?php if($pengikut): ?>
+                  <?php foreach ($pengikut as $p):?>
+                    <tr>
+                      <td><?= $nomor++ ?></td>
+                      <td><?= $p['nama'] ?></td>
+                      <td><?= $p['tanggal_lahir'] ?></td>
+                      <td><?= $p['keterangan'] ?></td>
+                    </tr>
+                  <?php endforeach; ?>
+                <?php endif; ?>
               </tbody>
             </table>
           </td>
