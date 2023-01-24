@@ -8,7 +8,7 @@ class PengajuanModel extends CI_Model {
   public function insert_laporan_perjalanan_dinas($data) {
     $data['hash_id'] = password_hash(time(), PASSWORD_DEFAULT);
 
-    $this->db->insert('laporan_perjalan_dinas', $data);
+    $this->db->insert('laporan_perjalanan_dinas', $data);
     return $data['hash_id'];
   }
 
