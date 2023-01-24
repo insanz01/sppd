@@ -130,12 +130,12 @@
             </li>
           </ul>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a href="<?= base_url('downloads/document/SPPD 2022.docx') ?>" download class="nav-link">
             <i class="nav-icon fas fa-download"></i>
             <p>Download Template</p>
           </a>
-        </li>
+        </li> -->
 
         <!-- <li class="nav-item">
           <a href="<?= base_url('admin/laporan') ?>" target="_blank" class="nav-link">
