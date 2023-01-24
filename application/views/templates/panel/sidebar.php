@@ -110,40 +110,22 @@
             </p>
           </a>
           <ul class="nav nav-treeview">
-            <!-- <li class="nav-item">
-              <a href="<?= base_url('buku') ?>" class="nav-link">
-                <i class="far fa-circle nav-icon ml-3"></i>
-                <p>Buku Pustaka</p>
-              </a>
-            </li> -->
             <li class="nav-item">
-              <a href="#!" class="nav-link">
+              <a href="<?= base_url('pengajuan/sppd') ?>" class="nav-link">
                 <i class="far fa-circle nav-icon ml-3"></i>
-                <p>Daftar Permintaan</p>
+                <p>SPPD</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="#!" class="nav-link">
+              <a href="<?= base_url('pengajuan/lpd') ?>" class="nav-link">
                 <i class="far fa-circle nav-icon ml-3"></i>
-                <p>NPPD</p>
+                <p>LPD</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="#!" class="nav-link">
+              <a href="<?= base_url('pengajuan/spt') ?>" class="nav-link">
                 <i class="far fa-circle nav-icon ml-3"></i>
-                <p>Surat Perintah Tugas</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#!" class="nav-link">
-                <i class="far fa-circle nav-icon ml-3"></i>
-                <p>Rincian Biaya</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#!" class="nav-link">
-                <i class="far fa-circle nav-icon ml-3"></i>
-                <p>Hasil Perjalanan Dinas</p>
+                <p>SPT</p>
               </a>
             </li>
           </ul>

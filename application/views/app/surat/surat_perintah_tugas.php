@@ -14,7 +14,7 @@
       }
     </style>
 
-    <title>Surat Perintah Perjalanan Dinas</title>
+    <title>Surat Perintah Tugas</title>
   </head>
   <body class="container-fluid">
     
