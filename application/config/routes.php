@@ -53,26 +53,12 @@ $route['default_controller'] = 'AppController/index';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['visitor'] = 'VisitorController/guest';
-$route['visitor/do_submit'] = 'VisitorController/guest_record';
-$route['visitor/member'] = 'VisitorController/member';
-$route['visitor/member/do_submit'] = 'VisitorController/member_record';
+$route['karyawan'] = "KaryawanController/index";
+$route['karyawan/add'] = "KaryawanController/add_karyawan";
+$route['karyawan/do_add'] = "KaryawanController/do_add_karyawan";
+$route['karyawan/edit/(:any)'] = "KaryawanController/edit_karyawan/$1";
+$route['karyawan/do_edit'] = "KaryawanController/do_update_karyawan";
+$route['karyawan/delete'] = "KaryawanController/delete_karyawan";
 
-$route['log/pinjam'] = 'LogController/log_keluar';
-$route['log/pinjam/add'] = 'LogController/add_log_keluar';
-
-$route['log/kembali'] = 'LogController/log_masuk';
-$route['log/kembali/add'] = 'LogController/add_log_masuk';
-
-$route['membership'] = 'MembershipController/index';
-$route['membership/add'] = 'MembershipController/add_membership';
-$route['membership/do_add'] = 'MembershipController/do_add_membership';
-$route['membership/edit/(:any)'] = 'MembershipController/edit_membership/$1';
-$route['membership/do_edit'] = 'MembershipController/do_update_membership';
-$route['membership/delete/(:any)'] = 'MembershipController/delete_membership/$1';
-
-$route['buku'] = 'BookController/index';
-$route['buku/add'] = 'BookController/add_book';
-$route['buku/do_add'] = 'BookController/do_add_book';
-$route['buku/edit/(:any)'] = 'BookController/edit_book/$1';
-$route['buku/do_edit'] = 'BookController/do_update_book';
+$route['surat/sppd'] = "SuratController/surat_perintah_perjalanan_dinas";
+$route['surat/spt'] = "SuratController/surat_perintah_tugas";
