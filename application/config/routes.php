@@ -61,8 +61,13 @@ $route['karyawan/do_edit'] = "KaryawanController/do_update_karyawan";
 $route['karyawan/delete'] = "KaryawanController/delete_karyawan";
 
 $route['pengajuan/sppd'] = "PengajuanController/surat_perintah_perjalanan_dinas";
+$route['pengajuan/add_sppd'] = "PengajuanController/add_surat_perintah_perjalanan_dinas";
+
 $route['pengajuan/spt'] = "PengajuanController/surat_perintah_tugas";
+$route['pengajuan/add_spt'] = "PengajuanController/add_surat_perintah_tugas";
+
 $route['pengajuan/lpd'] = "PengajuanController/laporan_perjalanan_dinas";
+$route['pengajuan/add_lpd'] = "PengajuanController/add_laporan_perjalanan_dinas";
 
 $route['surat/sppd'] = "SuratController/surat_perintah_perjalanan_dinas";
 $route['surat/spt/(:any)'] = "SuratController/surat_perintah_tugas/$1";

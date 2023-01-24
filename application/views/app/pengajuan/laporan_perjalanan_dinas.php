@@ -25,7 +25,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-body">
-              <form action="<?= base_url('surat/lpd') ?>" method="post">
+              <form action="<?= base_url('pengajuan/add_lpd') ?>" method="post">
                 <div class="form-group">
                   <label for="penerima_surat">Tujuan (Penerima Surat)</label>
                   <input type="text" name="penerima_surat" class="form-control" id="penerima_surat" required>
