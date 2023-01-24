@@ -65,5 +65,5 @@ $route['pengajuan/spt'] = "PengajuanController/surat_perintah_tugas";
 $route['pengajuan/lpd'] = "PengajuanController/laporan_perjalanan_dinas";
 
 $route['surat/sppd'] = "SuratController/surat_perintah_perjalanan_dinas";
-$route['surat/spt'] = "SuratController/surat_perintah_tugas";
-$route['surat/lpd'] = "SuratController/laporan_perjalanan_dinas";
+$route['surat/spt/(:any)'] = "SuratController/surat_perintah_tugas/$1";
+$route['surat/lpd/(:any)'] = "SuratController/laporan_perjalanan_dinas/$1";

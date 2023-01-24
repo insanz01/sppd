@@ -4,6 +4,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class SuratController extends CI_Controller {
   public function __construct() {
     parent::__construct();
+
+    $this->load->model("PengajuanModel", "pengajuan_m");
   }
 
   public function surat_perintah_perjalanan_dinas() {
@@ -51,11 +53,15 @@ class SuratController extends CI_Controller {
     $this->load->view("app/surat/surat_perintah_perjalanan_dinas", $data);
   }
 
-  public function surat_perintah_tugas() {
-    $this->load->view("app/surat/surat_perintah_tugas");
+  public function surat_perintah_tugas($hash_id) {
+    $data['surat'] = $this->pengajuan_m->get_surat_perintah_tugas($hash_id);
+
+    $this->load->view("app/surat/surat_perintah_tugas", $data);
   }
 
   public function laporan_perjalanan_dinas() {
-    $this->load->view("app/surat/laporan_perjalanan_dinas");
+    $data['surat'] = $this->pengajuan_m->get_surat_perintah_tugas($hash_id);
+
+    $this->load->view("app/surat/laporan_perjalanan_dinas", $data);
   }
 }
