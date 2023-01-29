@@ -99,8 +99,8 @@
                   <th width="30%">Nama</th>
                   <th width="10%">Tanggal Lahir</th>
                   <th width="50%">Keterangan</th>
-                  </tr>
-                </thead>
+                </tr>
+              </thead>
               <tbody>
                 <?php $nomor = 1; ?>
                 <?php if($surat['pengikut']): ?>

@@ -105,7 +105,7 @@
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-book"></i>
             <p>
-              Laporan
+              Pengajuan
               <i class="right fas fa-angle-left"></i>
             </p>
           </a>
@@ -124,6 +124,36 @@
             </li>
             <li class="nav-item">
               <a href="<?= base_url('pengajuan/spt') ?>" class="nav-link">
+                <i class="far fa-circle nav-icon ml-3"></i>
+                <p>SPT</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item has-treeview">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-book"></i>
+            <p>
+              Laporan
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="<?= base_url('laporan/sppd') ?>" class="nav-link">
+                <i class="far fa-circle nav-icon ml-3"></i>
+                <p>SPPD</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?= base_url('laporan/lpd') ?>" class="nav-link">
+                <i class="far fa-circle nav-icon ml-3"></i>
+                <p>LPD</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?= base_url('laporan/spt') ?>" class="nav-link">
                 <i class="far fa-circle nav-icon ml-3"></i>
                 <p>SPT</p>
               </a>

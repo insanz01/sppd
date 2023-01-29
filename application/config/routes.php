@@ -76,3 +76,7 @@ $route['pengajuan/add_lpd'] = "PengajuanController/add_laporan_perjalanan_dinas"
 $route['surat/sppd/(:any)'] = "SuratController/surat_perintah_perjalanan_dinas/$1";
 $route['surat/spt/(:any)'] = "SuratController/surat_perintah_tugas/$1";
 $route['surat/lpd/(:any)'] = "SuratController/laporan_perjalanan_dinas/$1";
+
+$route['laporan/sppd'] = "LaporanController/surat_perintah_perjalanan_dinas";
+$route['laporan/spt'] = "LaporanController/surat_perintah_tugas";
+$route['laporan/lpd'] = "LaporanController/laporan_perjalanan_dinas";
