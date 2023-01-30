@@ -5,7 +5,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Biaya Perjalanan Dinas</h1>
+          <h1 class="m-0 text-dark">Laporan Perjalanan Dinas</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <!-- <ol class="breadcrumb float-sm-right">
@@ -33,9 +33,9 @@
                   <table class="table custom-table">
                     <thead>
                       <th>#</th>
-                      <th>Nama Karyawan</th>
-                      <th>File Pengajuan</th>
-                      <th>Status</th>
+                      <th>Penerima Surat</th>
+                      <th>Pengiriman Surat</th>
+                      <th>Perihal</th>
                       <th>Aksi</th>
                     </thead>
                     <tbody>
@@ -43,16 +43,13 @@
                       <?php foreach ($reports as $laporan) : ?>
                         <tr>
                           <td><?= $index++ ?></td>
-                          <td><?= $laporan['nama_karyawan'] ?></td>
+                          <td><?= $laporan['penerima_surat'] ?></td>
+                          <td><?= $laporan['pengirim_surat'] ?></td>
+                          <td><?= $laporan['perihal'] ?></td>
                           <td>
-                            <a href="<?= base_url('uploads/documents/') . $laporan['file_pengajuan'] ?>" download>
-                              <?= $laporan['file_pengajuan'] ?>
-                            </a>
-                          </td>
-                          <td><?= $laporan['status'] ?></td>
-                          <td>
-                            <a href="<?= base_url('pengajuan/bpd/') . $laporan['hash_id'] . '/terima' ?>" class="badge badge-sm badge-success badge-pill">Terima</a>
-                            <a href="<?= base_url('pengajuan/bpd/') . $laporan['hash_id'] . '/tolak' ?>" class="badge badge-sm badge-danger badge-pill">Tolak</a>
+                            <!-- <a href="<?= base_url('laporan/lpd/edit/') . $laporan['id'] ?>" class="badge badge-sm badge-info badge-pill">edit</a>
+                            <a href="<?= base_url('laporan/lpd/delete/') . $laporan['id'] ?>" class="badge badge-sm badge-danger badge-pill">hapus</a> -->
+                            <a href="<?= base_url('surat/lpd/') . $laporan['hash_id'] ?>" class="badge badge-sm badge-success badge-pill" target="_blank">lihat surat</a>
                           </td>
                         </tr>
                       <?php endforeach; ?>

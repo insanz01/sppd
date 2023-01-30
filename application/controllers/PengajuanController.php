@@ -63,6 +63,18 @@ class PengajuanController extends CI_Controller {
     }
   }
 
+  public function status_biaya_perjalanan_dinas($hash_id, $status) {
+    $status_code = ($status == "terima") ? 1 : -1;
+
+    if($this->pengajuan_m->update_status_biaya_perjalanan_dinas($hash_id, $status_code)) {
+      $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Berhasil merubah status</div>');
+    } else {
+      $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">Gagal merubah status</div>');
+    }
+
+    redirect('laporan/bpd');
+  }
+
   // public function biaya_perjalanan_dinas() {
   //   $this->load->view('templates/panel/header');
   //   $this->load->view('templates/panel/sidebar');

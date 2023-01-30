@@ -46,6 +46,7 @@
                           <td><?= $laporan['penerima_surat'] ?></td>
                           <td><?= $laporan['pengirim_surat'] ?></td>
                           <td><?= $laporan['perihal'] ?></td>
+                          <td><?= $laporan['status'] ?></td>
                           <td>
                             <!-- <a href="<?= base_url('laporan/lpd/edit/') . $laporan['id'] ?>" class="badge badge-sm badge-info badge-pill">edit</a>
                             <a href="<?= base_url('laporan/lpd/delete/') . $laporan['id'] ?>" class="badge badge-sm badge-danger badge-pill">hapus</a> -->

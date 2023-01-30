@@ -9,6 +9,7 @@ class PengajuanModel extends CI_Model {
     $hash_id = password_hash(time(), PASSWORD_DEFAULT);
 
     $data['hash_id'] = base64_encode($hash_id);
+    $data['user_id'] = $this->session->userdata('SESS_SPPD_USERID');
 
     $this->db->insert('laporan_perjalanan_dinas', $data);
     return $data['hash_id'];
@@ -59,5 +60,13 @@ class PengajuanModel extends CI_Model {
 
   public function get_all_biaya_perjalanan_dinas() {
     return $this->db->get('biaya_perjalanan_dinas')->result_array();
+  }
+
+  public function update_status_biaya_perjalanan_dinas($hash_id, $status_code) {
+    $this->db->set('status', $status_code);
+    $this->db->where('hash_id', $hash_id);
+    $this->db->update('biaya_perjalanan_dinas');
+
+    return $this->db->affected_rows();
   }
 }

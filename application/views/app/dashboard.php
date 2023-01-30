@@ -37,10 +37,11 @@
   <section class="content">
     <div class="container">
       <div class="row">
-        <div class="col-12 mb-4">
-          <h1 class="text-center">
-            Selamat Datang di SPPD
-          </h1>
+        <div class="col-12 mb-4 text-center">
+          <img src="<?= base_url('assets/bahan/icon1.png') ?>" width="250px" alt="">
+          <h2 class="text-center">
+            Selamat Datang di SPPD Dinas Ketahanan Pangan, Pertanian dan Perikanan (DKP3) Banjarmasin
+          </h2>
         </div>
         
         <div class="col-lg-3 col-6">
@@ -101,7 +102,7 @@
       </div>
 
       <div class="row">
-        <div class="col-12">
+        <div class="col-5 mx-auto">
           <div id="map"></div>
         </div>
       </div>
@@ -111,7 +112,7 @@
 
 <script>
   window.addEventListener('load', () => {
-    var map = L.map('map').setView([-3.3089402, 114.6136443], 15);
+    var map = L.map('map').setView([-3.3089402, 114.6136443], 17);
   
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,

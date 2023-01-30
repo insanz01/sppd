@@ -59,4 +59,14 @@ class NonAdminController extends CI_Controller {
 
     redirect('na/bpd');
   }
+
+  public function laporan_perjalanan_dinas() {
+    $data['reports'] = $this->laporan_m->get_all_reports_by_user('laporan_perjalanan_dinas');
+
+    $this->load->view('templates/panel/header');
+    $this->load->view('templates/panel/sidebar');
+    $this->load->view('templates/panel/navbar');
+    $this->load->view('app/laporan/laporan_perjalanan_dinas', $data);
+    $this->load->view('templates/panel/footer');
+  }
 }

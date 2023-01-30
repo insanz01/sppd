@@ -46,7 +46,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <style>
-    #map { height: 500px; }
+    #map { height: 300px; }
   </style>
 </head>
 

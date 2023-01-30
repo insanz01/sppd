@@ -22,10 +22,46 @@ class LaporanModel extends CI_Model {
     }
   }
 
+  public function get_all_reports_by_user($target) {
+    switch($target) {
+      case "laporan_perjalanan_dinas":
+        return $this->get_all_laporan_perjalanan_dinas_by_user();
+        break;
+      case "surat_perintah_perjalanan_dinas":
+        return $this->get_all_surat_perintah_perjalanan_dinas_by_user();
+        break;
+      case "surat_perintah_tugas":
+        return $this->get_all_surat_perintah_tugas_by_user();
+        break;
+      case "biaya_perjalanan_dinas":
+        return $this->get_all_biaya_perjalanan_dinas_by_user();
+        break;
+    }
+  }
+
   public function get_all_laporan_perjalanan_dinas() {
     $query = "SELECT * FROM laporan_perjalanan_dinas";
 
-    return $this->db->query($query)->result_array();
+    $lpd = $this->db->query($query)->result_array();
+
+    $results = [];
+
+    foreach($lpd as $l) {
+      $status = "initial";
+      $result = $l;
+
+      if($l['status'] == 1) {
+        $status = "diterima";
+      } else if ($l['status'] == -1) {
+        $status = "ditolak";
+      }
+
+      $result['status'] = $status;
+
+      array_push($results, $result);
+    }
+
+    return $results;
   }
 
   public function get_all_surat_perintah_perjalanan_dinas() {
@@ -98,5 +134,48 @@ class LaporanModel extends CI_Model {
     }
 
     return $results;
+  }
+
+  public function get_all_laporan_perjalanan_dinas_by_user() {
+    $user_id = $this->session->userdata('SESS_SPPD_USERID');
+
+    $query = "SELECT * FROM laporan_perjalanan_dinas WHERE user_id = $user_id";
+
+    $lpd = $this->db->query($query)->result_array();
+
+    $results = [];
+
+    foreach($lpd as $l) {
+      $status = "initial";
+      $result = $l;
+
+      if($l['status'] == 1) {
+        $status = "diterima";
+      } else if ($l['status'] == -1) {
+        $status = "ditolak";
+      }
+
+      $result['status'] = $status;
+
+      array_push($results, $result);
+    }
+
+    return $results;
+  }
+
+  public function get_all_surat_perintah_perjalanan_dinas_by_user() {
+    $user_id = $this->session->userdata('SESS_SPPD_USERID');
+    
+    $query = "SELECT * FROM surat_perintah_perjalanan_dinas";
+
+    return $this->db->query($query)->result_array();
+  }
+
+  public function get_all_surat_perintah_tugas_by_user() {
+    $user_id = $this->session->userdata('SESS_SPPD_USERID');
+    
+    $query = "SELECT * FROM surat_perintah_tugas";
+
+    return $this->db->query($query)->result_array();
   }
 }

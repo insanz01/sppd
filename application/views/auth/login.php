@@ -2,7 +2,7 @@
   <div class="col-12 login-page">
     <div class="login-box">
       <div class="login-logo">
-        <a href="<?= base_url() ?>"><b>Login</b> | SPPD</a>
+        <a class="text-white" href="<?= base_url() ?>"><b>Login</b> | SPPD</a>
       </div>
       <!-- /.login-logo -->
       <div class="card">

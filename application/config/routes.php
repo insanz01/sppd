@@ -75,6 +75,8 @@ $route['pengajuan/add_spt'] = "PengajuanController/add_surat_perintah_tugas";
 $route['pengajuan/lpd'] = "PengajuanController/laporan_perjalanan_dinas";
 $route['pengajuan/add_lpd'] = "PengajuanController/add_laporan_perjalanan_dinas";
 
+$route['pengajuan/bpd/(:any)/(:any)'] = "PengajuanController/status_biaya_perjalanan_dinas/$1/$2";
+
 $route['surat/sppd/(:any)'] = "SuratController/surat_perintah_perjalanan_dinas/$1";
 $route['surat/spt/(:any)'] = "SuratController/surat_perintah_tugas/$1";
 $route['surat/lpd/(:any)'] = "SuratController/laporan_perjalanan_dinas/$1";
@@ -87,3 +89,5 @@ $route['laporan/bpd'] = "LaporanController/biaya_perjalanan_dinas";
 $route['na/bpd'] = "NonAdminController/biaya_perjalanan_dinas";
 $route['na/bpd/laporan'] = "NonAdminController/laporan_biaya_perjalanan_dinas";
 $route['na/bpd/add'] = "NonAdminController/add_biaya_perjalanan_dinas";
+
+$route['na/lpd'] = "NonAdminController/laporan_perjalanan_dinas";

@@ -1,12 +1,18 @@
+<style>
+  .bg-custom-side {
+    background-color: #594545;
+  }
+</style>
+
 <!-- Main Sidebar Container -->
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="main-sidebar sidebar-dark-primary elevation-4 bg-custom-side">
   <!-- Brand Logo -->
   <a href="<?= base_url('profile') ?>" class="brand-link">
     <img src="<?= base_url() ?>assets/bahan/sipetruk_Transparent.png" alt="Panel Admin Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
     <span class="brand-text font-weight-light">Panel Console</span>
   </a>
   <!-- Sidebar -->
-  <div class="sidebar">
+  <div class="sidebar bg-custom-side">
     <!-- Sidebar user panel (optional) -->
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
       <div class="image">
@@ -133,12 +139,12 @@
                   <p>SPPD</p>
                 </a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a href="<?= base_url('pengajuan/lpd') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon ml-3"></i>
                   <p>LPD</p>
                 </a>
-              </li>
+              </li> -->
             </ul>
           </li>
   
