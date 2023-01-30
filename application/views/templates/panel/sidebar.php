@@ -47,40 +47,70 @@
         </li> -->
 
         <?php if($this->session->userdata('SESS_SPPD_ROLEID') == 2): ?>
-          <li class="nav-item">
-            <a href="<?= base_url('na/bpd') ?>" class="nav-link">
-              <i class="nav-icon fas fa-cogs"></i>
-              <p>
-                AJUKAN BPD
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="<?= base_url('na/bpd/laporan') ?>" class="nav-link">
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>
-                LAPORAN BPD
+                PENGAJUAN
+                <i class="right fas fa-angle-left"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?= base_url('na/spt') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon ml-3"></i>
+                  <p>BPD</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('pengajuan/lpd') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon ml-3"></i>
+                  <p>LPD</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+                LAPORAN
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?= base_url('na/bpd/laporan') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon ml-3"></i>
+                  <p>BPD</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('laporan/lpd') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon ml-3"></i>
+                  <p>LPD</p>
+                </a>
+              </li>
+            </ul>
           </li>
         <?php else: ?>
           <li class="nav-item has-treeview">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-globe-asia"></i>
-            <p>
-              Master Data
-              <i class="right fas fa-angle-left"></i>
-            </p>
-          </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="<?= base_url('karyawan') ?>" class="nav-link">
-                <i class="far fa-circle nav-icon ml-3"></i>
-                <p>Pegawai</p>
-              </a>
-            </li>
-          </ul>
-        </li>
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-globe-asia"></i>
+              <p>
+                Master Data
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?= base_url('karyawan') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon ml-3"></i>
+                  <p>Pegawai</p>
+                </a>
+              </li>
+            </ul>
+          </li>
 
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
