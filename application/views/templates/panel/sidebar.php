@@ -46,7 +46,7 @@
           </a>
         </li> -->
 
-        <?php if($this->session->userdata('SESS_SPPD_ROLEID') == 1): ?>
+        <?php if($this->session->userdata('SESS_SPPD_ROLEID') == 2): ?>
           <li class="nav-item">
             <a href="<?= base_url('na/bpd') ?>" class="nav-link">
               <i class="nav-icon fas fa-cogs"></i>
