@@ -16,6 +16,9 @@ class LaporanModel extends CI_Model {
       case "surat_perintah_tugas":
         return $this->get_all_surat_perintah_tugas();
         break;
+      case "biaya_perjalanan_dinas":
+        return $this->get_all_biaya_perjalanan_dinas();
+        break;
     }
   }
 
@@ -33,6 +36,12 @@ class LaporanModel extends CI_Model {
 
   public function get_all_surat_perintah_tugas() {
     $query = "SELECT * FROM surat_perintah_tugas";
+
+    return $this->db->query($query)->result_array();
+  }
+
+  public function get_all_biaya_perjalanan_dinas() {
+    $query = "SELECT * FROM biaya_perjalanan_dinas";
 
     return $this->db->query($query)->result_array();
   }

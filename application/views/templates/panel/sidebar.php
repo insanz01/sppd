@@ -100,6 +100,9 @@
           </ul>
         </li>
 
+        <?php if($this->session->userdata('SESS_SPPD_ROLEID') == 1): ?>
+          
+        <?php endif; ?>
 
         <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
@@ -111,21 +114,27 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
+              <a href="<?= base_url('pengajuan/spt') ?>" class="nav-link">
+                <i class="far fa-circle nav-icon ml-3"></i>
+                <p>SPT</p>
+              </a>
+            </li>
+            <li class="nav-item">
               <a href="<?= base_url('pengajuan/sppd') ?>" class="nav-link">
                 <i class="far fa-circle nav-icon ml-3"></i>
                 <p>SPPD</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="<?= base_url('pengajuan/lpd') ?>" class="nav-link">
+              <a href="<?= base_url('pengajuan/bpd') ?>" class="nav-link">
                 <i class="far fa-circle nav-icon ml-3"></i>
-                <p>LPD</p>
+                <p>BPD</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="<?= base_url('pengajuan/spt') ?>" class="nav-link">
+              <a href="<?= base_url('pengajuan/lpd') ?>" class="nav-link">
                 <i class="far fa-circle nav-icon ml-3"></i>
-                <p>SPT</p>
+                <p>LPD</p>
               </a>
             </li>
           </ul>
@@ -141,21 +150,27 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
+              <a href="<?= base_url('laporan/spt') ?>" class="nav-link">
+                <i class="far fa-circle nav-icon ml-3"></i>
+                <p>SPT</p>
+              </a>
+            </li>
+            <li class="nav-item">
               <a href="<?= base_url('laporan/sppd') ?>" class="nav-link">
                 <i class="far fa-circle nav-icon ml-3"></i>
                 <p>SPPD</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="<?= base_url('laporan/lpd') ?>" class="nav-link">
+              <a href="<?= base_url('laporan/bpd') ?>" class="nav-link">
                 <i class="far fa-circle nav-icon ml-3"></i>
-                <p>LPD</p>
+                <p>BPD</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="<?= base_url('laporan/spt') ?>" class="nav-link">
+              <a href="<?= base_url('laporan/lpd') ?>" class="nav-link">
                 <i class="far fa-circle nav-icon ml-3"></i>
-                <p>SPT</p>
+                <p>LPD</p>
               </a>
             </li>
           </ul>

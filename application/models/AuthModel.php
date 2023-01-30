@@ -16,6 +16,7 @@ class AuthModel extends CI_Model {
 			
 			$this->session->set_userdata('SESS_SPPD_USERID', $user['id']);
 			$this->session->set_userdata('SESS_SPPD_USERNAME', $user['username']);
+			$this->session->set_userdata('SESS_SPPD_ROLEID', $user['role_id']);
 			// $this->session->set_userdata('SESS_SIPERPUS_ROLE', $user['role']);
 
 			// if($user['role'] == 3) {

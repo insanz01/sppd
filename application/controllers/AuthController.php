@@ -43,6 +43,7 @@ class AuthController extends CI_Controller
   {
 		$this->session->unset_userdata("SESS_SPPD_USERID");
 		$this->session->unset_userdata("SESS_SPPD_USERNAME");
+		$this->session->unset_userdata("SESS_SPPD_ROLEID");
 
 		redirect('auth');
   }

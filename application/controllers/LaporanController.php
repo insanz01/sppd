@@ -36,4 +36,14 @@ class LaporanController extends CI_Controller {
     $this->load->view('app/laporan/surat_perintah_tugas', $data);
     $this->load->view('templates/panel/footer');
   }
+
+  public function biaya_perjalanan_dinas() {
+    $data['reports'] = $this->laporan_m->get_all_reports('biaya_perjalanan_dinas');
+
+    $this->load->view('templates/panel/header');
+    $this->load->view('templates/panel/sidebar');
+    $this->load->view('templates/panel/navbar');
+    $this->load->view('app/laporan/biaya_perjalanan_dinas', $data);
+    $this->load->view('templates/panel/footer');
+  }
 }

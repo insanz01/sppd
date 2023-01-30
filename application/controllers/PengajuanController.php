@@ -62,4 +62,21 @@ class PengajuanController extends CI_Controller {
       redirect('surat/lpd/' . $hash_id);
     }
   }
+
+  public function biaya_perjalanan_dinas() {
+    $this->load->view('templates/panel/header');
+    $this->load->view('templates/panel/sidebar');
+    $this->load->view('templates/panel/navbar');
+    $this->load->view("app/pengajuan/biaya_perjalanan_dinas");
+    $this->load->view('templates/panel/footer');
+  }
+
+  public function add_biaya_perjalanan_dinas() {
+    $data = $this->input->post();
+
+    $hash_id = $this->pengajuan_m->insert_biaya_perjalanan_dinas($data);
+    if($hash_id) {
+      redirect('surat/bpd/' . $hash_id);
+    }
+  }
 }

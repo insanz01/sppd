@@ -58,11 +58,13 @@
 
 <script>
   window.addEventListener('load', () => {
-    var map = L.map('map').setView([-3.3184324, 114.5896241], 16.7);
+    var map = L.map('map').setView([-3.3089402, 114.6136443], 15);
   
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
+
+    var marker = L.marker([-3.3089402, 114.6136443]).addTo(map);
   })
 </script>
