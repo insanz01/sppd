@@ -39,7 +39,15 @@
 
   <script src="https://cdn.tiny.cloud/1/z1lrb6zvxa518fkipkyqz8us14r3ybrqvco0l7egt9s34789/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
+
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    #map { height: 500px; }
+  </style>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">

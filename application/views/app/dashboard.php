@@ -46,6 +46,23 @@
           </div>
         </div>
       </div>
+
+      <div class="row">
+        <div class="col-12">
+          <div id="map"></div>
+        </div>
+      </div>
     </div>
   </section>
 </div>
+
+<script>
+  window.addEventListener('load', () => {
+    var map = L.map('map').setView([-3.3184324, 114.5896241], 16.7);
+  
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+  })
+</script>

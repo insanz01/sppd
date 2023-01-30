@@ -53,6 +53,8 @@ $route['default_controller'] = 'AppController/index';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+$route['dashboard'] = 'AppController/index';
+
 $route['auth'] = "AuthController/index";
 $route['auth/do_login'] = "AuthController/do_login";
 $route['auth/logout'] = "AuthController/do_logout";
