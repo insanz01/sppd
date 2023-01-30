@@ -1,3 +1,18 @@
+<style>
+  .bg-warna-1 {
+    background-color: #AAE3E2;
+  }
+  .bg-warna-2 {
+    background-color: #D9ACF5;
+  }
+  .bg-warna-3 {
+    background-color: #7286D3;
+  }
+  .bg-warna-4 {
+    background-color: #FD8A8A;
+  }
+</style>
+
 <div class="content-wrapper">
 
   <!-- Content Header (Page header) -->
@@ -27,22 +42,60 @@
             Selamat Datang di SPPD
           </h1>
         </div>
-        <div class="col-6">
-          <div class="card bg-primary">
-            <div class="card-body">
-              <h3 class="text-center text-white">
-                SURAT MASUK
-              </h3>
+        
+        <div class="col-lg-3 col-6">
+
+          <div class="small-box bg-warna-1">
+            <div class="inner">
+              <h3><?= $total_lpd ?></h3>
+              <p>Total LPD</p>
             </div>
+            <div class="icon">
+              <i class="ion ion-pie-graph"></i>
+            </div>
+            <!-- <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> -->
           </div>
         </div>
-        <div class="col-6">
-          <div class="card bg-danger">
-            <div class="card-body">
-              <h3 class="text-center text-white">
-                SURAT KELUAR
-              </h3>
+
+        <div class="col-lg-3 col-6">
+
+          <div class="small-box bg-warna-2">
+            <div class="inner">
+              <h3><?= $total_sppd ?></h3>
+              <p>Total SPPD</p>
             </div>
+            <div class="icon">
+              <i class="ion ion-pie-graph"></i>
+            </div>
+            <!-- <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> -->
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-6">
+
+          <div class="small-box bg-warna-3">
+            <div class="inner">
+              <h3><?= $total_spt ?></h3>
+              <p>Total SPT</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-pie-graph"></i>
+            </div>
+            <!-- <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> -->
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-6">
+
+          <div class="small-box bg-warna-4">
+            <div class="inner">
+              <h3><?= $total_bpd ?></h3>
+              <p>Total BPD</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-pie-graph"></i>
+            </div>
+            <!-- <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> -->
           </div>
         </div>
       </div>

@@ -49,7 +49,7 @@
           </form>
 
           <p class="mb-1 mt-3">
-            <a href="<?= base_url('visitor') ?>" target="_blank">Beralih ke halaman buku tamu pengunjung</a>
+            <!-- <a href="<?= base_url('visitor') ?>" target="_blank">Beralih ke halaman buku tamu pengunjung</a> -->
           </p>
           <!-- <p class="mb-0">
             <a href="<?= base_url('signup') ?>" class="text-center">Registrasi pengguna baru</a>
