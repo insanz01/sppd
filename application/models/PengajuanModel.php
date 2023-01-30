@@ -56,4 +56,8 @@ class PengajuanModel extends CI_Model {
   public function get_biaya_perjalanan_dinas($hash_id) {
     return $this->db->get_where('biaya_perjalanan_dinas', ['hash_id' => $hash_id])->row_array();
   }
+
+  public function get_all_biaya_perjalanan_dinas() {
+    return $this->db->get('biaya_perjalanan_dinas')->result_array();
+  }
 }

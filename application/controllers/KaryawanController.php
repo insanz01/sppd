@@ -78,8 +78,6 @@ class KaryawanController extends CI_Controller {
     redirect('karyawan');
   }
 
-
-
   public function delete_karyawan()
   {
     $id = $this->input->post('id');

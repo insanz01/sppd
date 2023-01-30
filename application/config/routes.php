@@ -82,3 +82,8 @@ $route['surat/lpd/(:any)'] = "SuratController/laporan_perjalanan_dinas/$1";
 $route['laporan/sppd'] = "LaporanController/surat_perintah_perjalanan_dinas";
 $route['laporan/spt'] = "LaporanController/surat_perintah_tugas";
 $route['laporan/lpd'] = "LaporanController/laporan_perjalanan_dinas";
+$route['laporan/bpd'] = "LaporanController/biaya_perjalanan_dinas";
+
+$route['na/bpd'] = "NonAdminController/biaya_perjalanan_dinas";
+$route['na/bpd/laporan'] = "NonAdminController/laporan_biaya_perjalanan_dinas";
+$route['na/bpd/add'] = "NonAdminController/add_biaya_perjalanan_dinas";

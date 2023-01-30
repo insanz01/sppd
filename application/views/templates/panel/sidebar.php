@@ -46,7 +46,25 @@
           </a>
         </li> -->
 
-        <li class="nav-item has-treeview">
+        <?php if($this->session->userdata('SESS_SPPD_ROLEID') == 1): ?>
+          <li class="nav-item">
+            <a href="<?= base_url('na/bpd') ?>" class="nav-link">
+              <i class="nav-icon fas fa-cogs"></i>
+              <p>
+                AJUKAN BPD
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?= base_url('na/bpd/laporan') ?>" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+                LAPORAN BPD
+              </p>
+            </a>
+          </li>
+        <?php else: ?>
+          <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-globe-asia"></i>
             <p>
@@ -55,126 +73,82 @@
             </p>
           </a>
           <ul class="nav nav-treeview">
-            <!-- <li class="nav-item">
-              <a href="<?= base_url('buku') ?>" class="nav-link">
-                <i class="far fa-circle nav-icon ml-3"></i>
-                <p>Buku Pustaka</p>
-              </a>
-            </li> -->
             <li class="nav-item">
               <a href="<?= base_url('karyawan') ?>" class="nav-link">
                 <i class="far fa-circle nav-icon ml-3"></i>
                 <p>Pegawai</p>
               </a>
             </li>
-            <!-- <li class="nav-item">
-              <a href="#!" class="nav-link">
-                <i class="far fa-circle nav-icon ml-3"></i>
-                <p>NPPD</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#!" class="nav-link">
-                <i class="far fa-circle nav-icon ml-3"></i>
-                <p>SPPD</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#!" class="nav-link">
-                <i class="far fa-circle nav-icon ml-3"></i>
-                <p>Surat Perintah</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#!" class="nav-link">
-                <i class="far fa-circle nav-icon ml-3"></i>
-                <p>Data Tujuan</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#!" class="nav-link">
-                <i class="far fa-circle nav-icon ml-3"></i>
-                <p>Data Biaya</p>
-              </a>
-            </li> -->
           </ul>
         </li>
 
-        <?php if($this->session->userdata('SESS_SPPD_ROLEID') == 1): ?>
-          
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+                Pengajuan
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?= base_url('pengajuan/spt') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon ml-3"></i>
+                  <p>SPT</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('pengajuan/sppd') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon ml-3"></i>
+                  <p>SPPD</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('pengajuan/lpd') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon ml-3"></i>
+                  <p>LPD</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+  
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+                Laporan
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?= base_url('laporan/spt') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon ml-3"></i>
+                  <p>SPT</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('laporan/sppd') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon ml-3"></i>
+                  <p>SPPD</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('laporan/bpd') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon ml-3"></i>
+                  <p>BPD</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('laporan/lpd') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon ml-3"></i>
+                  <p>LPD</p>
+                </a>
+              </li>
+            </ul>
+          </li>
         <?php endif; ?>
 
-        <li class="nav-item has-treeview">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-book"></i>
-            <p>
-              Pengajuan
-              <i class="right fas fa-angle-left"></i>
-            </p>
-          </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="<?= base_url('pengajuan/spt') ?>" class="nav-link">
-                <i class="far fa-circle nav-icon ml-3"></i>
-                <p>SPT</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="<?= base_url('pengajuan/sppd') ?>" class="nav-link">
-                <i class="far fa-circle nav-icon ml-3"></i>
-                <p>SPPD</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="<?= base_url('pengajuan/bpd') ?>" class="nav-link">
-                <i class="far fa-circle nav-icon ml-3"></i>
-                <p>BPD</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="<?= base_url('pengajuan/lpd') ?>" class="nav-link">
-                <i class="far fa-circle nav-icon ml-3"></i>
-                <p>LPD</p>
-              </a>
-            </li>
-          </ul>
-        </li>
-
-        <li class="nav-item has-treeview">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-book"></i>
-            <p>
-              Laporan
-              <i class="right fas fa-angle-left"></i>
-            </p>
-          </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="<?= base_url('laporan/spt') ?>" class="nav-link">
-                <i class="far fa-circle nav-icon ml-3"></i>
-                <p>SPT</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="<?= base_url('laporan/sppd') ?>" class="nav-link">
-                <i class="far fa-circle nav-icon ml-3"></i>
-                <p>SPPD</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="<?= base_url('laporan/bpd') ?>" class="nav-link">
-                <i class="far fa-circle nav-icon ml-3"></i>
-                <p>BPD</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="<?= base_url('laporan/lpd') ?>" class="nav-link">
-                <i class="far fa-circle nav-icon ml-3"></i>
-                <p>LPD</p>
-              </a>
-            </li>
-          </ul>
-        </li>
         <!-- <li class="nav-item">
           <a href="<?= base_url('downloads/document/SPPD 2022.docx') ?>" download class="nav-link">
             <i class="nav-icon fas fa-download"></i>
