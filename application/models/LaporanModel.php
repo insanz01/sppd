@@ -58,7 +58,7 @@ class LaporanModel extends CI_Model {
       $result = [
         'id' => $b['id'],
         'hash_id' => $b['hash_id'],
-        'file_dokumen' => $b['file_dokumen'],
+        'file_pengajuan' => $b['file_dokumen'],
         'nama_karyawan' => $b['nama_karyawan'],
         'status' => $status,
       ];
@@ -89,7 +89,7 @@ class LaporanModel extends CI_Model {
       $result = [
         'id' => $b['id'],
         'hash_id' => $b['hash_id'],
-        'file_dokumen' => $b['file_dokumen'],
+        'file_pengajuan' => $b['file_dokumen'],
         'nama_karyawan' => $b['nama_karyawan'],
         'status' => $status,
       ];

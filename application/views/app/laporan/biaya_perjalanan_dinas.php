@@ -45,7 +45,7 @@
                           <td><?= $index++ ?></td>
                           <td><?= $laporan['nama_karyawan'] ?></td>
                           <td>
-                            <a href="<?= base_url() . $laporan['file_pengajuan'] ?>" download>
+                            <a href="<?= base_url('uploads/documents/') . $laporan['file_pengajuan'] ?>" download>
                               <?= $laporan['file_pengajuan'] ?>
                             </a>
                           </td>

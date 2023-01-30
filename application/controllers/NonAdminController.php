@@ -9,7 +9,7 @@ class NonAdminController extends CI_Controller {
   }
 
   public function biaya_perjalanan_dinas() {
-    $data['file_template'] = "dokumen/template_kwitansi_dan_bpd.xlsx";
+    $data['file_template'] = "dokumen/template_bpd.xlsx";
 
     $this->load->view('templates/panel/header');
     $this->load->view('templates/panel/sidebar');
@@ -30,25 +30,27 @@ class NonAdminController extends CI_Controller {
 
   public function add_biaya_perjalanan_dinas() {
     $data = [
-      'users_id' => $this->session->userdata('SESS_SPPD_USERID')
+      'user_id' => $this->session->userdata('SESS_SPPD_USERID')
     ];
 
-    $config['upload_path']          = './uploads/documents/';
-    $config['allowed_types']        = 'xlsx|docs|docx|doc|xls';
+    $config['upload_path']          = 'uploads/documents/';
+    $config['allowed_types']        = 'docx|doc|xlsx|xls|pdf';
 
     $this->load->library('upload', $config);
 
     if ( ! $this->upload->do_upload('file_dokumen'))
     {
+      var_dump($this->upload->data());
+
       $error = array('error' => $this->upload->display_errors());
 
       var_dump($error); die;
     }
     else
     {
-      $imageData = array('upload_data' => $this->upload->data());
+      $dokumenData = array('upload_data' => $this->upload->data());
 
-      $data['file_dokumen'] = $imageData['upload_data']['file_name'];
+      $data['file_dokumen'] = $dokumenData['upload_data']['file_name'];
     }
 
     if($this->pengajuan_m->insert_biaya_perjalanan_dinas($data)) {
