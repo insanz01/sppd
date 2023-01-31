@@ -22,6 +22,23 @@ class LaporanModel extends CI_Model {
     }
   }
 
+  public function get_single_report_by_hash($target) {
+    switch($target) {
+      case "laporan_perjalanan_dinas":
+        return $this->get_single_laporan_perjalanan_dinas();
+        break;
+      case "surat_perintah_perjalanan_dinas":
+        return $this->get_single_surat_perintah_perjalanan_dinas();
+        break;
+      case "surat_perintah_tugas":
+        return $this->get_single_surat_perintah_tugas();
+        break;
+      case "biaya_perjalanan_dinas":
+        return $this->get_single_biaya_perjalanan_dinas();
+        break;
+    }
+  }
+
   public function get_all_reports_by_user($target) {
     switch($target) {
       case "laporan_perjalanan_dinas":
@@ -70,10 +87,22 @@ class LaporanModel extends CI_Model {
     return $this->db->query($query)->result_array();
   }
 
+  public function get_single_surat_perintah_perjalanan_dinas($hash_id) {
+    $query = "SELECT * FROM surat_perintah_perjalanan_dinas WHERE hash_id = '$hash_id'";
+
+    return $this->db->query($query)->row_array();
+  }
+
   public function get_all_surat_perintah_tugas() {
     $query = "SELECT * FROM surat_perintah_tugas";
 
     return $this->db->query($query)->result_array();
+  }
+
+  public function get_single_surat_perintah_tugas($hash_id) {
+    $query = "SELECT * FROM surat_perintah_tugas WHERE hash_id = '$hash_id'";
+
+    return $this->db->query($query)->row_array();
   }
 
   public function get_all_biaya_perjalanan_dinas() {

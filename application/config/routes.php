@@ -68,9 +68,15 @@ $route['karyawan/delete'] = "KaryawanController/delete_karyawan";
 
 $route['pengajuan/sppd'] = "PengajuanController/surat_perintah_perjalanan_dinas";
 $route['pengajuan/add_sppd'] = "PengajuanController/add_surat_perintah_perjalanan_dinas";
+$route['pengajuan/edit_sppd/(:any)'] = "PengajuanController/edit_surat_perintah_perjalanan_dinas/$1";
+$route['pengajuan/do_edit_sppd/(:any)'] = "PengajuanController/do_edit_surat_perintah_perjalanan_dinas/$1";
+$route['pengajuan/delete_sppd/(:any)'] = "PengajuanController/delete_surat_perintah_perjalanan_dinas/$1";
 
 $route['pengajuan/spt'] = "PengajuanController/surat_perintah_tugas";
 $route['pengajuan/add_spt'] = "PengajuanController/add_surat_perintah_tugas";
+$route['pengajuan/edit_spt/(:any)'] = "PengajuanController/edit_surat_perintah_tugas/$1";
+$route['pengajuan/do_edit_spt/(:any)'] = "PengajuanController/do_edit_surat_perintah_tugas/$1";
+$route['pengajuan/delete_spt/(:any)'] = "PengajuanController/delete_surat_perintah_tugas/$1";
 
 $route['pengajuan/lpd'] = "PengajuanController/laporan_perjalanan_dinas";
 $route['pengajuan/add_lpd'] = "PengajuanController/add_laporan_perjalanan_dinas";
@@ -82,9 +88,10 @@ $route['surat/spt/(:any)'] = "SuratController/surat_perintah_tugas/$1";
 $route['surat/lpd/(:any)'] = "SuratController/laporan_perjalanan_dinas/$1";
 
 $route['laporan/sppd'] = "LaporanController/surat_perintah_perjalanan_dinas";
-$route['laporan/spt'] = "LaporanController/surat_perintah_tugas";
 $route['laporan/lpd'] = "LaporanController/laporan_perjalanan_dinas";
 $route['laporan/bpd'] = "LaporanController/biaya_perjalanan_dinas";
+
+$route['laporan/spt'] = "LaporanController/surat_perintah_tugas";
 
 $route['na/bpd'] = "NonAdminController/biaya_perjalanan_dinas";
 $route['na/bpd/laporan'] = "NonAdminController/laporan_biaya_perjalanan_dinas";

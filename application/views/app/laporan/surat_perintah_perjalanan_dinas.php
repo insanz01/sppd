@@ -47,8 +47,8 @@
                           <td><?= $laporan['nama_karyawan'] ?></td>
                           <td><?= $laporan['maksud_perjalanan_dinas'] ?></td>
                           <td>
-                            <!-- <a href="<?= base_url('laporan/lpd/edit/') . $laporan['id'] ?>" class="badge badge-sm badge-info badge-pill">edit</a>
-                            <a href="<?= base_url('laporan/lpd/delete/') . $laporan['id'] ?>" class="badge badge-sm badge-danger badge-pill">hapus</a> -->
+                            <a href="<?= base_url('pengajuan/edit_sppd/') . $laporan['hash_id'] ?>" class="badge badge-sm badge-info badge-pill">edit</a>
+                            <a href="<?= base_url('pengajuan/delete_sppd/') . $laporan['hash_id'] ?>" class="badge badge-sm badge-danger badge-pill">hapus</a>
                             <a href="<?= base_url('surat/sppd/') . $laporan['hash_id'] ?>" class="badge badge-sm badge-success badge-pill" target="_blank">lihat surat</a>
                           </td>
                         </tr>
