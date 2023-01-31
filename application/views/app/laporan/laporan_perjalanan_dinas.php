@@ -50,7 +50,7 @@
                           <td>
                             <!-- <a href="<?= base_url('laporan/lpd/edit/') . $laporan['id'] ?>" class="badge badge-sm badge-info badge-pill">edit</a>
                             <a href="<?= base_url('laporan/lpd/delete/') . $laporan['id'] ?>" class="badge badge-sm badge-danger badge-pill">hapus</a> -->
-                            <a href="<?= base_url('surat/lpd/') . $laporan['hash_id'] ?>" class="badge badge-sm badge-success badge-pill">lihat surat</a>
+                            <a href="<?= base_url('surat/lpd/') . $laporan['hash_id'] ?>" class="badge badge-sm badge-success badge-pill" target="_blank">lihat surat</a>
                           </td>
                         </tr>
                       <?php endforeach; ?>
