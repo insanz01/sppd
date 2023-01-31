@@ -17,6 +17,29 @@
     <title>Surat Perintah Perjalanan Dinas</title>
   </head>
   <body class="container-fluid">
+
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-8 mx-auto">
+          <div class="row">
+            <div class="col-2">
+              <img src="C:\xampp\htdocs\sppd\assets\bahan\icon1.png" width="220px" alt="gambar">
+            </div>
+            <div class="col-1"></div>
+            <div class="col-9">
+              <h3 class="text-center">PEMERINTAH KOTA BANJARMASIN</h3>
+              <h4 class="text-center">DINAS KETAHANAN PANGAN, PERTANIAN DAN PERIKANAN</h4>
+              <p class="text-center">Jl. Pangeran Hidayatullah/Lingkar Dalam Utara Telp. 0511-3201327 Kel. Benua Anyar Kec. Banjarmasin Timur 70239</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <hr style="border: 2px solid black">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     
     <h4 class="text-center my-4">LAPORAN PERJALANAN DINAS</h4>
 
