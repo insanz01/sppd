@@ -18,12 +18,12 @@
   </head>
   <body class="container-fluid">
 
-    <div class="container mt-4">
+    <div class="mt-4">
       <div class="row">
         <div class="col-8 mx-auto">
           <div class="row">
             <div class="col-2">
-              <img src="C:\xampp\htdocs\sppd\assets\bahan\icon1.png" width="220px" alt="gambar">
+              <img src="<?= base_url('assets\bahan\icon1.png') ?>" width="220px" alt="gambar">
             </div>
             <div class="col-1"></div>
             <div class="col-9">
