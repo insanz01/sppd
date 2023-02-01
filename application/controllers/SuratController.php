@@ -54,6 +54,7 @@ class SuratController extends CI_Controller {
     // $data['beban_anggaran_mata_anggaran'] = "Rupiah";
     // $data['keterangan_lainnya'] = "";
     $data['surat'] = $this->pengajuan_m->get_surat_perintah_perjalanan_dinas($hash_id);
+    $data['surat']['pengikut'] = NULL;
 
     $this->load->view("app/surat/surat_perintah_perjalanan_dinas", $data);
   }

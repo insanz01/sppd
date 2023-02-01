@@ -111,6 +111,7 @@
           </td>
           <td><?= $surat['tanggal_kembali'] ?></td>
         </tr>
+        <?php if($surat['pengikut']): ?>
         <tr>
           <td>8.</td>
           <td colspan="2">
@@ -139,8 +140,9 @@
             </table>
           </td>
         </tr>
+        <?php endif; ?>
         <tr>
-          <td rowspan="3">9.</td>
+          <td rowspan="3">8.</td>
           <td>Pembebanan Anggaran</td>
         </tr>
         <tr>
@@ -152,9 +154,9 @@
           <td><?= $surat['beban_anggaran_mata_anggaran'] ?></td>
         </tr>
         <tr>
-          <td>10.</td>
+          <td>9.</td>
           <td>Keterangan Lain-lain</td>
-          <td><?= $surat['keterangan_lainnya'] ?></td>
+          <td><?= $surat['keterangan'] ?></td>
         </tr>
       </tbody>
     </table>
