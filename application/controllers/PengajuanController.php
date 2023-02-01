@@ -176,7 +176,7 @@ class PengajuanController extends CI_Controller {
       $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">Gagal merubah status</div>');
     }
 
-    redirect('laporan/bpd');
+    redirect('laporan/lpd');
   }
 
   public function status_biaya_perjalanan_dinas($hash_id, $status) {
