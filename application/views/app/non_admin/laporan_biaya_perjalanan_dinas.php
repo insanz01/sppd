@@ -51,7 +51,7 @@
                           </td>
                           <td><?= $laporan['status'] ?></td>
                           <td>
-                            <a href="<?= base_url('surat/delete_bpd/') . $laporan['hash_id'] ?>" class="badge badge-sm badge-success badge-pill">hapus</a>
+                            <a href="<?= base_url('pengajuan/delete_bpd/') . $laporan['hash_id'] ?>" class="badge badge-sm badge-success badge-pill">hapus</a>
                           </td>
                         </tr>
                       <?php endforeach; ?>
