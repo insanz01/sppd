@@ -51,7 +51,7 @@
                           <td><?= $k['email'] ?></td>
                           <td><?= $k['jabatan'] ?></td>
                           <td>
-                            <a href="<?= base_url('k/edit/') . $k['id'] ?>" class="badge badge-sm badge-info badge-pill">edit</a>
+                            <a href="<?= base_url('karyawan/edit/') . $k['id'] ?>" class="badge badge-sm badge-info badge-pill">edit</a>
                             <a href="#!" data-toggle="modal" data-target="#hapusModal" class="badge badge-sm badge-danger badge-pill" onclick="hapusData(this)" data-id="<?= $k['id'] ?>">hapus</a>
                           </td>
                         </tr>

@@ -47,7 +47,7 @@ class KaryawanController extends CI_Controller {
 
   public function edit_karyawan($id)
   {
-    $data['karyawan'] = $this->karyawan_m->get_single_karyawan($id);
+    $data['k'] = $this->karyawan_m->get_single_karyawan($id);
     $data['id'] = $id;
 
     $this->load->view('templates/panel/header');
