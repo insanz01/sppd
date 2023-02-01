@@ -20,7 +20,7 @@ class KaryawanModel extends CI_Model {
   }
 
   public function delete_karyawan($id) {
-    return $this->db->get_where('karyawan', ['id'=> $id]);
+    return $this->db->delete('karyawan', ['id'=> $id]);
   }
 
   public function update_karyawan($data, $id) {
