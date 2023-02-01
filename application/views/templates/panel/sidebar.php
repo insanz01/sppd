@@ -92,7 +92,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?= base_url('laporan/lpd') ?>" class="nav-link">
+                <a href="<?= base_url('na/lpd') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon ml-3"></i>
                   <p>LPD</p>
                 </a>
