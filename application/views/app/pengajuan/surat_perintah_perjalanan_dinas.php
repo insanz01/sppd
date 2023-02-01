@@ -96,8 +96,8 @@
                   <input type="text" name="beban_anggaran_mata_anggaran" class="form-control" id="beban_anggaran_mata_anggaran" required>
                 </div>
                 <div class="form-group">
-                  <label for="keterangan_lainnya">Keterangan Lainnya</label>
-                  <textarea name="keterangan_lainnya" id="keterangan_lainnya" class="form-control" cols="30" rows="10"></textarea>
+                  <label for="keterangan">Keterangan Lainnya</label>
+                  <textarea name="keterangan" id="keterangan" class="form-control" cols="30" rows="10"></textarea>
                 </div>
 
                 <div class="form-group">
