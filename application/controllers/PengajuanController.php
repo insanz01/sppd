@@ -133,6 +133,17 @@ class PengajuanController extends CI_Controller {
     }
   }
 
+  public function delete_laporan_perjalanan_dinas($hash_id) {
+    // $hash_id = $this->input->post('hash_id');
+    if($this->pengajuan_m->delete_laporan_perjalanan_dinas($hash_id)) {
+      $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Berhasil menghapus data</div>');
+    } else {
+      $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">Gagal menghapus data</div>');
+    }
+
+    redirect('laporan/spt');
+  }
+
   public function status_biaya_perjalanan_dinas($hash_id, $status) {
     $status_code = ($status == "terima") ? 1 : -1;
 

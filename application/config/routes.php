@@ -80,6 +80,7 @@ $route['pengajuan/delete_spt/(:any)'] = "PengajuanController/delete_surat_perint
 
 $route['pengajuan/lpd'] = "PengajuanController/laporan_perjalanan_dinas";
 $route['pengajuan/add_lpd'] = "PengajuanController/add_laporan_perjalanan_dinas";
+$route['pengajuan/delete_lpd/(:any)'] = "PengajuanController/delete_laporan_perjalanan_dinas/$1";
 
 $route['pengajuan/bpd/(:any)/(:any)'] = "PengajuanController/status_biaya_perjalanan_dinas/$1/$2";
 

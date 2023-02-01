@@ -19,6 +19,10 @@ class PengajuanModel extends CI_Model {
     return $this->db->get_where('laporan_perjalanan_dinas', ['hash_id' => $hash_id])->row_array();
   }
 
+  public function delete_laporan_perjalanan_dinas($hash_id) {
+    return $this->db->delete('laporan_perjalanan_dinas', ['hash_id' => $hash_id]);
+  }
+
   public function insert_surat_perintah_tugas($data) {
     $hash_id = password_hash(time(), PASSWORD_DEFAULT);
 
