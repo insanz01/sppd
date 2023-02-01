@@ -167,6 +167,18 @@ class PengajuanController extends CI_Controller {
     redirect('laporan/lpd');
   }
 
+  public function status_laporan_perjalanan_dinas($hash_id, $status) {
+    $status_code = ($status == "terima") ? 1 : -1;
+
+    if($this->pengajuan_m->update_status_laporan_perjalanan_dinas($hash_id, $status_code)) {
+      $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Berhasil merubah status</div>');
+    } else {
+      $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">Gagal merubah status</div>');
+    }
+
+    redirect('laporan/bpd');
+  }
+
   public function status_biaya_perjalanan_dinas($hash_id, $status) {
     $status_code = ($status == "terima") ? 1 : -1;
 

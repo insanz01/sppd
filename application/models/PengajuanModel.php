@@ -31,6 +31,14 @@ class PengajuanModel extends CI_Model {
     return $this->db->delete('laporan_perjalanan_dinas', ['hash_id' => $hash_id]);
   }
 
+  public function update_status_laporan_perjalanan_dinas($hash_id, $status_code) {
+    $this->db->set('status', $status_code);
+    $this->db->where('hash_id', $hash_id);
+    $this->db->update('laporan_perjalanan_dinas');
+
+    return $this->db->affected_rows();
+  }
+
   public function insert_surat_perintah_tugas($data) {
     $hash_id = password_hash(time(), PASSWORD_DEFAULT);
 

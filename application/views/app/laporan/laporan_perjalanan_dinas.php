@@ -49,9 +49,9 @@
                           <td><?= $laporan['perihal'] ?></td>
                           <td><?= $laporan['status'] ?></td>
                           <td>
-                            <a href="<?= base_url('pengajuan/edit_lpd/') . $laporan['hash_id'] ?>" class="badge badge-sm badge-info badge-pill">edit</a>
-                            <a href="<?= base_url('pengajuan/delete_lpd/') . $laporan['hash_id'] ?>" class="badge badge-sm badge-danger badge-pill">hapus</a>
                             <a href="<?= base_url('surat/lpd/') . $laporan['hash_id'] ?>" class="badge badge-sm badge-success badge-pill" target="_blank">lihat surat</a>
+                            <a href="<?= base_url('pengajuan/lpd/') . $laporan['hash_id'] . '/terima' ?>" class="badge badge-sm badge-info badge-pill">terima</a>
+                            <a href="<?= base_url('pengajuan/lpd/') . $laporan['hash_id'] . '/tolak' ?>" class="badge badge-sm badge-danger badge-pill">tolak</a>
                           </td>
                         </tr>
                       <?php endforeach; ?>
