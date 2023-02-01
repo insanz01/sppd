@@ -36,6 +36,7 @@
                       <th>Penerima Surat</th>
                       <th>Pengiriman Surat</th>
                       <th>Perihal</th>
+                      <th>Status</th>
                       <th>Aksi</th>
                     </thead>
                     <tbody>
