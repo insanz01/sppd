@@ -128,7 +128,8 @@ class PengajuanController extends CI_Controller {
 
     $hash_id = $this->pengajuan_m->insert_laporan_perjalanan_dinas($data);
     if($hash_id) {
-      redirect('surat/lpd/' . $hash_id);
+      redirect("laporan/lpd");
+      // redirect('surat/lpd/' . $hash_id);
     }
   }
 
