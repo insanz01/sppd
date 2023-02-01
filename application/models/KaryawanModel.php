@@ -26,7 +26,7 @@ class KaryawanModel extends CI_Model {
   public function update_karyawan($data, $id) {
     $this->db->set($data);
     $this->db->where('id', $id);
-    $this->db->update('membership');
+    $this->db->update('karyawan');
 
     return $this->db->affected_rows();
   }
