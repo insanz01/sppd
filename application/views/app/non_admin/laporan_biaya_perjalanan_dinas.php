@@ -36,7 +36,7 @@
                       <th>Nama Karyawan</th>
                       <th>File Pengajuan</th>
                       <th>Status</th>
-                      <!-- <th>Aksi</th> -->
+                      <th>Aksi</th>
                     </thead>
                     <tbody>
                       <?php $index = 1 ?>
@@ -50,9 +50,9 @@
                             </a>
                           </td>
                           <td><?= $laporan['status'] ?></td>
-                          <!-- <td>
-                            <a href="<?= base_url('surat/lpd/') . $laporan['hash_id'] ?>" class="badge badge-sm badge-success badge-pill">lihat surat</a>
-                          </td> -->
+                          <td>
+                            <a href="<?= base_url('surat/delete_bpd/') . $laporan['hash_id'] ?>" class="badge badge-sm badge-success badge-pill">hapus</a>
+                          </td>
                         </tr>
                       <?php endforeach; ?>
                     </tbody>

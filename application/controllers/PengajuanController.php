@@ -133,6 +133,29 @@ class PengajuanController extends CI_Controller {
     }
   }
 
+  public function edit_laporan_perjalanan_dinas($hash_id) {
+    $data['laporan'] = $this->laporan_m->get_single_laporan_perjalanan_dinas($hash_id);
+    $data['hash_id'] = $hash_id;
+    
+    $this->load->view('templates/panel/header');
+    $this->load->view('templates/panel/sidebar');
+    $this->load->view('templates/panel/navbar');
+    $this->load->view("app/pengajuan/edit_laporan_perjalanan_dinas", $data);
+    $this->load->view('templates/panel/footer');
+  }
+
+  public function do_edit_laporan_perjalanan_dinas($hash_id) {
+    $data = $this->input->post();
+
+    if($this->pengajuan_m->edit_laporan_perjalanan_dinas($data, $hash_id)) {
+      $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Berhasil mengubah data</div>');
+    } else {
+      $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">Gagal mengubah data</div>');
+    }
+
+    redirect('laporan/lpd');
+  }
+
   public function delete_laporan_perjalanan_dinas($hash_id) {
     // $hash_id = $this->input->post('hash_id');
     if($this->pengajuan_m->delete_laporan_perjalanan_dinas($hash_id)) {
@@ -141,7 +164,7 @@ class PengajuanController extends CI_Controller {
       $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">Gagal menghapus data</div>');
     }
 
-    redirect('laporan/spt');
+    redirect('laporan/lpd');
   }
 
   public function status_biaya_perjalanan_dinas($hash_id, $status) {
@@ -151,6 +174,17 @@ class PengajuanController extends CI_Controller {
       $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Berhasil merubah status</div>');
     } else {
       $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">Gagal merubah status</div>');
+    }
+
+    redirect('laporan/bpd');
+  }
+
+  public function delete_biaya_perjalanan_dinas($hash_id) {
+    // $hash_id = $this->input->post('hash_id');
+    if($this->pengajuan_m->delete_biaya_perjalanan_dinas($hash_id)) {
+      $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Berhasil menghapus data</div>');
+    } else {
+      $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">Gagal menghapus data</div>');
     }
 
     redirect('laporan/bpd');

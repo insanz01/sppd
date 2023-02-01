@@ -19,6 +19,14 @@ class PengajuanModel extends CI_Model {
     return $this->db->get_where('laporan_perjalanan_dinas', ['hash_id' => $hash_id])->row_array();
   }
 
+  public function edit_laporan_perjalanan_dinas($data, $hash_id) {
+    $this->db->set($data);
+    $this->db->where('hash_id', $hash_id);
+    $this->db->update('laporan_perjalanan_dinas');
+
+    return $this->db->affected_rows();
+  }
+
   public function delete_laporan_perjalanan_dinas($hash_id) {
     return $this->db->delete('laporan_perjalanan_dinas', ['hash_id' => $hash_id]);
   }
@@ -96,5 +104,9 @@ class PengajuanModel extends CI_Model {
     $this->db->update('biaya_perjalanan_dinas');
 
     return $this->db->affected_rows();
+  }
+
+  public function delete_biaya_perjalanan_dinas($hash_id) {
+    return $this->db->delete('biaya_perjalanan_dinas', ['hash_id' => $hash_id]);
   }
 }
