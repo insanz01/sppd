@@ -137,7 +137,7 @@ class LaporanModel extends CI_Model {
   public function get_all_biaya_perjalanan_dinas_by_user() {
     $user_id = $this->session->userdata('SESS_SPPD_USERID');
     
-    $query = "SELECT b.id, b.hash_id, b.file_dokumen, k.nama as nama_karyawan, b.status FROM biaya_perjalanan_dinas b JOIN karyawan k ON b.user_id = k.user_id WHERE b.user_id = $user_id ORDER BY b.id DESC";
+    $query = "SELECT b.id, b.hash_id, b.file_dokumen, k.nama as nama_karyawan, b.status, b.nomor_SPPD, b.tanggal, b.perincian_biaya, b.jumlah_biaya, b.keterangan, b.nama_bendaharawan, b.NIP_bendaharawan FROM biaya_perjalanan_dinas b JOIN karyawan k ON b.user_id = k.user_id WHERE b.user_id = $user_id ORDER BY b.id DESC";
 
     $bpd = $this->db->query($query)->result_array();
     $results = [];
@@ -154,6 +154,13 @@ class LaporanModel extends CI_Model {
       $result = [
         'id' => $b['id'],
         'hash_id' => $b['hash_id'],
+        'nomor_SPPD' => $b['nomor_SPPD'],
+        'tanggal' => $b['tanggal'],
+        'perincian_biaya' => $b['perincian_biaya'],
+        'jumlah_biaya' => $b['jumlah_biaya'],
+        'keterangan' => $b['keterangan'],
+        'nama_bendaharawan' => $b['nama_bendaharawan'],
+        'NIP_bendaharawan' => $b['NIP_bendaharawan'],
         'file_pengajuan' => $b['file_dokumen'],
         'nama_karyawan' => $b['nama_karyawan'],
         'status' => $status,

@@ -70,4 +70,10 @@ class SuratController extends CI_Controller {
 
     $this->load->view("app/surat/laporan_perjalanan_dinas", $data);
   }
+
+  public function biaya_perjalanan_dinas($hash_id) {
+    $data['surat'] = $this->pengajuan_m->get_biaya_perjalanan_dinas($hash_id);
+
+    $this->load->view("app/surat/biaya_perjalanan_dinas", $data);
+  }
 }

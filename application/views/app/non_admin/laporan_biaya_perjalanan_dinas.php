@@ -33,8 +33,8 @@
                   <table class="table custom-table">
                     <thead>
                       <th>#</th>
-                      <th>Nama Karyawan</th>
-                      <th>File Pengajuan</th>
+                      <th>Nomor SPPD</th>
+                      <th>Tanggal Kegiatan</th>
                       <th>Status</th>
                       <th>Aksi</th>
                     </thead>
@@ -43,15 +43,12 @@
                       <?php foreach ($reports as $laporan) : ?>
                         <tr>
                           <td><?= $index++ ?></td>
-                          <td><?= $laporan['nama_karyawan'] ?></td>
-                          <td>
-                            <a href="<?= base_url('uploads/documents/') . $laporan['file_pengajuan'] ?>" download>
-                              <?= $laporan['file_pengajuan'] ?>
-                            </a>
-                          </td>
+                          <td><?= $laporan['nomor_SPPD'] ?></td>
+                          <td><?= date('Y M d', strtotime($laporan['tanggal'])) ?></td>
                           <td><?= $laporan['status'] ?></td>
                           <td>
-                            <a href="<?= base_url('pengajuan/delete_bpd/') . $laporan['hash_id'] ?>" class="badge badge-sm badge-success badge-pill">hapus</a>
+                            <a href="<?= base_url('surat/bpd/') . $laporan['hash_id'] ?>" class="badge badge-sm badge-info badge-pill">Info</a>
+                            <a href="<?= base_url('pengajuan/delete_bpd/') . $laporan['hash_id'] ?>" class="badge badge-sm badge-danger badge-pill">hapus</a>
                           </td>
                         </tr>
                       <?php endforeach; ?>

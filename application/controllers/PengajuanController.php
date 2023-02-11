@@ -218,4 +218,45 @@ class PengajuanController extends CI_Controller {
   //     redirect('surat/bpd/' . $hash_id);
   //   }
   // }
+
+  public function biaya_perjalanan_dinas() {
+    $this->load->view('templates/panel/header');
+    $this->load->view('templates/panel/sidebar');
+    $this->load->view('templates/panel/navbar');
+    $this->load->view("app/pengajuan/biaya_perjalanan_dinas");
+    $this->load->view('templates/panel/footer');
+  }
+
+  public function add_biaya_perjalanan_dinas() {
+    $data = $this->input->post();
+
+    $hash_id = $this->pengajuan_m->insert_biaya_perjalanan_dinas($data);
+    if($hash_id) {
+      redirect("laporan/bpd");
+      // redirect('surat/lpd/' . $hash_id);
+    }
+  }
+
+  public function edit_biaya_perjalanan_dinas($hash_id) {
+    $data['laporan'] = $this->laporan_m->get_single_biaya_perjalanan_dinas($hash_id);
+    $data['hash_id'] = $hash_id;
+    
+    $this->load->view('templates/panel/header');
+    $this->load->view('templates/panel/sidebar');
+    $this->load->view('templates/panel/navbar');
+    $this->load->view("app/pengajuan/edit_biaya_perjalanan_dinas", $data);
+    $this->load->view('templates/panel/footer');
+  }
+
+  public function do_edit_biaya_perjalanan_dinas($hash_id) {
+    $data = $this->input->post();
+
+    if($this->pengajuan_m->edit_biaya_perjalanan_dinas($data, $hash_id)) {
+      $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Berhasil mengubah data</div>');
+    } else {
+      $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">Gagal mengubah data</div>');
+    }
+
+    redirect('laporan/bpd');
+  }
 }

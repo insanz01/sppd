@@ -11,6 +11,8 @@ class KaryawanModel extends CI_Model {
   }
 
   public function save_karyawan($data) {
+    
+
     $this->db->insert('karyawan', $data);
     return $this->db->insert_id();
   }
