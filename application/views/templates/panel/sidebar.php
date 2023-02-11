@@ -33,7 +33,7 @@
           <a href="<?= base_url() ?>" class="nav-link">
             <i class="nav-icon fas fa-home"></i>
             <p>
-              Dashboard
+              DASHBOARD
               <!-- <span class="badge badge-info right">2</span> -->
             </p>
           </a>
