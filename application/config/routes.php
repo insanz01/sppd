@@ -104,6 +104,7 @@ $route['laporan/spt'] = "LaporanController/surat_perintah_tugas";
 $route['na/bpd'] = "PengajuanController/biaya_perjalanan_dinas";
 $route['na/bpd/laporan'] = "NonAdminController/laporan_biaya_perjalanan_dinas";
 $route['na/bpd/add'] = "NonAdminController/add_biaya_perjalanan_dinas";
+$route['na/bpd/delete/(:any)'] = "NonAdminController/delete_biaya_perjalanan_dinas/$1";
 
 $route['na/lpd'] = "NonAdminController/laporan_perjalanan_dinas";
 

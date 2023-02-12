@@ -69,4 +69,15 @@ class NonAdminController extends CI_Controller {
     $this->load->view('app/non_admin/laporan_perjalanan_dinas', $data);
     $this->load->view('templates/panel/footer');
   }
+
+  public function delete_biaya_perjalanan_dinas($hash_id) {
+    // $hash_id = $this->input->post('hash_id');
+    if($this->pengajuan_m->delete_biaya_perjalanan_dinas($hash_id)) {
+      $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Berhasil menghapus data</div>');
+    } else {
+      $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">Gagal menghapus data</div>');
+    }
+
+    redirect('na/bpd/laporan');
+  }
 }
