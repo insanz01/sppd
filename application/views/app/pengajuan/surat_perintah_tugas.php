@@ -74,14 +74,14 @@
                   <textarea name="atas_beban" class="form-control" id="atas_beban" required></textarea>
                 </div>
 
-                <div class="form-group">
+                <!-- <div class="form-group">
                   <label for="NIP_petugas">NIP Petugas</label>
                   <input type="text" name="NIP_petugas" class="form-control" id="NIP_petugas" required>
                 </div>
                 <div class="form-group">
                   <label for="nama_petugas">Nama Petugas</label>
                   <input type="text" name="nama_petugas" class="form-control" id="nama_petugas" required>
-                </div>
+                </div> -->
 
                 <div class="form-group">
                   <button type="submit" class="btn btn-primary btn-block btn-lg">BUAT LAPORAN PERINTAH TUGAS</button>
