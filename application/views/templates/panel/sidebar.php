@@ -202,14 +202,14 @@
           </a>
         </li> -->
 
-        <!-- <li class="nav-item">
-            <a href="<?= base_url('panel/pengaturan') ?>" class="nav-link">
-              <i class="nav-icon fas fa-cogs"></i>
-              <p>
-                Pengaturan
-              </p>
-            </a>
-          </li> -->
+        <li class="nav-item">
+          <a href="<?= base_url('kwitansi') ?>" class="nav-link">
+            <i class="nav-icon fas fa-envelope"></i>
+            <p>
+              KWITANSI
+            </p>
+          </a>
+        </li>
 
         <li class="nav-item my-4">
           <a href="<?= base_url('auth/logout') ?>" class="nav-link">

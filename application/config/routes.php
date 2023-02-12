@@ -107,4 +107,9 @@ $route['na/bpd/add'] = "NonAdminController/add_biaya_perjalanan_dinas";
 
 $route['na/lpd'] = "NonAdminController/laporan_perjalanan_dinas";
 
+$route['kwitansi'] = "KwitansiController/index";
+$route['kwitansi/add'] = "KwitansiController/add";
+$route['kwitansi/do_add'] = "KwitansiController/do_add";
+$route['kwitansi/delete/(:any)'] = "KwitansiController/delete/$1";
+
 $route['api/karyawan/(:any)'] = 'APIController/karyawan_by_NIP/$1';
