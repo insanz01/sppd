@@ -34,4 +34,8 @@ class KaryawanModel extends CI_Model {
   public function get_by_NIP($nip) {
     return $this->db->get_where("karyawan", ['NIP' => $nip])->row_array();
   }
+
+  public function get_single_karyawan_by_user_id($user_id) {
+    return $this->db->get_where("karyawan", ['user_id' => $user_id])->row_array();
+  }
 }

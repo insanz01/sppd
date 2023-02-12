@@ -130,6 +130,12 @@ class PengajuanController extends CI_Controller {
 
   public function add_laporan_perjalanan_dinas() {
     $data = $this->input->post();
+    $user_id = $this->session->userdata("SESS_SPPD_USERID");
+
+    $karyawan = $this->karyawan_m->get_single_karyawan_by_user_id($user_id);
+
+    $data['nama_karyawan'] = $karyawan['nama'];
+    $data['NIP_karyawan'] = $karyawan['NIP'];
 
     $hash_id = $this->pengajuan_m->insert_laporan_perjalanan_dinas($data);
     if($hash_id) {
@@ -235,6 +241,9 @@ class PengajuanController extends CI_Controller {
   public function add_biaya_perjalanan_dinas() {
     $data = $this->input->post();
     $data['user_id'] = $this->session->userdata("SESS_SPPD_USERID");
+    $karyawan = $this->karyawan_m->get_single_karyawan_by_user_id($data['user_id']);
+    $data['NIP_karyawan'] = $karyawan['NIP'];
+    $data['nama_karyawan'] = $karyawan['nama'];
     
     $hash_id = $this->pengajuan_m->insert_biaya_perjalanan_dinas($data);
     if($hash_id) {

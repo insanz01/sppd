@@ -70,6 +70,15 @@
                 </div>
 
                 <div class="form-group">
+                  <label for="nama_petugas">Nama Petugas</label>
+                  <input type="text" class="form-control" id="nama_petugas" name="nama_petugas" required>
+                </div>
+                <div class="form-group">
+                  <label for="NIP_petugas">NIP Petugas</label>
+                  <input type="text" class="form-control" id="NIP_petugas" name="NIP_petugas" required>
+                </div>
+
+                <div class="form-group">
                   <button type="submit" class="btn btn-primary btn-block btn-lg">BUAT LAPORAN PERJALANAN DINAS</button>
                 </div>
               </form>
