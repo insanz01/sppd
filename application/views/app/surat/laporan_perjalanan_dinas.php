@@ -109,6 +109,40 @@
       </div>
     </div>
 
+    <div class="row mt-5">
+      <div class="col-9 mx-auto">
+        <table class="no-border" style="width: 100%">
+          <tr>
+            <td width="30%"></td>
+            <td width="40%"></td>
+            <td width="30%">Banjarmasin, <?= date("M Y", strtotime($surat['tanggal_kegiatan'])) ?></td>
+          </tr>
+          <tr>
+            <td width="30%"></td>
+            <td width="40%"></td>
+            <td width="30%"></td>
+          </tr>
+          <tr>
+            <td width="30%">Petugas</td>
+            <td width="40%"></td>
+            <td width="30%">Yang Menerima,</td>
+          </tr>
+        </table>
+        <table class="no-border mt-5" style="width: 100%">
+          <tr>
+            <td width="30%"><?= $surat['nama_petugas'] ?></td>
+            <td width="40%"></td>
+            <td width="30%"><?= $surat['nama_karyawan'] ?></td>
+          </tr>
+          <tr>
+            <td width="30%">NIP. <?= $surat['NIP_petugas'] ?></td>
+            <td width="40%"></td>
+            <td width="30%">NIP. <?= $surat['NIP_karyawan'] ?></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->

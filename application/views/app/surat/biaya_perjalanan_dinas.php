@@ -58,19 +58,19 @@
           <tbody>
             <tr>
               <td>1</td>
-              <td><?= $data['perincian_biaya'] ?></td>
-              <td>Rp <?= number_format($data['jumlah_biaya'], 0, '.', ',') ?></td>
-              <td><?= $data['keterangan'] ?></td>
+              <td><?= $surat['perincian_biaya'] ?></td>
+              <td>Rp <?= number_format($surat['jumlah_biaya'], 0, '.', ',') ?></td>
+              <td><?= $surat['keterangan'] ?></td>
             </tr>
             <tr>
               <td></td>
               <td>Jumlah</td>
-              <td>Rp <?= number_format($data['jumlah_biaya'], 0, '.', ',') ?></td>
+              <td>Rp <?= number_format($surat['jumlah_biaya'], 0, '.', ',') ?></td>
               <td></td>
             </tr>
             <tr>
               <td></td>
-              <td colspan="3"><?= $data['jumlah'] ?></td>
+              <td colspan="3"><?= $surat['jumlah_biaya'] ?></td>
             </tr>
           </tbody>
         </table>
@@ -83,7 +83,7 @@
           <tr>
             <td width="30%"></td>
             <td width="40%"></td>
-            <td width="30%">Banjarmasin, <?= date("M Y", strtotime($data['tanggal'])) ?></td>
+            <td width="30%">Banjarmasin, <?= date("M Y", strtotime($surat['tanggal'])) ?></td>
           </tr>
           <tr>
             <td width="30%">Telah dibayar sejumlah</td>
@@ -91,9 +91,9 @@
             <td width="30%">Telah menerima jumlah</td>
           </tr>
           <tr>
-            <td width="30%">Rp <?= number_format($data['jumlah_biaya'], 0, ',', '.') ?></td>
+            <td width="30%">Rp <?= number_format($surat['jumlah_biaya'], 0, ',', '.') ?></td>
             <td width="40%"></td>
-            <td width="30%">Uang Sebesar Rp <?= number_format($data['jumlah_biaya'], 0, ',', '.') ?></td>
+            <td width="30%">Uang Sebesar Rp <?= number_format($surat['jumlah_biaya'], 0, ',', '.') ?></td>
           </tr>
           <tr>
             <td width="30%"></td>
@@ -108,12 +108,12 @@
         </table>
         <table class="no-border mt-5" style="width: 100%">
           <tr>
-            <td width="30%"><?= $data['nama_bendaharawan'] ?></td>
+            <td width="30%"><?= $surat['nama_bendaharawan'] ?></td>
             <td width="40%"></td>
             <td width="30%">Surianata, SP, MP</td>
           </tr>
           <tr>
-            <td width="30%">NIP. <?= $data['NIP_bendaharawan'] ?></td>
+            <td width="30%">NIP. <?= $surat['NIP_bendaharawan'] ?></td>
             <td width="40%"></td>
             <td width="30%">NIP. 1231231231231</td>
           </tr>

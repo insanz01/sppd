@@ -11,13 +11,16 @@ class PengajuanController extends CI_Controller {
 
     $this->load->model("PengajuanModel", "pengajuan_m");
     $this->load->model("LaporanModel", "laporan_m");
+    $this->load->model("KaryawanModel", "karyawan_m");
   }
 
   public function surat_perintah_perjalanan_dinas() {
+    $data['karyawan'] = $this->karyawan_m->get_all_karyawan();
+
     $this->load->view('templates/panel/header');
     $this->load->view('templates/panel/sidebar');
     $this->load->view('templates/panel/navbar');
-    $this->load->view('app/pengajuan/surat_perintah_perjalanan_dinas');
+    $this->load->view('app/pengajuan/surat_perintah_perjalanan_dinas', $data);
     $this->load->view('templates/panel/footer');
   }
 
@@ -65,10 +68,12 @@ class PengajuanController extends CI_Controller {
   }
 
   public function surat_perintah_tugas() {
+    $data['karyawan'] = $this->karyawan_m->get_all_karyawan();
+
     $this->load->view('templates/panel/header');
     $this->load->view('templates/panel/sidebar');
     $this->load->view('templates/panel/navbar');
-    $this->load->view("app/pengajuan/surat_perintah_tugas");
+    $this->load->view("app/pengajuan/surat_perintah_tugas", $data);
     $this->load->view('templates/panel/footer');
   }
 
@@ -229,11 +234,12 @@ class PengajuanController extends CI_Controller {
 
   public function add_biaya_perjalanan_dinas() {
     $data = $this->input->post();
-
+    $data['user_id'] = $this->session->userdata("SESS_SPPD_USERID");
+    
     $hash_id = $this->pengajuan_m->insert_biaya_perjalanan_dinas($data);
     if($hash_id) {
-      redirect("laporan/bpd");
-      // redirect('surat/lpd/' . $hash_id);
+      redirect("na/bpd/laporan");
+      // redirect('surat/bpd/' . $hash_id);
     }
   }
 

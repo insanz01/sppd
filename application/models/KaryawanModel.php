@@ -11,8 +11,6 @@ class KaryawanModel extends CI_Model {
   }
 
   public function save_karyawan($data) {
-    
-
     $this->db->insert('karyawan', $data);
     return $this->db->insert_id();
   }
@@ -31,5 +29,9 @@ class KaryawanModel extends CI_Model {
     $this->db->update('karyawan');
 
     return $this->db->affected_rows();
+  }
+
+  public function get_by_NIP($nip) {
+    return $this->db->get_where("karyawan", ['NIP' => $nip])->row_array();
   }
 }

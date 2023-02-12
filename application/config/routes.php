@@ -85,6 +85,7 @@ $route['pengajuan/do_edit_lpd/(:any)'] = "PengajuanController/do_edit_laporan_pe
 $route['pengajuan/delete_lpd/(:any)'] = "PengajuanController/delete_laporan_perjalanan_dinas/$1";
 $route['pengajuan/lpd/(:any)/(:any)'] = "PengajuanController/status_laporan_perjalanan_dinas/$1/$2";
 
+$route['pengajuan/add_bpd'] = "PengajuanController/add_biaya_perjalanan_dinas";
 $route['pengajuan/delete_bpd/(:any)'] = "PengajuanController/delete_biaya_perjalanan_dinas/$1";
 $route['pengajuan/bpd/(:any)/(:any)'] = "PengajuanController/status_biaya_perjalanan_dinas/$1/$2";
 
@@ -105,3 +106,5 @@ $route['na/bpd/laporan'] = "NonAdminController/laporan_biaya_perjalanan_dinas";
 $route['na/bpd/add'] = "NonAdminController/add_biaya_perjalanan_dinas";
 
 $route['na/lpd'] = "NonAdminController/laporan_perjalanan_dinas";
+
+$route['api/karyawan/(:any)'] = 'APIController/karyawan_by_NIP/$1';

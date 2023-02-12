@@ -32,7 +32,13 @@
                 </div>
                 <div class="form-group">
                   <label for="nip_karyawan">NIP Karyawan (Yang diperintah)</label>
-                  <input type="text" name="nip_karyawan" class="form-control" id="nip_karyawan" required>
+                  <select name="nip_karyawan" id="nip_karyawan" class="form-control" onchange="getKaryawanName(this)">
+                    <option value="">- PILIH - </option>
+                    <?php foreach($karyawan as $k): ?>
+                      <option value="<?= $k['NIP'] ?>"><?= $k["NIP"] ?></option>
+                    <?php endforeach; ?>
+                  </select>
+                  <!-- <input type="text" name="nip_karyawan" class="form-control" id="nip_karyawan" required> -->
                 </div>
                 <div class="form-group">
                   <label for="nama_karyawan">Nama Karyawan (Yang diperintah)</label>
@@ -69,6 +75,15 @@
                 </div>
 
                 <div class="form-group">
+                  <label for="NIP_petugas">NIP Petugas</label>
+                  <input type="text" name="NIP_petugas" class="form-control" id="NIP_petugas" required>
+                </div>
+                <div class="form-group">
+                  <label for="nama_petugas">Nama Petugas</label>
+                  <input type="text" name="nama_petugas" class="form-control" id="nama_petugas" required>
+                </div>
+
+                <div class="form-group">
                   <button type="submit" class="btn btn-primary btn-block btn-lg">BUAT LAPORAN PERINTAH TUGAS</button>
                 </div>
               </form>
@@ -81,7 +96,13 @@
 </div>
 
 <script>
-  // const getNameOfMember = () => {
+  const getDetailKaryawan = async (nip) => {
+    return await axios.get(`http://localhost/sppd/api/karyawan/${nip}`).then(res => res.data);
+  }
+  const getKaryawanName = async (target) => {
+    const nip = target.value;
+    const karyawan = await getDetailKaryawan(nip).then(res => res.data);
 
-  // }
+    document.getElementById('nama_karyawan').value = karyawan.nama
+  }
 </script>

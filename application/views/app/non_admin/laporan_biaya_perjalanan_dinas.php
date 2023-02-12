@@ -47,7 +47,7 @@
                           <td><?= date('Y M d', strtotime($laporan['tanggal'])) ?></td>
                           <td><?= $laporan['status'] ?></td>
                           <td>
-                            <a href="<?= base_url('surat/bpd/') . $laporan['hash_id'] ?>" class="badge badge-sm badge-info badge-pill">Info</a>
+                            <a href="<?= base_url('surat/bpd/') . $laporan['hash_id'] ?>" class="badge badge-sm badge-info badge-pill" target="_blank">Info</a>
                             <a href="<?= base_url('pengajuan/delete_bpd/') . $laporan['hash_id'] ?>" class="badge badge-sm badge-danger badge-pill">hapus</a>
                           </td>
                         </tr>
