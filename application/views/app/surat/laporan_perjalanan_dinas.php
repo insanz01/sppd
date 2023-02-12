@@ -115,7 +115,7 @@
           <tr>
             <td width="30%"></td>
             <td width="40%"></td>
-            <td width="30%">Banjarmasin, <?= date("M Y", strtotime($surat['tanggal_kegiatan'])) ?></td>
+            <td width="30%">Banjarmasin, <?= date("d M Y", strtotime($surat['tanggal_kegiatan'])) ?></td>
           </tr>
           <tr>
             <td width="30%"></td>

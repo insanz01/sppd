@@ -167,29 +167,29 @@
           <tr>
             <td width="30%"></td>
             <td width="40%"></td>
-            <td width="30%">Banjarmasin, <?= date("M Y", strtotime($surat['created_at'])) ?></td>
+            <td width="30%" class="text-center">Banjarmasin, <?= date("d M Y", strtotime($surat['created_at'])) ?></td>
+          </tr>
+          <tr>
+            <td width="30%"></td>
+            <td width="40%"></td>
+            <td width="30%" class="text-center">Kepala Dinas Ketahanan Pangan, Pertanian dan Perikanan Kota Banjarmasin</td>
           </tr>
           <tr>
             <td width="30%"></td>
             <td width="40%"></td>
             <td width="30%"></td>
-          </tr>
-          <tr>
-            <td width="30%">Petugas</td>
-            <td width="40%"></td>
-            <td width="30%">Yang Menerima,</td>
           </tr>
         </table>
         <table class="no-border mt-5" style="width: 100%">
           <tr>
-            <td width="30%"><?= $surat['nama_petugas'] ?></td>
+            <td width="30%"></td>
             <td width="40%"></td>
-            <td width="30%">Surianata, SP, MP</td>
+            <td width="30%" class="text-center">Ir. M. Makhmud, MS</td>
           </tr>
           <tr>
-            <td width="30%">NIP. <?= $surat['NIP_petugas'] ?></td>
+            <td width="30%"></td>
             <td width="40%"></td>
-            <td width="30%">NIP. 1231231231231</td>
+            <td width="30%" class="text-center">NIP. 19650328 198803 1 009</td>
           </tr>
         </table>
       </div>

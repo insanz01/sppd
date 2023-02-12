@@ -110,12 +110,12 @@
           <tr>
             <td width="30%"><?= $surat['nama_bendaharawan'] ?></td>
             <td width="40%"></td>
-            <td width="30%">Surianata, SP, MP</td>
+            <td width="30%"><?= $surat['nama_karyawan'] ?></td>
           </tr>
           <tr>
             <td width="30%">NIP. <?= $surat['NIP_bendaharawan'] ?></td>
             <td width="40%"></td>
-            <td width="30%">NIP. 1231231231231</td>
+            <td width="30%">NIP. <?= $surat['NIP_karyawan'] ?></td>
           </tr>
         </table>
       </div>
