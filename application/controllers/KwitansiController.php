@@ -4,12 +4,20 @@ class KwitansiController extends CI_Controller {
   public function __construct() {
     parent::__construct();
 
+    if(!$this->session->userdata("SESS_SPPD_USERID")) {
+      redirect('auth/logout');
+    }
+
     $this->load->model("KwitansiModel", "kwitansi_m");
     $this->load->model("KaryawanModel", "karyawan_m");
   }
 
   public function index() {
-    $data['kwitansi'] = $this->kwitansi_m->get_all_kwitansi();
+    $user_id = $this->session->userdata("SESS_SPPD_USERID");
+    $data['kwitansi'] = $this->kwitansi_m->get_all_kwitansi_by_user_id($user_id);
+    if($this->session->userdata("SESS_SPPD_ROLEID") == 1) {
+      $data['kwitansi'] = $this->kwitansi_m->get_all_kwitansi();
+    }
 
     $this->load->view('templates/panel/header');
     $this->load->view('templates/panel/sidebar');
