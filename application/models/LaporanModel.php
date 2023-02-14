@@ -106,7 +106,7 @@ class LaporanModel extends CI_Model {
   }
 
   public function get_all_biaya_perjalanan_dinas() {
-    $query = "SELECT b.id, b.hash_id, b.file_dokumen, k.nama as nama_karyawan, b.status FROM biaya_perjalanan_dinas b JOIN karyawan k ON b.user_id = k.user_id ORDER BY b.id DESC";
+    $query = "SELECT b.id, b.hash_id, b.nomor_SPPD, k.nama as nama_karyawan, b.status FROM biaya_perjalanan_dinas b JOIN karyawan k ON b.user_id = k.user_id ORDER BY b.id DESC";
 
     $bpd = $this->db->query($query)->result_array();
     $results = [];
@@ -123,7 +123,7 @@ class LaporanModel extends CI_Model {
       $result = [
         'id' => $b['id'],
         'hash_id' => $b['hash_id'],
-        'file_pengajuan' => $b['file_dokumen'],
+        'nomor_SPPD' => $b['nomor_SPPD'],
         'nama_karyawan' => $b['nama_karyawan'],
         'status' => $status,
       ];

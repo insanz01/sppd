@@ -34,7 +34,7 @@
                     <thead>
                       <th>#</th>
                       <th>Nama Karyawan</th>
-                      <th>File Pengajuan</th>
+                      <th>Nomor Surat</th>
                       <th>Status</th>
                       <th>Aksi</th>
                     </thead>
@@ -45,12 +45,13 @@
                           <td><?= $index++ ?></td>
                           <td><?= $laporan['nama_karyawan'] ?></td>
                           <td>
-                            <a href="<?= base_url('uploads/documents/') . $laporan['file_pengajuan'] ?>" download>
-                              <?= $laporan['file_pengajuan'] ?>
-                            </a>
+                            <?= $laporan['nomor_SPPD'] ?>
                           </td>
                           <td><?= $laporan['status'] ?></td>
                           <td>
+                            <a href="<?= base_url("surat/bpd/") . $laporan['hash_id'] ?>" class="badge badge-info badge-sm badge-pill">
+                              Lihat
+                            </a>
                             <a href="<?= base_url('pengajuan/bpd/') . $laporan['hash_id'] . '/terima' ?>" class="badge badge-sm badge-success badge-pill">Terima</a>
                             <a href="<?= base_url('pengajuan/bpd/') . $laporan['hash_id'] . '/tolak' ?>" class="badge badge-sm badge-danger badge-pill">Tolak</a>
                           </td>

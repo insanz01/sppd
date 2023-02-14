@@ -59,13 +59,13 @@
             <tr>
               <td>1</td>
               <td><?= $surat['perincian_biaya'] ?></td>
-              <td>Rp <?= number_format($surat['jumlah_biaya'], 0, '.', ',') ?></td>
+              <td>Rp <?= number_format($surat['jumlah_biaya'], 0, ',', '.') ?></td>
               <td><?= $surat['keterangan'] ?></td>
             </tr>
             <tr>
               <td></td>
               <td>Jumlah</td>
-              <td>Rp <?= number_format($surat['jumlah_biaya'], 0, '.', ',') ?></td>
+              <td>Rp <?= number_format($surat['jumlah_biaya'], 0, ',', '.') ?></td>
               <td></td>
             </tr>
             <tr>
