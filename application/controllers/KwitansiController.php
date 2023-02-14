@@ -48,7 +48,7 @@ class KwitansiController extends CI_Controller {
     {
       $dokumenData = array('upload_data' => $this->upload->data());
 
-      $data['file_kwitansi'] = $dokumenData['upload_data']['file_name'];
+      $data['file'] = $dokumenData['upload_data']['file_name'];
     }
 
     if($this->kwitansi_m->insert_kwitansi($data)) {
