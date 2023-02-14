@@ -5,6 +5,11 @@ class KwitansiModel extends CI_Model {
     parent::__construct();
   }
 
+  public function insert_kwitansi($data) {
+    $this-db->insert("kwitansi", $data);
+    return $this->db->insert_id();
+  }
+
   public function get_all_kwitansi() {
     $query = "SELECT kw.id, kw.file, kw.user_id, k.NIP, k.nama, k.email, k.nomor_hp FROM karyawan k JOIN kwitansi kw ON k.user_id = kw.user_id";
 

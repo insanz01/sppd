@@ -32,7 +32,7 @@
                     <option value="">- PILIH -</option>
                     <?php foreach($karyawan as $k): ?>
                       <option value="<?= $k['user_id'] ?>">
-                        <?= $k['nama'] ?> (<?= $k['nama'] ?>)
+                        <?= $k['nama'] ?> (<?= $k['NIP'] ?>)
                       </option>
                     <?php endforeach; ?>
                   </select>
