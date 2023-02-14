@@ -11,7 +11,9 @@ class KaryawanModel extends CI_Model {
   }
 
   public function save_karyawan($data) {
-    $this->create_user($data);
+    $user_id = $this->create_user($data);
+
+    $data['user_id'] = $user_id;
     $this->db->insert('karyawan', $data);
     return $this->db->insert_id();
   }
@@ -48,6 +50,8 @@ class KaryawanModel extends CI_Model {
       'is_active' => 1
     ];
 
-    return $this->db->insert('users', $userData);
+    $this->db->insert('users', $userData);
+
+    return $this->db->insert_id();
   }
 }
