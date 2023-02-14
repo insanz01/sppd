@@ -139,7 +139,7 @@ class PengajuanController extends CI_Controller {
 
     $hash_id = $this->pengajuan_m->insert_laporan_perjalanan_dinas($data);
     if($hash_id) {
-      redirect("laporan/lpd");
+      redirect("na/lpd");
       // redirect('surat/lpd/' . $hash_id);
     }
   }
@@ -175,7 +175,7 @@ class PengajuanController extends CI_Controller {
       $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">Gagal menghapus data</div>');
     }
 
-    redirect('laporan/lpd');
+    redirect('na/lpd');
   }
 
   public function status_laporan_perjalanan_dinas($hash_id, $status) {

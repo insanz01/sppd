@@ -132,12 +132,12 @@
           <tr>
             <td width="30%"></td>
             <td width="40%"></td>
-            <td width="30%" class="text-center">Tutuk Munikah, S.Si, M.Si</td>
+            <td width="30%" class="text-center"><?= $surat['nama_karyawan'] ?></td>
           </tr>
           <tr>
             <td width="30%"></td>
             <td width="40%"></td>
-            <td width="30%" class="text-center">NIP. 19790602 201001 2 004</td>
+            <td width="30%" class="text-center">NIP. <?= $surat['NIP_karyawan'] ?></td>
           </tr>
         </table>
       </div>
