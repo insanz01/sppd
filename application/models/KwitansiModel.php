@@ -6,7 +6,7 @@ class KwitansiModel extends CI_Model {
   }
 
   public function insert_kwitansi($data) {
-    $this-db->insert("kwitansi", $data);
+    $this->db->insert("kwitansi", $data);
     return $this->db->insert_id();
   }
 
