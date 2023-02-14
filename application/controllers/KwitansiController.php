@@ -29,7 +29,9 @@ class KwitansiController extends CI_Controller {
   }
 
   public function do_add() {
-    $data = [];
+    $data = [
+      'user_id' => $this->input->post('user_id')
+    ];
 
     $config['upload_path']          = 'uploads/documents/';
     $config['allowed_types']        = 'docx|doc|xlsx|xls|pdf|jpg|jpeg|png';
@@ -60,7 +62,7 @@ class KwitansiController extends CI_Controller {
     redirect('kwitansi');
   }
 
-  public function delete_kwitansi($id) {
+  public function delete($id) {
     // $id = $this->input->post('id');
 
     if($this->kwitansi_m->delete_kwitansi($id)) {
