@@ -32,7 +32,7 @@ class KwitansiController extends CI_Controller {
     $data = [];
 
     $config['upload_path']          = 'uploads/documents/';
-    $config['allowed_types']        = 'docx|doc|xlsx|xls|pdf|jpg|jpeg';
+    $config['allowed_types']        = 'docx|doc|xlsx|xls|pdf|jpg|jpeg|png';
 
     $this->load->library('upload', $config);
 
