@@ -19,7 +19,13 @@
         <img src="<?= base_url() ?>assets/image/profile/user.png" class="objectPicture" alt="User Image">
       </div>
       <div class="info">
-        <a href="<?= base_url() ?>" class="d-block"><?= 'Administrator' ?> </a>
+        <a href="<?= base_url() ?>" class="d-block">
+          <?php if($this->session->userdata('SESS_SPPD_ROLEID') != 1): ?>
+              <?= $this->session->userdata('SESS_SPPD_USERNAME') ?>
+            <?php else: ?>
+              <?= 'ADMINISTRATOR' ?> 
+          <?php endif; ?>
+        </a>
       </div>
     </div>
 

@@ -89,6 +89,7 @@ $route['pengajuan/add_bpd'] = "PengajuanController/add_biaya_perjalanan_dinas";
 $route['pengajuan/delete_bpd/(:any)'] = "PengajuanController/delete_biaya_perjalanan_dinas/$1";
 $route['pengajuan/bpd/(:any)/(:any)'] = "PengajuanController/status_biaya_perjalanan_dinas/$1/$2";
 
+$route['surat/sppd2'] = "SuratController/surat_perintah_perjalanan_dinas_2";
 $route['surat/sppd/(:any)'] = "SuratController/surat_perintah_perjalanan_dinas/$1";
 $route['surat/spt/(:any)'] = "SuratController/surat_perintah_tugas/$1";
 $route['surat/lpd/(:any)'] = "SuratController/laporan_perjalanan_dinas/$1";

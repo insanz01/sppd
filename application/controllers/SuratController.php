@@ -76,4 +76,8 @@ class SuratController extends CI_Controller {
 
     $this->load->view("app/surat/biaya_perjalanan_dinas", $data);
   }
+
+  public function surat_perintah_perjalanan_dinas_2() {
+    $this->load->view("app/surat/surat_perintah_perjalanan_dinas_2");
+  }
 }

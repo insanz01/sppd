@@ -106,14 +106,30 @@
                   <textarea name="keterangan" id="keterangan" class="form-control" cols="30" rows="10"></textarea>
                 </div>
 
-                <!-- <div class="form-group">
-                  <label for="NIP_petugas">NIP Petugas</label>
-                  <input type="text" name="NIP_petugas" class="form-control" id="NIP_petugas" required>
-                </div>
                 <div class="form-group">
-                  <label for="nama_petugas">Nama Petugas</label>
-                  <input type="text" name="nama_petugas" class="form-control" id="nama_petugas" required>
-                </div> -->
+                  <label for="berangkat_tempat-kedudukan">Berangkat Dari</label>
+                  <input type="text" class="form-control" name="berangkat_dari" id="berangkat_tempat-kedudukan" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="tujuan-satu">Tujuan Pertama</label>
+                  <input type="text" class="form-control" name="tujuan_satu" id="tujuan-satu" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="tujuan-dua">Tujuan Kedua</label>
+                  <input type="text" class="form-control" name="tujuan_dua" id="tujuan-dua" placeholder="hanya isi jika ada tujuan kedua">
+                </div>
+
+                <div class="form-group">
+                  <label for="tujuan-tiga">Tujuan Ketiga</label>
+                  <input type="text" class="form-control" name="tujuan_tiga" id="tujuan-tiga" placeholder="hanya isi jika ada tujuan ketiga">
+                </div>
+
+                <div class="form-group">
+                  <label for="tanggal-tiba">Tanggal Tiba</label>
+                  <input type="date" class="form-control" name="tanggal_tiba" id="tanggal-tiba" required>
+                </div>
 
                 <div class="form-group">
                   <button type="submit" class="btn btn-primary btn-block btn-lg">BUAT SURAT PERINTAH PERJALANAN DINAS</button>
