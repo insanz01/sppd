@@ -287,7 +287,7 @@
                     <tr>
                       <td width="5%"></td>
                       <td width="50%">Ke</td>
-                      <td width="45%">: Bali</td>
+                      <td width="45%">: <?= $surat['tujuan_satu'] ?></td>
                     </tr>
                     <tr>
                       <td colspan="3" width="100%">
@@ -346,7 +346,7 @@
                       <td width="5%"></td>
                       <td width="50%">Pada Tanggal</td>
                       <td width="45%">: 
-                        <?php if($surat['tanggal_berangkat_tujuan_dua']): ?>
+                        <?php if($surat['tujuan_dua']): ?>
                           <?= date("d M Y", strtotime($surat['tanggal_berangkat_tujuan_dua'])) ?>
                         <?php else: ?>
                           <?= date("d M Y", strtotime($surat['tanggal_kembali'])) ?>
@@ -357,7 +357,7 @@
                       <td width="5%"></td>
                       <td width="50%">Ke</td>
                       <td width="45%">: 
-                        <?php if($surat['tanggal_berangkat_tujuan_dua']): ?>
+                        <?php if($surat['tujuan_dua']): ?>
                           <?= $surat['tujuan_dua'] ?>
                         <?php else: ?>
                           <?= $surat['berangkat_dari'] ?>
@@ -382,7 +382,7 @@
                       <td width="5%"></td>
                       <td width="50%">Pada Tanggal</td>
                       <td width="45%">: 
-                        <?php if($surat['tanggal_berangkat_tujuan_dua'] != NULL): ?>
+                        <?php if($surat['tujuan_dua']): ?>
                           <?= date("d M Y", strtotime($surat['tanggal_berangkat_tujuan_dua'])) ?>
                         <?php endif; ?>
                       </td>
@@ -407,9 +407,9 @@
                       <td width="5%"></td>
                       <td width="50%">Pada Tanggal</td>
                       <td width="45%">: 
-                        <?php if($surat['tanggal_berangkat_tujuan_tiga']): ?>
+                        <?php if($surat['tujuan_tiga']): ?>
                           <?= date("d M Y", strtotime($surat['tanggal_berangkat_tujuan_tiga'])) ?>
-                        <?php elseif($surat['tanggal_berangkat_tujuan_dua']): ?>
+                        <?php elseif($surat['tujuan_dua']): ?>
                           <?= date("d M Y", strtotime($surat['tanggal_kembali'])) ?>
                         <?php endif; ?>
                       </td>
@@ -418,9 +418,9 @@
                       <td width="5%"></td>
                       <td width="50%">Ke</td>
                       <td width="45%">: 
-                        <?php if($surat['tanggal_berangkat_tujuan_tiga']): ?>
+                        <?php if($surat['tujuan_tiga']): ?>
                           <?= $surat['tujuan_tiga'] ?>
-                        <?php elseif($surat['tanggal_berangkat_tujuan_dua']): ?>
+                        <?php elseif($surat['tujuan_dua']): ?>
                           <?= $surat['berangkat_dari'] ?>
                         <?php endif; ?>
                       </td>
@@ -443,7 +443,7 @@
                       <td width="5%"></td>
                       <td width="50%">Pada Tanggal</td>
                       <td width="45%">: 
-                        <?php if($surat['tanggal_berangkat_tujuan_tiga'] != NULL): ?>
+                        <?php if($surat['tujuan_tiga'] != NULL): ?>
                           <?= date("d M Y", strtotime($surat['tanggal_berangkat_tujuan_tiga'])) ?>
                         <?php endif; ?>
                       </td>
@@ -468,7 +468,7 @@
                       <td width="5%"></td>
                       <td width="50%">Pada Tanggal</td>
                       <td width="45%">: 
-                        <?php if($surat['tanggal_berangkat_tujuan_tiga'] != NULL): ?>
+                        <?php if($surat['tujuan_tiga']): ?>
                           <?= date("d M Y", strtotime($surat['tanggal_kembali'])) ?>
                         <?php endif; ?>
                       </td>
@@ -477,7 +477,7 @@
                       <td width="5%"></td>
                       <td width="50%">Ke</td>
                       <td width="45%">: 
-                        <?php if($surat['tanggal_berangkat_tujuan_tiga'] != NULL): ?>
+                        <?php if($surat['tujuan_tiga']): ?>
                           <?= $surat['berangkat_dari'] ?>
                         <?php endif; ?>
                       </td>
