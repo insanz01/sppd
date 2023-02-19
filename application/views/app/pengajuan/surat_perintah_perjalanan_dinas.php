@@ -87,11 +87,11 @@
                 </div>
                 <div class="form-group">
                   <label for="tanggal_berangkat">Tanggal Berangkat</label>
-                  <input type="text" name="tanggal_berangkat" class="form-control" id="tanggal_berangkat" required>
+                  <input type="date" name="tanggal_berangkat" class="form-control" id="tanggal_berangkat" required>
                 </div>
                 <div class="form-group">
                   <label for="tanggal_kembali">Tanggal Kembali</label>
-                  <input type="text" name="tanggal_kembali" class="form-control" id="tanggal_kembali" required>
+                  <input type="date" name="tanggal_kembali" class="form-control" id="tanggal_kembali" required>
                 </div>
                 <div class="form-group">
                   <label for="beban_anggaran_instansi">Beban Anggaran (Instansi)</label>
@@ -122,13 +122,18 @@
                 </div>
 
                 <div class="form-group">
+                  <label for="tanggal-tiba-tujuan-dua">Tanggal Berangkat Tujuan Kedua</label>
+                  <input type="date" class="form-control" name="tanggal_berangkat_tujuan_dua" id="tanggal-tiba-tujuan-dua" placeholder="hanya isi jika ada tujuan kedua">
+                </div>
+
+                <div class="form-group">
                   <label for="tujuan-tiga">Tujuan Ketiga</label>
                   <input type="text" class="form-control" name="tujuan_tiga" id="tujuan-tiga" placeholder="hanya isi jika ada tujuan ketiga">
                 </div>
 
                 <div class="form-group">
-                  <label for="tanggal-tiba">Tanggal Tiba</label>
-                  <input type="date" class="form-control" name="tanggal_tiba" id="tanggal-tiba" required>
+                  <label for="tanggal-tiba-tujuan-tiga">Tanggal Berangkat Tujuan Ketiga</label>
+                  <input type="date" class="form-control" name="tanggal_berangkat_tujuan_tiga" id="tanggal-tiba-tujuan-tiga" placeholder="hanya isi jika ada tujuan ketiga">
                 </div>
 
                 <div class="form-group">
