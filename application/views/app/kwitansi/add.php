@@ -5,7 +5,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Tambah Kwitansi</h1>
+          <h1 class="m-0 text-dark">Tambah Penyerahan BPD</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <!-- <ol class="breadcrumb float-sm-right">
@@ -31,19 +31,19 @@
                   <select name="user_id" id="user_id" class="form-control">
                     <option value="">- PILIH -</option>
                     <?php foreach($karyawan as $k): ?>
-                      <option value="<?= $k['user_id'] ?>">
-                        <?= $k['nama'] ?> (<?= $k['NIP'] ?>)
+                      <option value="<?= $k['id'] ?>">
+                        <span class="font-weight-bold"><?= $k['nomor_SPPD'] ?></span> | <?= $k['nama'] ?> (<?= $k['NIP'] ?>)
                       </option>
                     <?php endforeach; ?>
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="file_kwitansi">File Kwitansi</label>
+                  <label for="file_kwitansi">File Bukti</label>
                   <input type="file" name="file_kwitansi" class="form-control" id="file_kwitansi" required>
                 </div>
 
                 <div class="form-group">
-                  <button type="submit" class="btn btn-primary btn-block btn-lg">SIMPAN DATA KWITANSI</button>
+                  <button type="submit" class="btn btn-primary btn-block btn-lg">SIMPAN DATA PENYERAHAN BPD</button>
                 </div>
               </form>
             </div>

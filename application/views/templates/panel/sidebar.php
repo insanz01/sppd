@@ -110,7 +110,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-globe-asia"></i>
               <p>
-                Master Data
+                MASTER DATA
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -158,7 +158,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>
-                Laporan
+                LAPORAN
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -212,7 +212,7 @@
           <a href="<?= base_url('kwitansi') ?>" class="nav-link">
             <i class="nav-icon fas fa-envelope"></i>
             <p>
-              KWITANSI
+              PENYERAHAN BPD
             </p>
           </a>
         </li>

@@ -27,7 +27,7 @@ class KwitansiController extends CI_Controller {
   }
 
   public function add() {
-    $data['karyawan'] = $this->karyawan_m->get_all_karyawan();
+    $data['karyawan'] = $this->kwitansi_m->get_all_karyawan();
 
     $this->load->view('templates/panel/header');
     $this->load->view('templates/panel/sidebar');

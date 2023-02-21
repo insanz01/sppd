@@ -5,7 +5,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Kwitansi</h1>
+          <h1 class="m-0 text-dark">Penyerahan BPD</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <!-- <ol class="breadcrumb float-sm-right">
@@ -25,7 +25,7 @@
         <div class="col-12">
           <div class="row">
             <div class="col-12">
-              <a href="<?= base_url('kwitansi/add') ?>" class="btn btn-primary float-right mb-2">TAMBAH KWITANSI</a>
+              <a href="<?= base_url('kwitansi/add') ?>" class="btn btn-primary float-right mb-2">TAMBAH PENYERAHAN BPD</a>
             </div>
             <div class="col-12">
               <div class="card">
