@@ -86,7 +86,7 @@
         <div class="col-4">
           <table>
             <tr>
-              <td>Lembar Ke</td>
+              <td>Lembar ke</td>
               <td>: I, II</td>
             </tr>
             <tr>
