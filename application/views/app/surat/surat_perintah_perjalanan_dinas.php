@@ -55,7 +55,7 @@
   </head>
   <body class="container-fluid">
 
-    <div class="baris-baru">
+    <div class="baris-baru cetak-kecil">
       <div class="mt-4">
         <div class="row">
           <div class="col-8 mx-auto">
@@ -76,6 +76,28 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <!-- <div class="col-3"></div> -->
+        <div class="col-4"></div>
+        <div class="col-4"></div>
+        <div class="col-4">
+          <table>
+            <tr>
+              <td>Lembar Ke</td>
+              <td>: I, II</td>
+            </tr>
+            <tr>
+              <td>Kode</td>
+              <td>: <?= $surat['nomor_SPPD'] ?></td>
+            </tr>
+            <tr>
+              <td>Nomor</td>
+              <td>: 520/    Sekr Um Peg/DKP3</td>
+            </tr>
+          </table>
         </div>
       </div>
 
@@ -244,24 +266,9 @@
 
     <div class="baris-baru cetak-kecil">
       <div class="mt-4">
-        <div class="row">
-          <div class="col-8 mx-auto">
-            <div class="row">
-              <div class="col-2">
-                <img src="<?= base_url('assets\bahan\icon1.png') ?>" width="220px" alt="gambar">
-              </div>
-              <div class="col-1"></div>
-              <div class="col-9">
-                <h3 class="text-center" style="font-size: 1.9em">PEMERINTAH KOTA BANJARMASIN</h3>
-                <h4 class="text-center" style="font-size: 1.6 em">DINAS KETAHANAN PANGAN, PERTANIAN DAN PERIKANAN</h4>
-                <p class="text-center">Jl. Pangeran Hidayatullah/Lingkar Dalam Utara Telp. 0511-3201327 Kel. Benua Anyar Kec. Banjarmasin Timur 70239</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-12">
-                <hr style="border: 2px solid black">
-              </div>
-            </div>
+        <div class="row mb-3">
+          <div class="col-8 mx-auto text-center">
+            <img src="<?= base_url('assets\bahan\icon1.png') ?>" width="220px" alt="gambar">
           </div>
         </div>
       </div>
