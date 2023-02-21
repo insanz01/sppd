@@ -73,6 +73,23 @@ class LaporanModel extends CI_Model {
     }
   }
 
+  public function get_all_reports_by_user_filter($target, $filter) {
+    switch($target) {
+      case "laporan_perjalanan_dinas":
+        return $this->get_all_laporan_perjalanan_dinas_by_user_filter($filter);
+        break;
+      case "surat_perintah_perjalanan_dinas":
+        return $this->get_all_surat_perintah_perjalanan_dinas_by_user_filter($filter);
+        break;
+      case "surat_perintah_tugas":
+        return $this->get_all_surat_perintah_tugas_by_user_filter($filter);
+        break;
+      case "biaya_perjalanan_dinas":
+        return $this->get_all_biaya_perjalanan_dinas_by_user_filter($filter);
+        break;
+    }
+  }
+
   public function get_all_laporan_perjalanan_dinas() {
     $query = "SELECT * FROM laporan_perjalanan_dinas";
 
@@ -189,6 +206,44 @@ class LaporanModel extends CI_Model {
     return $results;
   }
 
+  public function get_all_biaya_perjalanan_dinas_by_user_filter($filter) {
+    $user_id = $this->session->userdata('SESS_SPPD_USERID');
+    
+    $query = "SELECT b.id, b.hash_id, b.file_dokumen, k.nama as nama_karyawan, b.status, b.nomor_SPPD, b.tanggal, b.perincian_biaya, b.jumlah_biaya, b.keterangan, b.nama_bendaharawan, b.NIP_bendaharawan FROM biaya_perjalanan_dinas b JOIN karyawan k ON b.user_id = k.user_id WHERE b.user_id = $user_id AND b.created_at BETWEEN '$filter[filter_awal]' AND '$filter[filter_akhir]' ORDER BY b.id DESC";
+
+    $bpd = $this->db->query($query)->result_array();
+    $results = [];
+
+    foreach ($bpd as $b) {
+      $status = 'initial';
+
+      if($b['status'] == -1) {
+        $status = "ditolak";
+      } else if($b['status'] == 1) {
+        $status = "diterima";
+      }
+
+      $result = [
+        'id' => $b['id'],
+        'hash_id' => $b['hash_id'],
+        'nomor_SPPD' => $b['nomor_SPPD'],
+        'tanggal' => $b['tanggal'],
+        'perincian_biaya' => $b['perincian_biaya'],
+        'jumlah_biaya' => $b['jumlah_biaya'],
+        'keterangan' => $b['keterangan'],
+        'nama_bendaharawan' => $b['nama_bendaharawan'],
+        'NIP_bendaharawan' => $b['NIP_bendaharawan'],
+        'file_pengajuan' => $b['file_dokumen'],
+        'nama_karyawan' => $b['nama_karyawan'],
+        'status' => $status,
+      ];
+
+      array_push($results, $result);
+    }
+
+    return $results;
+  }
+
   public function get_all_laporan_perjalanan_dinas_by_user() {
     $user_id = $this->session->userdata('SESS_SPPD_USERID');
 
@@ -228,6 +283,49 @@ class LaporanModel extends CI_Model {
     $user_id = $this->session->userdata('SESS_SPPD_USERID');
     
     $query = "SELECT * FROM surat_perintah_tugas";
+
+    return $this->db->query($query)->result_array();
+  }
+
+  public function get_all_laporan_perjalanan_dinas_by_user_filter($filter) {
+    $user_id = $this->session->userdata('SESS_SPPD_USERID');
+
+    $query = "SELECT * FROM laporan_perjalanan_dinas WHERE user_id = $user_id AND created_at BETWEEN $filter[filter_awal] AND $filter[filter_akhir]";
+
+    $lpd = $this->db->query($query)->result_array();
+
+    $results = [];
+
+    foreach($lpd as $l) {
+      $status = "initial";
+      $result = $l;
+
+      if($l['status'] == 1) {
+        $status = "diterima";
+      } else if ($l['status'] == -1) {
+        $status = "ditolak";
+      }
+
+      $result['status'] = $status;
+
+      array_push($results, $result);
+    }
+
+    return $results;
+  }
+
+  public function get_all_surat_perintah_perjalanan_dinas_by_user_filter($filter) {
+    $user_id = $this->session->userdata('SESS_SPPD_USERID');
+    
+    $query = "SELECT * FROM surat_perintah_perjalanan_dinas";
+
+    return $this->db->query($query)->result_array();
+  }
+
+  public function get_all_surat_perintah_tugas_by_user_filter($filter) {
+    $user_id = $this->session->userdata('SESS_SPPD_USERID');
+    
+    $query = "SELECT * FROM surat_perintah_tugas WHERE created_at BETWEEN $filter[filter_awal] AND $filter[filter_akhir]";
 
     return $this->db->query($query)->result_array();
   }

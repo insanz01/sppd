@@ -22,6 +22,18 @@ class NonAdminController extends CI_Controller {
   public function laporan_biaya_perjalanan_dinas() {
     $data['reports'] = $this->laporan_m->get_all_biaya_perjalanan_dinas_by_user();
 
+    $filter_awal = $this->input->post('tanggal_awal');
+    $filter_akhir = $this->input->post('tanggal_akhir');
+    
+    if($filter_awal && $filter_akhir) {
+      $filter = [
+        'filter_awal' => $filter_awal,
+        'filter_akhir' => $filter_akhir
+      ];
+
+      $data['reports'] = $this->laporan_m->get_all_biaya_perjalanan_dinas_by_user_filter($filter);
+    }
+
     $this->load->view('templates/panel/header');
     $this->load->view('templates/panel/sidebar');
     $this->load->view('templates/panel/navbar');
@@ -63,6 +75,18 @@ class NonAdminController extends CI_Controller {
 
   public function laporan_perjalanan_dinas() {
     $data['reports'] = $this->laporan_m->get_all_reports_by_user('laporan_perjalanan_dinas');
+
+    $filter_awal = $this->input->post('tanggal_awal');
+    $filter_akhir = $this->input->post('tanggal_akhir');
+    
+    if($filter_awal && $filter_akhir) {
+      $filter = [
+        'filter_awal' => $filter_awal,
+        'filter_akhir' => $filter_akhir
+      ];
+
+      $data['reports'] = $this->laporan_m->get_all_reports_by_user_filter('laporan_perjalanan_dinas', $filter);
+    }
 
     $this->load->view('templates/panel/header');
     $this->load->view('templates/panel/sidebar');
