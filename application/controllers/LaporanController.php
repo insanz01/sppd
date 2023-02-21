@@ -10,6 +10,18 @@ class LaporanController extends CI_Controller {
   public function laporan_perjalanan_dinas() {
     $data['reports'] = $this->laporan_m->get_all_reports('laporan_perjalanan_dinas');
 
+    $filter_awal = $this->input->post('tanggal_awal');
+    $filter_akhir = $this->input->post('tanggal_akhir');
+    
+    if($filter_awal && $filter_akhir) {
+      $filter = [
+        'filter_awal' => $filter_awal,
+        'filter_akhir' => $filter_akhir
+      ];
+
+      $data['reports'] = $this->laporan_m->get_all_reports_filter('laporan_perjalanan_dinas', $filter);
+    }
+
     $this->load->view('templates/panel/header');
     $this->load->view('templates/panel/sidebar');
     $this->load->view('templates/panel/navbar');
@@ -19,6 +31,18 @@ class LaporanController extends CI_Controller {
 
   public function surat_perintah_perjalanan_dinas() {
     $data['reports'] = $this->laporan_m->get_all_reports('surat_perintah_perjalanan_dinas');
+
+    $filter_awal = $this->input->post('tanggal_awal');
+    $filter_akhir = $this->input->post('tanggal_akhir');
+    
+    if($filter_awal && $filter_akhir) {
+      $filter = [
+        'filter_awal' => $filter_awal,
+        'filter_akhir' => $filter_akhir
+      ];
+
+      $data['reports'] = $this->laporan_m->get_all_reports_filter('surat_perintah_perjalanan_dinas', $filter);
+    }
 
     $this->load->view('templates/panel/header');
     $this->load->view('templates/panel/sidebar');
@@ -30,6 +54,18 @@ class LaporanController extends CI_Controller {
   public function surat_perintah_tugas() {
     $data['reports'] = $this->laporan_m->get_all_reports('surat_perintah_tugas');
 
+    $filter_awal = $this->input->post('tanggal_awal');
+    $filter_akhir = $this->input->post('tanggal_akhir');
+    
+    if($filter_awal && $filter_akhir) {
+      $filter = [
+        'filter_awal' => $filter_awal,
+        'filter_akhir' => $filter_akhir
+      ];
+
+      $data['reports'] = $this->laporan_m->get_all_reports_filter('surat_perintah_tugas', $filter);
+    }
+
     $this->load->view('templates/panel/header');
     $this->load->view('templates/panel/sidebar');
     $this->load->view('templates/panel/navbar');
@@ -39,6 +75,18 @@ class LaporanController extends CI_Controller {
 
   public function biaya_perjalanan_dinas() {
     $data['reports'] = $this->laporan_m->get_all_reports('biaya_perjalanan_dinas');
+    
+    $filter_awal = $this->input->post('tanggal_awal');
+    $filter_akhir = $this->input->post('tanggal_akhir');
+    
+    if($filter_awal && $filter_akhir) {
+      $filter = [
+        'filter_awal' => $filter_awal,
+        'filter_akhir' => $filter_akhir
+      ];
+
+      $data['reports'] = $this->laporan_m->get_all_reports_filter('biaya_perjalanan_dinas', $filter);
+    }
 
     $this->load->view('templates/panel/header');
     $this->load->view('templates/panel/sidebar');

@@ -19,6 +19,18 @@ class KwitansiController extends CI_Controller {
       $data['kwitansi'] = $this->kwitansi_m->get_all_kwitansi();
     }
 
+    $filter_awal = $this->input->post('tanggal_awal');
+    $filter_akhir = $this->input->post('tanggal_akhir');
+    
+    if($filter_awal && $filter_akhir) {
+      $filter = [
+        'filter_awal' => $filter_awal,
+        'filter_akhir' => $filter_akhir
+      ];
+
+      $data['kwitansi'] = $this->kwitansi_m->get_all_kwitansi_filter($filter);
+    }
+
     $this->load->view('templates/panel/header');
     $this->load->view('templates/panel/sidebar');
     $this->load->view('templates/panel/navbar');

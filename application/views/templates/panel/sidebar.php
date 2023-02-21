@@ -128,7 +128,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>
-                Pengajuan
+                PENGAJUAN
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>

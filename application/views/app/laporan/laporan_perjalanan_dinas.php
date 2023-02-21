@@ -25,6 +25,7 @@
         <div class="col-12">
           <div class="row">
             <div class="col-12">
+              <button type="button" class="btn btn-primary mb-2" data-toggle="modal" data-target="#filterModal">FILTER LAPORAN</button>
               <!-- <a href="<?= base_url('membership/add') ?>" class="btn btn-primary float-right mb-2">TAMBAH KARYAWAN</a> -->
             </div>
             <div class="col-12">
@@ -67,8 +68,32 @@
   </section>
 </div>
 
-<script>
-  // const getNameOfMember = () => {
-
-  // }
-</script>
+<!-- Modal -->
+<div class="modal fade" id="filterModal" tabindex="-1" aria-labelledby="filterModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="filterModalLabel">Filter Laporan</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="<?= base_url("laporan/lpd") ?>" method="post">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="tanggal_awal">Tanggal Awal</label>
+            <input type="date" class="form-control" name="tanggal_awal">
+          </div>
+          <div class="form-group">
+            <label for="tanggal_akhir">Tanggal Akhir</label>
+            <input type="date" class="form-control" name="tanggal_akhir">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+          <button type="submit" class="btn btn-primary">Filter</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

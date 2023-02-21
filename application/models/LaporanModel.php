@@ -22,6 +22,23 @@ class LaporanModel extends CI_Model {
     }
   }
 
+  public function get_all_reports_filter($target, $filter) {
+    switch($target) {
+      case "laporan_perjalanan_dinas":
+        return $this->get_all_laporan_perjalanan_dinas_filter($filter);
+        break;
+      case "surat_perintah_perjalanan_dinas":
+        return $this->get_all_surat_perintah_perjalanan_dinas_filter($filter);
+        break;
+      case "surat_perintah_tugas":
+        return $this->get_all_surat_perintah_tugas_filter($filter);
+        break;
+      case "biaya_perjalanan_dinas":
+        return $this->get_all_biaya_perjalanan_dinas_filter($filter);
+        break;
+    }
+  }
+
   public function get_single_report_by_hash($target) {
     switch($target) {
       case "laporan_perjalanan_dinas":
@@ -211,6 +228,31 @@ class LaporanModel extends CI_Model {
     $user_id = $this->session->userdata('SESS_SPPD_USERID');
     
     $query = "SELECT * FROM surat_perintah_tugas";
+
+    return $this->db->query($query)->result_array();
+  }
+
+  // FILTER
+  public function get_all_biaya_perjalanan_dinas_filter($filter) {
+    $query = "SELECT * FROM biaya_perjalanan_dinas WHERE created_at BETWEEN '$filter[filter_awal]' AND '$filter[filter_akhir]'";
+
+    return $this->db->query($query)->result_array();
+  }
+  
+  public function get_all_laporan_perjalanan_dinas_filter($filter) {
+    $query = "SELECT * FROM laporan_perjalanan_dinas WHERE created_at BETWEEN '$filter[filter_awal]' AND '$filter[filter_akhir]'";
+
+    return $this->db->query($query)->result_array();
+  }
+  
+  public function get_all_surat_perintah_perjalanan_dinas_filter($filter) {
+    $query = "SELECT * FROM surat_perintah_perjalanan_dinas WHERE created_at BETWEEN '$filter[filter_awal]' AND '$filter[filter_akhir]'";
+
+    return $this->db->query($query)->result_array();
+  }
+  
+  public function get_all_surat_perintah_tugas_filter($filter) {
+    $query = "SELECT * FROM surat_perintah_tugas WHERE created_at BETWEEN '$filter[filter_awal]' AND '$filter[filter_akhir]'";
 
     return $this->db->query($query)->result_array();
   }
