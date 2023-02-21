@@ -13,10 +13,16 @@ class AuthModel extends CI_Model {
 				$this->session->set_flashdata('is_active', false);
 				return false;
 			}
+
+			$karyawan = $this->db->get_where("karyawan", ["user_id" => $user['id']])->row_array();
 			
 			$this->session->set_userdata('SESS_SPPD_USERID', $user['id']);
 			$this->session->set_userdata('SESS_SPPD_USERNAME', $user['username']);
 			$this->session->set_userdata('SESS_SPPD_ROLEID', $user['role_id']);
+
+			if($user['role_id'] == 2) {
+				$this->session->set_userdata('SESS_SPPD_NIP', $karyawan['NIP']);
+			}
 			// $this->session->set_userdata('SESS_SIPERPUS_ROLE', $user['role']);
 
 			// if($user['role'] == 3) {

@@ -33,6 +33,7 @@
                   <table class="table custom-table">
                     <thead>
                       <th>#</th>
+                      <th>Nomor SPPD</th>
                       <th>NIP Karyawan</th>
                       <th>Nama Karyawan</th>
                       <th>Tujuan Perjalanan</th>
@@ -43,6 +44,7 @@
                       <?php foreach ($reports as $laporan) : ?>
                         <tr>
                           <td><?= $index++ ?></td>
+                          <td><?= $laporan['nomor_SPPD'] ?></td>
                           <td><?= $laporan['nip_karyawan'] ?></td>
                           <td><?= $laporan['nama_karyawan'] ?></td>
                           <td><?= $laporan['maksud_perjalanan_dinas'] ?></td>

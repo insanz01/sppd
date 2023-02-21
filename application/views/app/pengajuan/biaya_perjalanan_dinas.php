@@ -28,7 +28,13 @@
               <form action="<?= base_url('pengajuan/add_bpd') ?>" method="post">
                 <div class="form-group">
                   <label for="nomor_SPPD">Nomor SPPD</label>
-                  <input type="text" name="nomor_SPPD" class="form-control" id="nomor_SPPD" required>
+                  <select name="nomor_SPPD" class="form-control" id="nomor_SPPD" required>
+                    <option value="">- PILIH -</option>
+                    <?php foreach($SPPD as $sppd): ?>
+                      <option value="<?= $sppd['nomor_SPPD'] ?>"><?= $sppd['nomor_SPPD'] ?> | [ <?= $sppd['maksud_perjalanan_dinas'] ?> ]</option>
+                    <?php endforeach; ?>
+                  </select>
+                  <!-- <input type="text" name="nomor_SPPD" class="form-control" id="nomor_SPPD" required> -->
                 </div>
                 <div class="form-group">
                   <label for="tanggal">Tanggal</label>
@@ -56,10 +62,17 @@
                   <label for="nama_bendaharawan">Nama Bendaharawan Pengeluaran</label>
                   <input type="text" name="nama_bendaharawan" id="nama_bendaharawan" class="form-control" required>
                 </div>
+                
                 <div class="form-group">
                   <label for="NIP_bendaharawan">NIP Bendaharawan Pengeluaran</label>
                   <input type="text" name="NIP_bendaharawan" id="NIP_bendaharawan" class="form-control" required>
                 </div>
+
+                <div class="form-group">
+                  <label for="file_dokumen">Upload Bukti Perjalanan (cth: Biaya Hotel / Pesawat)</label>
+                  <input type="file" name="file_dokumen" id="file_dokumen" class="form-control" required>
+                </div>
+
                 <div class="form-group">
                   <button type="submit" class="btn btn-primary btn-block btn-lg">BUAT BIAYA PERJALANAN DINAS</button>
                 </div>

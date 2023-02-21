@@ -41,6 +41,10 @@ class AuthController extends CI_Controller
 
   public function do_logout()
   {
+		if($this->session->userdata("SESS_SPPD_ROLEID") == 2) {
+			$this->session->unset_userdata("SESS_SPPD_NIP");
+		}
+		
 		$this->session->unset_userdata("SESS_SPPD_USERID");
 		$this->session->unset_userdata("SESS_SPPD_USERNAME");
 		$this->session->unset_userdata("SESS_SPPD_ROLEID");

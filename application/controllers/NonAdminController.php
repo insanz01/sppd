@@ -10,6 +10,7 @@ class NonAdminController extends CI_Controller {
 
   public function biaya_perjalanan_dinas() {
     $data['file_template'] = "dokumen/template_bpd.xlsx";
+    $data['SPPD'] = $this->laporan_m->get_all_surat_perintah_perjalanan_dinas();
 
     $this->load->view('templates/panel/header');
     $this->load->view('templates/panel/sidebar');

@@ -63,11 +63,37 @@ class PengajuanModel extends CI_Model {
   public function delete_surat_perintah_tugas($hash_id) {
     return $this->db->delete('surat_perintah_tugas', ['hash_id' => $hash_id]);
   }
+
+  private function generate_nomor_SPPD() {
+    $exist_sppd = $this->db->get("surat_perintah_perjalanan_dinas")->getLastRow("array");
+
+    $nomor_id = 0;
+    if($exist_sppd) {
+      $nomor_id = $exist_sppd['id'];
+    }
+
+    $tahun = date("Y", time());
+    $bulan = date("m", time());
+
+    $bulan_romawi = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"];
+    $next_number = (string)($nomor_id + 1);
+    strlen($next_number);
+    
+    $nomor = "";
+    for($i = 0; $i < (3 - $next_number); $i++) {
+      $nomor += "0";
+    }
+
+    $nomor += $next_number;
+
+    return "12.$nomor/DKP3-KB/$bulan_rowawi[$bulan]/$tahun";
+  }
   
   public function insert_surat_perintah_perjalanan_dinas($data) {
     $hash_id = password_hash(time(), PASSWORD_DEFAULT);
 
     $data['hash_id'] = base64_encode($hash_id);
+    $data['nomor_SPPD'] = $this->generate_nomor_SPPD();
 
     $this->db->insert('surat_perintah_perjalanan_dinas', $data);
     return $data['hash_id'];

@@ -231,10 +231,21 @@ class PengajuanController extends CI_Controller {
   // }
 
   public function biaya_perjalanan_dinas() {
+    $all_SPPD = $this->laporan_m->get_all_surat_perintah_perjalanan_dinas();
+    $acceptance_sppd = [];
+
+    foreach($all_SPPD as $sppd) {
+      if($sppd['nip_karyawan'] == $this->session->userdata("SESS_SPPD_NIP")) {
+        array_push($acceptance_sppd, $sppd);
+      }
+    }
+
+    $data['SPPD'] = $acceptance_sppd;
+
     $this->load->view('templates/panel/header');
     $this->load->view('templates/panel/sidebar');
     $this->load->view('templates/panel/navbar');
-    $this->load->view("app/pengajuan/biaya_perjalanan_dinas");
+    $this->load->view("app/pengajuan/biaya_perjalanan_dinas", $data);
     $this->load->view('templates/panel/footer');
   }
 
@@ -244,6 +255,26 @@ class PengajuanController extends CI_Controller {
     $karyawan = $this->karyawan_m->get_single_karyawan_by_user_id($data['user_id']);
     $data['NIP_karyawan'] = $karyawan['NIP'];
     $data['nama_karyawan'] = $karyawan['nama'];
+
+    $config['upload_path']          = 'uploads/documents/';
+    $config['allowed_types']        = 'docx|doc|xlsx|xls|pdf|jpg|jpeg|png';
+
+    $this->load->library('upload', $config);
+
+    if ( ! $this->upload->do_upload('file_dokumen'))
+    {
+      var_dump($this->upload->data());
+
+      $error = array('error' => $this->upload->display_errors());
+
+      var_dump($error); die;
+    }
+    else
+    {
+      $dokumenData = array('upload_data' => $this->upload->data());
+
+      $data['file_dokumen'] = $dokumenData['upload_data']['file_name'];
+    }
     
     $hash_id = $this->pengajuan_m->insert_biaya_perjalanan_dinas($data);
     if($hash_id) {
