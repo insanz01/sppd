@@ -332,25 +332,25 @@ class LaporanModel extends CI_Model {
 
   // FILTER
   public function get_all_biaya_perjalanan_dinas_filter($filter) {
-    $query = "SELECT * FROM biaya_perjalanan_dinas WHERE created_at BETWEEN '$filter[filter_awal]' AND '$filter[filter_akhir]' OR created_at = '$filter[filter_akhir]'";
+    $query = "SELECT * FROM biaya_perjalanan_dinas WHERE created_at BETWEEN '$filter[filter_awal]' AND '$filter[filter_akhir]' OR created_at = '$filter[filter_awal]' OR created_at = '$filter[filter_akhir]'";
 
     return $this->db->query($query)->result_array();
   }
   
   public function get_all_laporan_perjalanan_dinas_filter($filter) {
-    $query = "SELECT * FROM laporan_perjalanan_dinas WHERE created_at BETWEEN '$filter[filter_awal]' AND '$filter[filter_akhir]' OR created_at = '$filter[filter_akhir]'";
+    $query = "SELECT * FROM laporan_perjalanan_dinas WHERE created_at BETWEEN '$filter[filter_awal]' AND '$filter[filter_akhir]' OR created_at = '$filter[filter_awal]' OR created_at = '$filter[filter_akhir]'";
 
     return $this->db->query($query)->result_array();
   }
   
   public function get_all_surat_perintah_perjalanan_dinas_filter($filter) {
-    $query = "SELECT * FROM surat_perintah_perjalanan_dinas WHERE created_at BETWEEN '$filter[filter_awal]' AND '$filter[filter_akhir]' OR created_at = '$filter[filter_akhir]'";
+    $query = "SELECT * FROM surat_perintah_perjalanan_dinas WHERE created_at BETWEEN '$filter[filter_awal]' AND '$filter[filter_akhir]' OR created_at = '$filter[filter_awal]' OR created_at = '$filter[filter_akhir]'";
 
     return $this->db->query($query)->result_array();
   }
   
   public function get_all_surat_perintah_tugas_filter($filter) {
-    $query = "SELECT * FROM surat_perintah_tugas WHERE created_at BETWEEN '$filter[filter_awal]' AND '$filter[filter_akhir]' OR created_at = '$filter[filter_akhir]'";
+    $query = "SELECT * FROM surat_perintah_tugas WHERE created_at BETWEEN '$filter[filter_awal]' AND '$filter[filter_akhir]' OR created_at = '$filter[filter_awal]' OR created_at = '$filter[filter_akhir]'";
 
     return $this->db->query($query)->result_array();
   }
