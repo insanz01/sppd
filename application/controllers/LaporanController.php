@@ -19,6 +19,9 @@ class LaporanController extends CI_Controller {
         'filter_akhir' => $filter_akhir
       ];
 
+      $this->session->set_userdata("FILTER_AWAL", $filter_awal);
+      $this->session->set_userdata("FILTER_AKHIR", $filter_akhir);
+
       $data['reports'] = $this->laporan_m->get_all_reports_filter('laporan_perjalanan_dinas', $filter);
     }
 
@@ -40,6 +43,9 @@ class LaporanController extends CI_Controller {
         'filter_awal' => $filter_awal,
         'filter_akhir' => $filter_akhir
       ];
+
+      $this->session->set_userdata("FILTER_AWAL", $filter_awal);
+      $this->session->set_userdata("FILTER_AKHIR", $filter_akhir);
 
       $data['reports'] = $this->laporan_m->get_all_reports_filter('surat_perintah_perjalanan_dinas', $filter);
     }
@@ -63,6 +69,9 @@ class LaporanController extends CI_Controller {
         'filter_akhir' => $filter_akhir
       ];
 
+      $this->session->set_userdata("FILTER_AWAL", $filter_awal);
+      $this->session->set_userdata("FILTER_AKHIR", $filter_akhir);
+
       $data['reports'] = $this->laporan_m->get_all_reports_filter('surat_perintah_tugas', $filter);
     }
 
@@ -84,6 +93,9 @@ class LaporanController extends CI_Controller {
         'filter_awal' => $filter_awal,
         'filter_akhir' => $filter_akhir
       ];
+
+      $this->session->set_userdata("FILTER_AWAL", $filter_awal);
+      $this->session->set_userdata("FILTER_AKHIR", $filter_akhir);
 
       $data['reports'] = $this->laporan_m->get_all_reports_filter('biaya_perjalanan_dinas', $filter);
     }

@@ -113,4 +113,69 @@ class SuratController extends CI_Controller {
 
     $this->load->view("app/bulk_print/biaya_perjalanan_dinas", $data);
   }
+
+  // list
+  public function list_surat_perintah_perjalanan_dinas() {
+    $filter_awal = $this->session->userdata("FILTER_AWAL");
+    $filter_akhir = $this->session->userdata("FILTER_AKHIR");
+
+    $filter = [
+      'filter_awal' => $filter_awal,
+      'filter_akhir' => $filter_akhir
+    ];
+    
+    $all_surat = $this->pengajuan_m->get_list_surat_perintah_perjalanan_dinas($filter);
+
+    $acceptance_surat = [];
+    foreach($all_surat as $surat) {
+      $surat['pengikut'] = null;
+      array_push($acceptance_surat, $surat);
+    }
+
+    $data['all_surat'] = $acceptance_surat;
+
+    $this->load->view("app/list_print/surat_perintah_perjalanan_dinas", $data);
+  }
+
+  public function list_surat_perintah_tugas() {
+    $filter_awal = $this->session->userdata("FILTER_AWAL");
+    $filter_akhir = $this->session->userdata("FILTER_AKHIR");
+
+    $filter = [
+      'filter_awal' => $filter_awal,
+      'filter_akhir' => $filter_akhir
+    ];
+
+    $data['all_surat'] = $this->pengajuan_m->get_list_surat_perintah_tugas($filter);
+
+    $this->load->view("app/list_print/surat_perintah_tugas", $data);
+  }
+
+  public function list_laporan_perjalanan_dinas() {
+    $filter_awal = $this->session->userdata("FILTER_AWAL");
+    $filter_akhir = $this->session->userdata("FILTER_AKHIR");
+
+    $filter = [
+      'filter_awal' => $filter_awal,
+      'filter_akhir' => $filter_akhir
+    ];
+
+    $data['all_surat'] = $this->pengajuan_m->get_list_laporan_perjalanan_dinas($filter);
+
+    $this->load->view("app/list_print/laporan_perjalanan_dinas", $data);
+  }
+
+  public function list_biaya_perjalanan_dinas() {
+    $filter_awal = $this->session->userdata("FILTER_AWAL");
+    $filter_akhir = $this->session->userdata("FILTER_AKHIR");
+
+    $filter = [
+      'filter_awal' => $filter_awal,
+      'filter_akhir' => $filter_akhir
+    ];
+
+    $data['all_surat'] = $this->pengajuan_m->get_list_biaya_perjalanan_dinas($filter);
+
+    $this->load->view("app/list_print/biaya_perjalanan_dinas", $data);
+  }
 }

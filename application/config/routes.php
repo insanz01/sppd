@@ -120,3 +120,8 @@ $route['bulk/lpd/print'] = "SuratController/bulk_laporan_perjalanan_dinas";
 $route['bulk/sppd/print'] = "SuratController/bulk_surat_perintah_perjalanan_dinas";
 $route['bulk/spt/print'] = "SuratController/bulk_surat_perintah_tugas";
 $route['bulk/bpd/print'] = "SuratController/bulk_biaya_perjalanan_dinas";
+
+$route['list/lpd/print'] = "SuratController/list_laporan_perjalanan_dinas";
+$route['list/sppd/print'] = "SuratController/list_surat_perintah_perjalanan_dinas";
+$route['list/spt/print'] = "SuratController/list_surat_perintah_tugas";
+$route['list/bpd/print'] = "SuratController/list_biaya_perjalanan_dinas";

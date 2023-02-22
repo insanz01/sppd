@@ -25,8 +25,8 @@
         <div class="col-12">
           <div class="row">
             <div class="col-12">
-              <!-- <button type="button" class="btn btn-primary mb-2" data-toggle="modal" data-target="#filterModal">FILTER LAPORAN</button> -->
-              <a href="<?= base_url("bulk/bpd/print") ?>" class="btn btn-primary mb-2" role="button" target="_blank">CETAK SEMUA</a>
+              <button type="button" class="btn btn-primary mb-2" data-toggle="modal" data-target="#filterModal">FILTER LAPORAN</button>
+              <a href="<?= base_url("list/bpd/print") ?>" class="btn btn-primary mb-2" role="button" target="_blank">CETAK SEMUA</a>
             </div>
             <div class="col-12">
               <div class="card">

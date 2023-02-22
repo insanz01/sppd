@@ -145,6 +145,7 @@ class PengajuanModel extends CI_Model {
     return $this->db->delete('biaya_perjalanan_dinas', ['hash_id' => $hash_id]);
   }
 
+  // bulk
   public function get_bulk_laporan_perjalanan_dinas() {
     return $this->db->get_where('laporan_perjalanan_dinas')->result_array();
   }
@@ -158,6 +159,47 @@ class PengajuanModel extends CI_Model {
   }
 
   public function get_bulk_surat_perintah_tugas() {
+    return $this->db->get_where('surat_perintah_tugas')->result_array();
+  }
+
+  // list
+  public function get_list_laporan_perjalanan_dinas($filter) {
+    if($filter['filter_awal'] && $filter['filter_akhir']) {
+      $query = "SELECT * FROM laporan_perjalanan_dinas WHERE created_at BETWEEN '$filter[filter_awal]' AND '$filter[filter_akhir]' OR created_at = '$filter[filter_akhir]'";
+
+      return $this->db->query($query)->result_array();
+    }
+
+    return $this->db->get_where('laporan_perjalanan_dinas')->result_array();
+  }
+
+  public function get_list_biaya_perjalanan_dinas($filter) {
+    if($filter['filter_awal'] && $filter['filter_akhir']) {
+      $query = "SELECT * FROM biaya_perjalanan_dinas WHERE created_at BETWEEN '$filter[filter_awal]' AND '$filter[filter_akhir]' OR created_at = '$filter[filter_akhir]'";
+
+      return $this->db->query($query)->result_array();
+    }
+
+    return $this->db->get_where('biaya_perjalanan_dinas')->result_array();
+  }
+
+  public function get_list_surat_perintah_perjalanan_dinas($filter) {
+    if($filter['filter_awal'] && $filter['filter_akhir']) {
+      $query = "SELECT * FROM surat_perintah_perjalanan_dinas WHERE created_at BETWEEN '$filter[filter_awal]' AND '$filter[filter_akhir]' OR created_at = '$filter[filter_akhir]'";
+
+      return $this->db->query($query)->result_array();
+    }
+
+    return $this->db->get_where('surat_perintah_perjalanan_dinas')->result_array();
+  }
+
+  public function get_list_surat_perintah_tugas($filter) {
+    if($filter['filter_awal'] && $filter['filter_akhir']) {
+      $query = "SELECT * FROM surat_perintah_tugas WHERE created_at BETWEEN '$filter[filter_awal]' AND '$filter[filter_akhir]' OR created_at = '$filter[filter_akhir]'";
+
+      return $this->db->query($query)->result_array();
+    }
+
     return $this->db->get_where('surat_perintah_tugas')->result_array();
   }
 }
