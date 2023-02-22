@@ -65,7 +65,8 @@ class PengajuanModel extends CI_Model {
   }
 
   private function generate_nomor_SPPD() {
-    $exist_sppd = $this->db->get("surat_perintah_perjalanan_dinas")->getLastRow("array");
+    $query = "SELECT id FROM surat_perintah_perjalanan_dinas ORDER BY id DESC LIMIT 1";
+    $exist_sppd = $this->db->query($query)->row_array();
 
     $nomor_id = 0;
     if($exist_sppd) {
