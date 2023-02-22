@@ -83,7 +83,15 @@ class SuratController extends CI_Controller {
 
   // bulk
   public function bulk_surat_perintah_perjalanan_dinas() {
-    $data['all_surat'] = $this->pengajuan_m->get_bulk_surat_perintah_perjalanan_dinas();
+    $all_surat = $this->pengajuan_m->get_bulk_surat_perintah_perjalanan_dinas();
+
+    $acceptance_surat = [];
+    foreach($all_surat as $surat) {
+      $surat['pengikut'] = null;
+      array_push($acceptance_surat, $surat);
+    }
+
+    $data['all_surat'] = $acceptance_surat;
 
     $this->load->view("app/bulk_print/surat_perintah_perjalanan_dinas", $data);
   }
