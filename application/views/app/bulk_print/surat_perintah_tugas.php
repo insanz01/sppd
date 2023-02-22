@@ -21,7 +21,8 @@
     <title>Surat Perintah Tugas</title>
   </head>
   <body class="container-fluid">
-
+    
+    <?php foreach($all_surat as $surat): ?>
     <div class="baris-baru">
       <div class="mt-4">
         <div class="row">
@@ -134,6 +135,7 @@
         </div>
       </div>
     </div>
+    <?php endforeach; ?>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
