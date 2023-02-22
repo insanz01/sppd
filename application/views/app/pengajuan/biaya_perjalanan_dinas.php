@@ -25,7 +25,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-body">
-              <form action="<?= base_url('pengajuan/add_bpd') ?>" method="post">
+              <form action="<?= base_url('pengajuan/add_bpd') ?>" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                   <label for="nomor_SPPD">Nomor SPPD</label>
                   <select name="nomor_SPPD" class="form-control" id="nomor_SPPD" required>
