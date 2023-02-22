@@ -25,9 +25,10 @@
         <div class="col-12">
           <div class="row">
             <div class="col-12">
-              <button type="button" class="btn btn-primary mb-2" data-toggle="modal" data-target="#filterModal">FILTER LAPORAN</button>
+              <!-- <button type="button" class="btn btn-primary mb-2" data-toggle="modal" data-target="#filterModal">FILTER LAPORAN</button> -->
 
-              <!-- <a href="<?= base_url('membership/add') ?>" class="btn btn-primary float-right mb-2">TAMBAH KARYAWAN</a> -->
+              <!-- <a href="<?= base_url("bulk/bpd/print") ?>" class="btn btn-primary mb-2" role="button" target="_blank">CETAK SEMUA</a> -->
+
             </div>
             <div class="col-12">
               <div class="card">
