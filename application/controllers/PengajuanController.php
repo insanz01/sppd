@@ -68,6 +68,8 @@ class PengajuanController extends CI_Controller {
   }
 
   public function surat_perintah_tugas() {
+    $data['SPPD'] = $this->laporan_m->get_all_surat_perintah_perjalanan_dinas();
+
     $data['karyawan'] = $this->karyawan_m->get_all_karyawan();
 
     $this->load->view('templates/panel/header');

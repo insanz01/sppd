@@ -144,4 +144,20 @@ class PengajuanModel extends CI_Model {
   public function delete_biaya_perjalanan_dinas($hash_id) {
     return $this->db->delete('biaya_perjalanan_dinas', ['hash_id' => $hash_id]);
   }
+
+  public function get_bulk_laporan_perjalanan_dinas() {
+    return $this->db->get_where('laporan_perjalanan_dinas')->result_array();
+  }
+
+  public function get_bulk_biaya_perjalanan_dinas() {
+    return $this->db->get_where('biaya_perjalanan_dinas')->result_array();
+  }
+
+  public function get_bulk_surat_perintah_perjalanan_dinas() {
+    return $this->db->get_where('surat_perintah_perjalanan_dinas')->result_array();
+  }
+
+  public function get_bulk_surat_perintah_tugas() {
+    return $this->db->get_where('surat_perintah_tugas')->result_array();
+  }
 }

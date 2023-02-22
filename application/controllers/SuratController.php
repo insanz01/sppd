@@ -80,4 +80,29 @@ class SuratController extends CI_Controller {
   public function surat_perintah_perjalanan_dinas_2() {
     $this->load->view("app/surat/surat_perintah_perjalanan_dinas_2");
   }
+
+  // bulk
+  public function bulk_surat_perintah_perjalanan_dinas() {
+    $data['all_surat'] = $this->pengajuan_m->get_bulk_surat_perintah_perjalanan_dinas();
+
+    $this->load->view("app/bulk_print/surat_perintah_perjalanan_dinas", $data);
+  }
+
+  public function bulk_surat_perintah_tugas() {
+    $data['all_surat'] = $this->pengajuan_m->get_bulk_surat_perintah_tugas();
+
+    $this->load->view("app/bulk_print/surat_perintah_tugas", $data);
+  }
+
+  public function bulk_laporan_perjalanan_dinas() {
+    $data['all_surat'] = $this->pengajuan_m->get_bulk_laporan_perjalanan_dinas();
+
+    $this->load->view("app/bulk_print/laporan_perjalanan_dinas", $data);
+  }
+
+  public function bulk_biaya_perjalanan_dinas() {
+    $data['all_surat'] = $this->pengajuan_m->get_bulk_biaya_perjalanan_dinas();
+
+    $this->load->view("app/bulk_print/biaya_perjalanan_dinas", $data);
+  }
 }

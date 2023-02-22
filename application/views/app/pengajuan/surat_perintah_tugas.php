@@ -28,7 +28,15 @@
               <form action="<?= base_url('pengajuan/add_spt') ?>" method="post">
                 <div class="form-group">
                   <label for="nomor_sppd">Nomor SPPD</label>
-                  <input type="text" name="nomor_sppd" class="form-control" id="nomor_sppd" required>
+                  <select name="nomor_sppd" id="nomor_sppd" required class="form-control">
+                    <option value="">- PILIH -</option>
+                    <?php foreach($SPPD as $sppd): ?>
+                      <option value="<?= $sppd['nomor_SPPD'] ?>">
+                        <?= $sppd['nomor_SPPD'] ?>
+                      </option>
+                    <?php endforeach; ?>
+                  </select>
+                  <!-- <input type="text" name="nomor_sppd" class="form-control" id="nomor_sppd" required> -->
                 </div>
                 <div class="form-group">
                   <label for="nip_karyawan">NIP Karyawan (Yang diperintah)</label>
@@ -98,6 +106,9 @@
 <script>
   const getDetailKaryawan = async (nip) => {
     return await axios.get(`http://localhost/sppd/api/karyawan/${nip}`).then(res => res.data);
+  }
+  const getDetailKaryawanBySPPD = async (nip) => {
+    return await axios.get(`http://localhost/sppd/api/sppd/${sppd}`).then(res => res.data);
   }
   const getKaryawanName = async (target) => {
     const nip = target.value;
