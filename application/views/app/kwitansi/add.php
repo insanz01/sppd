@@ -27,11 +27,11 @@
             <div class="card-body">
               <form action="<?= base_url('kwitansi/do_add') ?>" method="post" enctype="multipart/form-data">
                 <div class="form-group">
-                  <label for="user_id">Karyawan</label>
-                  <select name="user_id" id="user_id" class="form-control">
+                  <label for="nomor_SPPD">Karyawan</label>
+                  <select name="nomor_SPPD" id="nomor_SPPD" class="form-control">
                     <option value="">- PILIH -</option>
                     <?php foreach($karyawan as $k): ?>
-                      <option value="<?= $k['id'] ?>">
+                      <option value="<?= $k['nomor_SPPD'] ?>">
                         <span class="font-weight-bold"><?= $k['nomor_SPPD'] ?></span> | <?= $k['nama'] ?> (<?= $k['NIP'] ?>)
                       </option>
                     <?php endforeach; ?>

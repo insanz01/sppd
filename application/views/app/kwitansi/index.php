@@ -37,6 +37,7 @@
                       <th>#</th>
                       <th>NIP Karyawan</th>
                       <th>Nama</th>
+                      <th>Nomor SPPD</th>
                       <th>File</th>
                       <th>Aksi</th>
                     </thead>
@@ -47,9 +48,13 @@
                           <td><?= $index++ ?></td>
                           <td><?= $k['NIP'] ?></td>
                           <td><?= $k['nama'] ?></td>
+                          <td><?= $k['nomor_SPPD'] ?></td>
                           <td>
-                            <a href="<?= base_url("uploads/documents/") . $k['file'] ?>" download>
+                            <!-- <a href="<?= base_url("uploads/documents/") . $k['file'] ?>" download>
                               <i class="fas fa-fw fa-download"></i>
+                            </a> -->
+                            <a href="<?= base_url("uploads/documents/") . $k['file'] ?>" target="_blank">
+                              <i class="fas fa-fw fa-print"></i>
                             </a>
                           </td>
                           <td>

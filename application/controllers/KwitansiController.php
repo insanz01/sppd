@@ -49,8 +49,13 @@ class KwitansiController extends CI_Controller {
   }
 
   public function do_add() {
+    $nomor_SPPD = $this->input->post("nomor_SPPD");
+
+    $sppd = $this->kwitansi_m->get_user_id_by_nomor_SPPD($nomor_SPPD);
+
     $data = [
-      'user_id' => $this->input->post('user_id')
+      'nomor_SPPD' => $nomor_SPPD,
+      'user_id' => $sppd['user_id']
     ];
 
     $config['upload_path']          = 'uploads/documents/';

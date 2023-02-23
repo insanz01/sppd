@@ -34,6 +34,11 @@ class KwitansiModel extends CI_Model {
     return $this->db->query($query)->row_array();
   }
 
+  public function get_user_id_by_nomor_SPPD($nomor_SPPD) {
+    $query = "SELECT users.id as user_id FROM users JOIN karyawan ON users.id = karyawan.user_id JOIN surat_perintah_perjalanan_dinas ON karyawan.NIP = surat_perintah_perjalanan_dinas.nip_karyawan WHERE surat_perintah_perjalanan_dinas.nomor_SPPD = '$nomor_SPPD'";
+    $this->db->query($query)->row_array();
+  }
+
   public function delete_kwitansi($id) {
     return $this->db->delete('kwitansi', ['id' => $id]);
   }
