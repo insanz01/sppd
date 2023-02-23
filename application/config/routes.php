@@ -126,4 +126,6 @@ $route['list/sppd/print'] = "SuratController/list_surat_perintah_perjalanan_dina
 $route['list/spt/print'] = "SuratController/list_surat_perintah_tugas";
 $route['list/bpd/print'] = "SuratController/list_biaya_perjalanan_dinas";
 
+$route['list/penyerahan_bpd/print'] = "KwitansiController/list_penyerahan_bpd";
+
 $route["print/penyerahan_bpd/(:any)"] = "KwitansiController/print/$1";

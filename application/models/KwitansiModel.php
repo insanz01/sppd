@@ -17,7 +17,7 @@ class KwitansiModel extends CI_Model {
   }
 
   public function get_all_kwitansi_filter($filter) {
-    $query = "SELECT kw.id, kw.file, kw.user_id, kw.file_type, k.NIP, k.nama, k.email, k.nomor_hp, sppd.nomor_SPPD FROM karyawan k JOIN kwitansi kw ON k.user_id = kw.user_id JOIN surat_perintah_perjalanan_dinas sppd ON sppd.nip_karyawan = k.NIP WHERE kw.created_at BETWEEN '$filter[filter_awal]' AND '$filter[filter_akhir]' ORDER BY kw.created_at DESC";
+    $query = "SELECT kw.id, kw.file, kw.user_id, kw.file_type, k.NIP, k.nama, k.email, k.nomor_hp, sppd.nomor_SPPD FROM karyawan k JOIN kwitansi kw ON k.user_id = kw.user_id JOIN surat_perintah_perjalanan_dinas sppd ON sppd.nip_karyawan = k.NIP WHERE (DATE(kw.created_at) BETWEEN '$filter[filter_awal]' AND '$filter[filter_akhir]') OR (DATE(kw.created_at) = '$filter[filter_awal]' OR DATE(kw.created_at) = '$filter[filter_akhir]')";
 
     return $this->db->query($query)->result_array();
   }
@@ -47,5 +47,17 @@ class KwitansiModel extends CI_Model {
     $query = "SELECT k.id, k.NIP, k.nama, k.email, k.nomor_hp, sppd.nomor_SPPD FROM karyawan k JOIN surat_perintah_perjalanan_dinas sppd ON sppd.nip_karyawan = k.NIP ORDER BY sppd.created_at DESC";
 
     return $this->db->query($query)->result_array();
+  }
+
+  public function get_list_penyerahan_bpd($filter) {
+    if($filter['filter_awal'] && $filter['filter_akhir']) {
+      $query = "SELECT kw.id, kw.file, kw.user_id, k.NIP, k.nama, k.email, k.nomor_hp, sppd.nomor_SPPD FROM karyawan k JOIN kwitansi kw ON k.user_id = kw.user_id JOIN surat_perintah_perjalanan_dinas sppd ON sppd.nip_karyawan = k.NIP ORDER BY kw.created_at DESC WHERE (DATE(kw.created_at) BETWEEN '$filter[filter_awal]' AND '$filter[filter_akhir]') OR (DATE(kw.created_at) = '$filter[filter_awal]' OR DATE(kw.created_at) = '$filter[filter_akhir]')";
+
+      var_dump($query); die;
+
+      return $this->db->query($query)->result_array();
+    }
+
+    return $this->get_all_kwitansi();
   }
 }

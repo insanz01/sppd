@@ -114,4 +114,18 @@ class KwitansiController extends CI_Controller {
 
     $this->load->view("app/print/penyerahan_bpd", $data);
   }
+
+  public function list_penyerahan_bpd() {
+    $filter_awal = $this->session->userdata("FILTER_AWAL");
+    $filter_akhir = $this->session->userdata("FILTER_AKHIR");
+
+    $filter = [
+      'filter_awal' => $filter_awal,
+      'filter_akhir' => $filter_akhir
+    ];
+
+    $data['all_surat'] = $this->kwitansi_m->get_list_penyerahan_bpd($filter);
+
+    $this->load->view("app/list_print/penyerahan_bpd", $data);
+  }
 }
