@@ -59,7 +59,7 @@ class KwitansiController extends CI_Controller {
     ];
 
     $config['upload_path']          = 'uploads/documents/';
-    $config['allowed_types']        = 'docx|doc|xlsx|xls|pdf|jpg|jpeg|png';
+    $config['allowed_types']        = 'pdf|jpg|jpeg|png';
 
     $this->load->library('upload', $config);
 
@@ -76,6 +76,7 @@ class KwitansiController extends CI_Controller {
       $dokumenData = array('upload_data' => $this->upload->data());
 
       $data['file'] = $dokumenData['upload_data']['file_name'];
+      $data['file_type'] = $dokumenData['upload_data']['file_ext'];
     }
 
     if($this->kwitansi_m->insert_kwitansi($data)) {
@@ -97,5 +98,20 @@ class KwitansiController extends CI_Controller {
     }
 
     redirect("kwitansi");
+  }
+
+  public function print($id) {
+    $kwitansi = $this->kwitansi_m->get_single_kwitansi($id);
+
+    $data['filename'] = "uploads/documents/" . $kwitansi['file'];
+
+    $fileType = "gambar";
+    if($kwitansi['file_type'] == ".pdf") {
+      $fileType = "pdf";
+    }
+
+    $data['file_type'] = $fileType;
+
+    $this->load->view("app/print/penyerahan_bpd", $data);
   }
 }

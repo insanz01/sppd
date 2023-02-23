@@ -53,7 +53,10 @@
                             <!-- <a href="<?= base_url("uploads/documents/") . $k['file'] ?>" download>
                               <i class="fas fa-fw fa-download"></i>
                             </a> -->
-                            <a href="<?= base_url("uploads/documents/") . $k['file'] ?>" target="_blank">
+                            <!-- <a href="<?= base_url("uploads/documents/") . $k['file'] ?>" target="_blank">
+                              <i class="fas fa-fw fa-print"></i>
+                            </a> -->
+                            <a href="<?= base_url("print/penyerahan_bpd/") . $k['id'] ?>" target="_blank">
                               <i class="fas fa-fw fa-print"></i>
                             </a>
                           </td>
