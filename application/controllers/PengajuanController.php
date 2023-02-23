@@ -259,7 +259,7 @@ class PengajuanController extends CI_Controller {
     $data['nama_karyawan'] = $karyawan['nama'];
 
     $config['upload_path']          = 'uploads/documents/';
-    $config['allowed_types']        = 'docx|doc|xlsx|xls|pdf|jpg|jpeg|png';
+    $config['allowed_types']        = 'jpg|jpeg|png';
 
     $this->load->library('upload', $config);
 
