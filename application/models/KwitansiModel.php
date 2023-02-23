@@ -53,8 +53,6 @@ class KwitansiModel extends CI_Model {
     if($filter['filter_awal'] && $filter['filter_akhir']) {
       $query = "SELECT kw.id, kw.file, kw.user_id, k.NIP, k.nama, k.email, k.nomor_hp, sppd.nomor_SPPD FROM karyawan k JOIN kwitansi kw ON k.user_id = kw.user_id JOIN surat_perintah_perjalanan_dinas sppd ON sppd.nip_karyawan = k.NIP ORDER BY kw.created_at DESC WHERE (DATE(kw.created_at) BETWEEN '$filter[filter_awal]' AND '$filter[filter_akhir]') OR (DATE(kw.created_at) = '$filter[filter_awal]' OR DATE(kw.created_at) = '$filter[filter_akhir]')";
 
-      var_dump($query); die;
-
       return $this->db->query($query)->result_array();
     }
 
