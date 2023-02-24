@@ -48,7 +48,7 @@
       </div>
     </div>
 
-    <h3 class="text-center mb-2">Biaya Perjalanan Dinas</h3>
+    <h3 class="text-center mb-2">Laporan Biaya Perjalanan Dinas</h3>
 
     <table class="table table-bordered">
       <thead>
