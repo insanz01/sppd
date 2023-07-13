@@ -133,6 +133,9 @@ $route['biaya/pesawat/edit/(:any)'] = "BiayaController/edit_biaya_pesawat/$1";
 $route['biaya/pesawat/do_edit/(:any)'] = "BiayaController/do_edit_biaya_pesawat/$1";
 $route['biaya/pesawat/delete'] = "BiayaController/delete_biaya_pesawat";
 
+$route['kinerja'] = "KinerjaController/index";
+$route['kinerja/detail/(:any)'] = "KinerjaController/detail/$1";
+
 $route['list/penyerahan_bpd/print'] = "KwitansiController/list_penyerahan_bpd";
 
 $route["print/penyerahan_bpd/(:any)"] = "KwitansiController/print/$1";
