@@ -126,6 +126,13 @@ $route['list/sppd/print'] = "SuratController/list_surat_perintah_perjalanan_dina
 $route['list/spt/print'] = "SuratController/list_surat_perintah_tugas";
 $route['list/bpd/print'] = "SuratController/list_biaya_perjalanan_dinas";
 
+$route['biaya/pesawat'] = "BiayaController/list_biaya_pesawat";
+$route['biaya/pesawat/add'] = "BiayaController/add_biaya_pesawat";
+$route['biaya/pesawat/do_add'] = "BiayaController/do_add_biaya_pesawat";
+$route['biaya/pesawat/edit/(:any)'] = "BiayaController/edit_biaya_pesawat/$1";
+$route['biaya/pesawat/do_edit/(:any)'] = "BiayaController/do_edit_biaya_pesawat/$1";
+$route['biaya/pesawat/delete'] = "BiayaController/delete_biaya_pesawat";
+
 $route['list/penyerahan_bpd/print'] = "KwitansiController/list_penyerahan_bpd";
 
 $route["print/penyerahan_bpd/(:any)"] = "KwitansiController/print/$1";

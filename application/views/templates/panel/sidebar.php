@@ -217,6 +217,24 @@
           </a>
         </li>
 
+        <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+                BIAYA PERJALANAN
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?= base_url('biaya/pesawat') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon ml-3"></i>
+                  <p>Pesawat Udara</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
         <li class="nav-item my-4">
           <a href="<?= base_url('auth/logout') ?>" class="nav-link">
             <i class="nav-icon fas fa-sign-out-alt"></i>
