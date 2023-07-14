@@ -221,7 +221,7 @@
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-book"></i>
             <p>
-              BIAYA PERJALANAN
+              BIAYA TRANSPORTASI
               <i class="right fas fa-angle-left"></i>
             </p>
           </a>
@@ -236,6 +236,30 @@
               <a href="<?= base_url('biaya/taxi') ?>" class="nav-link">
                 <i class="far fa-circle nav-icon ml-3"></i>
                 <p>Taxi</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item has-treeview">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-book"></i>
+            <p>
+              BIAYA PERJALANAN
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="<?= base_url('biaya/harian') ?>" class="nav-link">
+                <i class="far fa-circle nav-icon ml-3"></i>
+                <p>Uang Harian</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?= base_url('biaya/harian_dki') ?>" class="nav-link">
+                <i class="far fa-circle nav-icon ml-3"></i>
+                <p>Uang Harian (DKI)</p>
               </a>
             </li>
           </ul>

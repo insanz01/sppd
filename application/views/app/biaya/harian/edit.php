@@ -5,7 +5,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Ubah Perjalanan Taxi</h1>
+          <h1 class="m-0 text-dark">Ubah Biaya Perjalanan Dinas</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <!-- <ol class="breadcrumb float-sm-right">
@@ -25,7 +25,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-body">
-              <form action="<?= base_url('biaya/taxi/do_edit/') . $id ?>" method="post">
+              <form action="<?= base_url('biaya/harian/do_edit/') . $id ?>" method="post">
                 <div class="form-group">
                   <label for="nama_provinsi">Nama Provinsi</label>
                   <input type="text" name="nama_provinsi" class="form-control" id="nama_provinsi" value="<?= $biaya['nama_provinsi'] ?>" required>
@@ -41,7 +41,7 @@
 
                 <div class="form-group">
                   <button type="submit" class="btn btn-primary btn-block btn-lg">SIMPAN DATA PERJALANAN</button>
-                  <a href="<?= base_url("biaya/taxi") ?>" role="button" class="btn btn-warning btn-block btn-lg">BATAL SIMPAN</a>
+                  <a href="<?= base_url("biaya/harian") ?>" role="button" class="btn btn-warning btn-block btn-lg">BATAL SIMPAN</a>
                 </div>
               </form>
             </div>

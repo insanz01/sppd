@@ -140,6 +140,20 @@ $route['biaya/taxi/edit/(:any)'] = "BiayaController/edit_biaya_taxi/$1";
 $route['biaya/taxi/do_edit/(:any)'] = "BiayaController/do_edit_biaya_taxi/$1";
 $route['biaya/taxi/delete'] = "BiayaController/delete_biaya_taxi";
 
+$route['biaya/harian'] = "BiayaController/list_biaya_harian";
+$route['biaya/harian/add'] = "BiayaController/add_biaya_harian";
+$route['biaya/harian/do_add'] = "BiayaController/do_add_biaya_harian";
+$route['biaya/harian/edit/(:any)'] = "BiayaController/edit_biaya_harian/$1";
+$route['biaya/harian/do_edit/(:any)'] = "BiayaController/do_edit_biaya_harian/$1";
+$route['biaya/harian/delete'] = "BiayaController/delete_biaya_harian";
+
+$route['biaya/harian_dki'] = "BiayaController/list_biaya_harian_dki";
+$route['biaya/harian_dki/add'] = "BiayaController/add_biaya_harian_dki";
+$route['biaya/harian_dki/do_add'] = "BiayaController/do_add_biaya_harian_dki";
+$route['biaya/harian_dki/edit/(:any)'] = "BiayaController/edit_biaya_harian_dki/$1";
+$route['biaya/harian_dki/do_edit/(:any)'] = "BiayaController/do_edit_biaya_harian_dki/$1";
+$route['biaya/harian_dki/delete'] = "BiayaController/delete_biaya_harian_dki";
+
 $route['kinerja'] = "KinerjaController/index";
 $route['kinerja/detail/(:any)'] = "KinerjaController/detail/$1";
 
