@@ -47,7 +47,7 @@
                           <td><?= $b['satuan'] ?></td>
                           <td><?= $b['besaran'] ?></td>
                           <td>
-                            <a href="<?= base_url('biaya/pesawat/edit/') . $b['id'] ?>" class="badge badge-sm badge-info badge-pill">edit</a>
+                            <a href="<?= base_url('biaya/taxi/edit/') . $b['id'] ?>" class="badge badge-sm badge-info badge-pill">edit</a>
                             <a href="#!" class="badge badge-sm badge-danger badge-pill"  data-toggle="modal" data-target="#hapusModal" data-id="<?= $b['id'] ?>" onclick="hapusData(this)">hapus</a>
                           </td>
                         </tr>

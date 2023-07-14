@@ -5,7 +5,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Uang Harian Perjalanan Dinas</h1>
+          <h1 class="m-0 text-dark">Uang Harian Perjalanan Dinas DKI</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <!-- <ol class="breadcrumb float-sm-right">
@@ -25,7 +25,7 @@
         <div class="col-12">
           <div class="row">
             <div class="col-12">
-              <a href="<?= base_url('biaya/harian/add') ?>" class="btn btn-primary float-right mb-2">TAMBAH DATA UANG HARIAN</a>
+              <a href="<?= base_url('biaya/harian_dki/add') ?>" class="btn btn-primary float-right mb-2">TAMBAH DATA UANG HARIAN</a>
             </div>
             <div class="col-12">
               <div class="card">
@@ -33,9 +33,15 @@
                   <table class="table custom-table">
                     <thead>
                       <th>#</th>
-                      <th>Nama Provinsi</th>
-                      <th>Satuan</th>
-                      <th>Besaran</th>
+                      <th>URAIAN</th>
+                      <th>WALIKOTA / WAKIL WALIKOTA / PIMPINAN DPRD</th>
+                      <th>ANGGOTA DPRD</th>
+                      <th>SEKDA</th>
+                      <th>ASISTEN SEKDA / JABATAN PIMPINAN TINGGI</th>
+                      <th>ADMINISTRATOR / GOL IV</th>
+                      <th>PENGAWAS / GOL III</th>
+                      <th>PELAKSANA GOL II / I / NON PNS</th>
+                      <th>KET.</th>
                       <th>Aksi</th>
                     </thead>
                     <tbody>
@@ -43,11 +49,17 @@
                       <?php foreach ($biaya as $b) : ?>
                         <tr>
                           <td><?= $index++ ?></td>
-                          <td><?= $b['nama_provinsi'] ?></td>
-                          <td><?= $b['satuan'] ?></td>
-                          <td><?= $b['besaran'] ?></td>
+                          <td><?= $b['uraian'] ?></td>
+                          <td><?= $b['walikota'] ?></td>
+                          <td><?= $b['dprd'] ?></td>
+                          <td><?= $b['sekda'] ?></td>
+                          <td><?= $b['asisten_sekda'] ?></td>
+                          <td><?= $b['administrator'] ?></td>
+                          <td><?= $b['pengawas'] ?></td>
+                          <td><?= $b['pelaksana'] ?></td>
+                          <td><?= $b['keterangan'] ?></td>
                           <td>
-                            <a href="<?= base_url('biaya/harian/edit/') . $b['id'] ?>" class="badge badge-sm badge-info badge-pill">edit</a>
+                            <a href="<?= base_url('biaya/harian_dki/edit/') . $b['id'] ?>" class="badge badge-sm badge-info badge-pill">edit</a>
                             <a href="#!" class="badge badge-sm badge-danger badge-pill"  data-toggle="modal" data-target="#hapusModal" data-id="<?= $b['id'] ?>" onclick="hapusData(this)">hapus</a>
                           </td>
                         </tr>
@@ -74,7 +86,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="<?= base_url("biaya/harian/delete") ?>" method="post">
+      <form action="<?= base_url("biaya/harian_dki/delete") ?>" method="post">
         <div class="modal-body">
           <input type="hidden" id="id-hapus" name="id">
         </div>

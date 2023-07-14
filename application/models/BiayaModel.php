@@ -53,7 +53,7 @@ class BiayaModel extends CI_Model {
     return $this->db->affected_rows();
   }
 
-  public function delete_biaya_pesawat($id) {
+  public function delete_biaya_taxi($id) {
     return $this->db->delete("uang_taxi_perjalanan_dinas", ['id' => $id]);
   }
 
