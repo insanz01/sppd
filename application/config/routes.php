@@ -133,6 +133,13 @@ $route['biaya/pesawat/edit/(:any)'] = "BiayaController/edit_biaya_pesawat/$1";
 $route['biaya/pesawat/do_edit/(:any)'] = "BiayaController/do_edit_biaya_pesawat/$1";
 $route['biaya/pesawat/delete'] = "BiayaController/delete_biaya_pesawat";
 
+$route['biaya/taxi'] = "BiayaController/list_biaya_taxi";
+$route['biaya/taxi/add'] = "BiayaController/add_biaya_taxi";
+$route['biaya/taxi/do_add'] = "BiayaController/do_add_biaya_taxi";
+$route['biaya/taxi/edit/(:any)'] = "BiayaController/edit_biaya_taxi/$1";
+$route['biaya/taxi/do_edit/(:any)'] = "BiayaController/do_edit_biaya_taxi/$1";
+$route['biaya/taxi/delete'] = "BiayaController/delete_biaya_taxi";
+
 $route['kinerja'] = "KinerjaController/index";
 $route['kinerja/detail/(:any)'] = "KinerjaController/detail/$1";
 
