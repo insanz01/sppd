@@ -35,7 +35,7 @@
                       <th>#</th>
                       <th>Nama Provinsi</th>
                       <th>Satuan</th>
-                      <th>Besaran</th>
+                      <th>Besaran (Rp)</th>
                       <th>Aksi</th>
                     </thead>
                     <tbody>
@@ -45,7 +45,7 @@
                           <td><?= $index++ ?></td>
                           <td><?= $b['nama_provinsi'] ?></td>
                           <td><?= $b['satuan'] ?></td>
-                          <td><?= $b['besaran'] ?></td>
+                          <td><?= number_format($b['besaran'], 0, ',', '.') ?></td>
                           <td>
                             <a href="<?= base_url('biaya/harian/edit/') . $b['id'] ?>" class="badge badge-sm badge-info badge-pill">edit</a>
                             <a href="#!" class="badge badge-sm badge-danger badge-pill"  data-toggle="modal" data-target="#hapusModal" data-id="<?= $b['id'] ?>" onclick="hapusData(this)">hapus</a>

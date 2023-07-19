@@ -39,6 +39,7 @@ class BiayaController extends CI_Controller {
 
   public function edit_biaya_pesawat($id) {
     $data['biaya'] = $this->biaya_m->get_single_biaya_pesawat($id);
+    $data['id'] = $id;
 
     $this->load->view('templates/panel/header');
     $this->load->view('templates/panel/sidebar');
@@ -103,6 +104,7 @@ class BiayaController extends CI_Controller {
 
   public function edit_biaya_taxi($id) {
     $data['biaya'] = $this->biaya_m->get_single_biaya_taxi($id);
+    $data['id'] = $id;
 
     $this->load->view('templates/panel/header');
     $this->load->view('templates/panel/sidebar');
@@ -167,6 +169,7 @@ class BiayaController extends CI_Controller {
 
   public function edit_biaya_harian($id) {
     $data['biaya'] = $this->biaya_m->get_single_biaya_harian($id);
+    $data['id'] = $id;
 
     $this->load->view('templates/panel/header');
     $this->load->view('templates/panel/sidebar');
@@ -231,6 +234,7 @@ class BiayaController extends CI_Controller {
 
   public function edit_biaya_harian_dki($id) {
     $data['biaya'] = $this->biaya_m->get_single_biaya_harian_dki($id);
+    $data['id'] = $id;
 
     $this->load->view('templates/panel/header');
     $this->load->view('templates/panel/sidebar');
