@@ -13,7 +13,7 @@ class BatalkanController extends CI_Controller {
     $this->load->view('templates/panel/header');
     $this->load->view('templates/panel/sidebar');
     $this->load->view('templates/panel/navbar');
-    $this->load->view('app/batalkan/spt/index');
+    $this->load->view('app/batalkan/sppd/index', $data);
     $this->load->view('templates/panel/footer');
   }
 
@@ -27,5 +27,15 @@ class BatalkanController extends CI_Controller {
     }
 
     redirect('batalkan/sppd');
+  }
+
+  public function riwayat() {
+    $data['batalkan'] = $this->batalkan_m->get_all_pembatalan_sppd();
+
+    $this->load->view('templates/panel/header');
+    $this->load->view('templates/panel/sidebar');
+    $this->load->view('templates/panel/navbar');
+    $this->load->view('app/batalkan/sppd/index');
+    $this->load->view('templates/panel/footer');
   }
 }

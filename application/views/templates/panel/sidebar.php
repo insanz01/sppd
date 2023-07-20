@@ -106,14 +106,15 @@
             </ul>
           </li>
 
-          <li class="nav-item">
-          <a href="<?= base_url('batalkan/sppd') ?>" class="nav-link">
-            <i class="nav-icon fas fa-book"></i>
-            <p>
-              Batalkan Perjalanan
-            </p>
-          </a>
-        </li>
+          <!-- <li class="nav-item">
+            <a href="<?= base_url('batalkan/sppd') ?>" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+                Batalkan Perjalanan
+              </p>
+            </a>
+          </li> -->
+          
         <?php else: ?>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
@@ -160,6 +161,30 @@
                   <p>LPD</p>
                 </a>
               </li> -->
+            </ul>
+          </li>
+
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-book-open"></i>
+              <p>
+                PEMBATALAN
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?= base_url('batalkan/sppd') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon ml-3"></i>
+                  <p>Batalkan Perjalanan</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('batalkan/sppd/riwayat') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon ml-3"></i>
+                  <p>Riwayat Pembatalan</p>
+                </a>
+              </li>
             </ul>
           </li>
   

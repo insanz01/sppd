@@ -160,6 +160,7 @@ $route['kinerja'] = "KinerjaController/index";
 $route['kinerja/detail/(:any)'] = "KinerjaController/detail/$1";
 
 $route['batalkan/sppd'] = "BatalkanController/index";
+$route['batalkan/sppd/riwayat'] = "BatalkanController/riwayat";
 $route['batalkan/sppd/do_batal/(:any)'] = "BatalkanController/do_batal/$1";
 
 $route['list/penyerahan_bpd/print'] = "KwitansiController/list_penyerahan_bpd";
