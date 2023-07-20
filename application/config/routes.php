@@ -116,6 +116,7 @@ $route['kwitansi/do_add'] = "KwitansiController/do_add";
 $route['kwitansi/delete/(:any)'] = "KwitansiController/delete/$1";
 
 $route['api/karyawan/(:any)'] = 'APIController/karyawan_by_NIP/$1';
+$route['api/anggaran/(:any)/(:any)/(:any)'] = "APIController/beban_anggaran_pesawat/$1/$2/$3";
 
 $route['bulk/lpd/print'] = "SuratController/bulk_laporan_perjalanan_dinas";
 $route['bulk/sppd/print'] = "SuratController/bulk_surat_perintah_perjalanan_dinas";

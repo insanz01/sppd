@@ -108,7 +108,7 @@
 
                 <div class="form-group">
                   <label for="berangkat_tempat-kedudukan">Berangkat Dari</label>
-                  <select name="berangkat_dari" id="berangkat_tempat-kedudukan" class="form-control">
+                  <select name="berangkat_dari" id="berangkat_tempat-kedudukan" class="form-control" onchange="getBiayaPesawat(this)">
                     <?php foreach($kota_asal as $kota): ?>
                       <option value="<?= $kota['kota_asal'] ?>"><?= $kota['kota_asal'] ?></option>
                     <?php endforeach; ?>
@@ -118,7 +118,7 @@
 
                 <div class="form-group">
                   <label for="tujuan-satu">Tujuan Pertama</label>
-                  <select name="tujuan_satu" id="tujuan-satu" class="form-control">
+                  <select name="tujuan_satu" id="tujuan-satu" class="form-control" onchange="getBiayaPesawat(this)">
                     <option value="">- SILAHKAN PILIH -</option>
                     <?php foreach($kota_tujuan as $kota): ?>
                       <option value="<?= $kota['kota_tujuan'] ?>"><?= $kota['kota_tujuan'] ?></option>
@@ -180,5 +180,30 @@
     const karyawan = await getDetailKaryawan(nip).then(res => res.data);
 
     document.getElementById('nama_karyawan').value = karyawan.nama
+  }
+  const checkBiayaPesawat = async (data) => {
+    console.log(data);
+
+    return await axios.get(`<?= BASE_URL() ?>api/anggaran/BISNIS/${data.asal}/${data.tujuan}`).then(res => res.data);
+  }
+
+  const getBiayaPesawat = async (target) => {
+    
+    const asal = document.getElementById('berangkat_tempat-kedudukan').value;
+    const tujuan = document.getElementById('tujuan-satu').value;
+    
+    const data = {
+      asal,
+      tujuan
+    };
+
+    if(data.asal != "" && data.tujuan != "") {
+      const result = await checkBiayaPesawat(data);
+
+      if(result.success) {
+        document.getElementById("beban_anggaran_instansi").value = result.data.biaya;
+      }
+    }
+    
   }
 </script>
