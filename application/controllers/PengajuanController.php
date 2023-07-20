@@ -12,10 +12,14 @@ class PengajuanController extends CI_Controller {
     $this->load->model("PengajuanModel", "pengajuan_m");
     $this->load->model("LaporanModel", "laporan_m");
     $this->load->model("KaryawanModel", "karyawan_m");
+    $this->load->model("HelperModel", "helper_m");
   }
 
   public function surat_perintah_perjalanan_dinas() {
     $data['karyawan'] = $this->karyawan_m->get_all_karyawan();
+
+    $data['kota_asal'] = $this->helper_m->get_all_asal_pesawat();
+    $data['kota_tujuan'] = $this->helper_m->get_all_tujuan_pesawat();
 
     $this->load->view('templates/panel/header');
     $this->load->view('templates/panel/sidebar');

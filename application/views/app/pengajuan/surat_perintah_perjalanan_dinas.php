@@ -108,17 +108,34 @@
 
                 <div class="form-group">
                   <label for="berangkat_tempat-kedudukan">Berangkat Dari</label>
-                  <input type="text" class="form-control" name="berangkat_dari" id="berangkat_tempat-kedudukan" required>
+                  <select name="berangkat_dari" id="berangkat_tempat-kedudukan" class="form-control">
+                    <?php foreach($kota_asal as $kota): ?>
+                      <option value="<?= $kota['kota_asal'] ?>"><?= $kota['kota_asal'] ?></option>
+                    <?php endforeach; ?>
+                  </select>
+                  <!-- <input type="text" class="form-control" name="berangkat_dari" id="berangkat_tempat-kedudukan" required> -->
                 </div>
 
                 <div class="form-group">
                   <label for="tujuan-satu">Tujuan Pertama</label>
-                  <input type="text" class="form-control" name="tujuan_satu" id="tujuan-satu" required>
+                  <select name="tujuan_satu" id="tujuan-satu" class="form-control">
+                    <option value="">- SILAHKAN PILIH -</option>
+                    <?php foreach($kota_tujuan as $kota): ?>
+                      <option value="<?= $kota['kota_tujuan'] ?>"><?= $kota['kota_tujuan'] ?></option>
+                    <?php endforeach; ?>
+                  </select>
+                  <!-- <input type="text" class="form-control" name="tujuan_satu" id="tujuan-satu" required> -->
                 </div>
 
                 <div class="form-group">
                   <label for="tujuan-dua">Tujuan Kedua</label>
-                  <input type="text" class="form-control" name="tujuan_dua" id="tujuan-dua" placeholder="hanya isi jika ada tujuan kedua">
+                  <select name="tujuan_dua" id="tujuan-dua" class="form-control">
+                    <option value="">hanya isi jika ada tujuan kedua</option>
+                    <?php foreach($kota_tujuan as $kota): ?>
+                      <option value="<?= $kota['kota_tujuan'] ?>"><?= $kota['kota_tujuan'] ?></option>
+                    <?php endforeach; ?>
+                  </select>
+                  <!-- <input type="text" class="form-control" name="tujuan_dua" id="tujuan-dua" placeholder="hanya isi jika ada tujuan kedua"> -->
                 </div>
 
                 <div class="form-group">
@@ -128,7 +145,13 @@
 
                 <div class="form-group">
                   <label for="tujuan-tiga">Tujuan Ketiga</label>
-                  <input type="text" class="form-control" name="tujuan_tiga" id="tujuan-tiga" placeholder="hanya isi jika ada tujuan ketiga">
+                  <select name="tujuan_tiga" id="tujuan-tiga" class="form-control">
+                    <option value="">hanya isi jika ada tujuan ketiga</option>
+                    <?php foreach($kota_tujuan as $kota): ?>
+                      <option value="<?= $kota['kota_tujuan'] ?>"><?= $kota['kota_tujuan'] ?></option>
+                    <?php endforeach; ?>
+                  </select>
+                  <!-- <input type="text" class="form-control" name="tujuan_tiga" id="tujuan-tiga" placeholder="hanya isi jika ada tujuan ketiga"> -->
                 </div>
 
                 <div class="form-group">

@@ -16,6 +16,9 @@ class BiayaModel extends CI_Model {
   }
 
   public function add_biaya_pesawat($data) {
+    $data['kota_asal'] = strtoupper($data['kota_asal']);
+    $data['kota_tujuan'] = strtoupper($data['kota_tujuan']);
+
     return $this->db->insert("biaya_pesawat", $data);
   }
 
