@@ -105,6 +105,15 @@
               </li>
             </ul>
           </li>
+
+          <li class="nav-item">
+          <a href="<?= base_url('batalkan/sppd') ?>" class="nav-link">
+            <i class="nav-icon fas fa-book"></i>
+            <p>
+              Batalkan Perjalanan
+            </p>
+          </a>
+        </li>
         <?php else: ?>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
@@ -217,62 +226,64 @@
           </a>
         </li>
 
-        <li class="nav-item has-treeview">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-book"></i>
-            <p>
-              BIAYA TRANSPORTASI
-              <i class="right fas fa-angle-left"></i>
-            </p>
-          </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="<?= base_url('biaya/pesawat') ?>" class="nav-link">
-                <i class="far fa-circle nav-icon ml-3"></i>
-                <p>Pesawat Udara</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="<?= base_url('biaya/taxi') ?>" class="nav-link">
-                <i class="far fa-circle nav-icon ml-3"></i>
-                <p>Taxi</p>
-              </a>
-            </li>
-          </ul>
-        </li>
+        <?php if($this->session->userdata("SESS_SPPD_ROLEID") == 1): ?>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+                BIAYA TRANSPORTASI
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?= base_url('biaya/pesawat') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon ml-3"></i>
+                  <p>Pesawat Udara</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('biaya/taxi') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon ml-3"></i>
+                  <p>Taxi</p>
+                </a>
+              </li>
+            </ul>
+          </li>
 
-        <li class="nav-item has-treeview">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-book"></i>
-            <p>
-              BIAYA PERJALANAN
-              <i class="right fas fa-angle-left"></i>
-            </p>
-          </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="<?= base_url('biaya/harian') ?>" class="nav-link">
-                <i class="far fa-circle nav-icon ml-3"></i>
-                <p>Uang Harian</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="<?= base_url('biaya/harian_dki') ?>" class="nav-link">
-                <i class="far fa-circle nav-icon ml-3"></i>
-                <p>Uang Harian (DKI)</p>
-              </a>
-            </li>
-          </ul>
-        </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+                BIAYA PERJALANAN
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?= base_url('biaya/harian') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon ml-3"></i>
+                  <p>Uang Harian</p>
+                </a>
+              </li>
+              <!-- <li class="nav-item">
+                <a href="<?= base_url('biaya/harian_dki') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon ml-3"></i>
+                  <p>Uang Harian (DKI)</p>
+                </a>
+              </li> -->
+            </ul>
+          </li>
 
-        <li class="nav-item">
-          <a href="<?= base_url('kinerja') ?>" class="nav-link">
-            <i class="nav-icon fas fa-trophy"></i>
-            <p>
-              KINERJA PEGAWAI
-            </p>
-          </a>
-        </li>
+          <li class="nav-item">
+            <a href="<?= base_url('kinerja') ?>" class="nav-link">
+              <i class="nav-icon fas fa-trophy"></i>
+              <p>
+                KINERJA PEGAWAI
+              </p>
+            </a>
+          </li>
+        <?php endif; ?>
 
         <li class="nav-item my-4">
           <a href="<?= base_url('auth/logout') ?>" class="nav-link">

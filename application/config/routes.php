@@ -94,6 +94,7 @@ $route['surat/sppd/(:any)'] = "SuratController/surat_perintah_perjalanan_dinas/$
 $route['surat/spt/(:any)'] = "SuratController/surat_perintah_tugas/$1";
 $route['surat/lpd/(:any)'] = "SuratController/laporan_perjalanan_dinas/$1";
 $route['surat/bpd/(:any)'] = "SuratController/biaya_perjalanan_dinas/$1";
+$route['surat/ptpd/(:any)'] = "SuratController/pembatalan_tugas_perjalanan_dinas/$1";
 
 $route['laporan/sppd'] = "LaporanController/surat_perintah_perjalanan_dinas";
 $route['laporan/lpd'] = "LaporanController/laporan_perjalanan_dinas";
@@ -156,6 +157,9 @@ $route['biaya/harian_dki/delete'] = "BiayaController/delete_biaya_harian_dki";
 
 $route['kinerja'] = "KinerjaController/index";
 $route['kinerja/detail/(:any)'] = "KinerjaController/detail/$1";
+
+$route['batalkan/sppd'] = "BatalkanController/index";
+$route['batalkan/sppd/do_batal/(:any)'] = "BatalkanController/do_batal/$1";
 
 $route['list/penyerahan_bpd/print'] = "KwitansiController/list_penyerahan_bpd";
 
