@@ -39,7 +39,7 @@ class BatalkanModel extends CI_Model {
     return $this->db->get_where("surat_perintah_perjalanan_dinas", ["status" => -1])->result_array();
   }
 
-  public function batalkan_tugas($data, $spt_hash_id) {
+  public function batalkan_perintah_tugas($data, $spt_hash_id) {
     $this->db->set("status", -1);
     $this->db->where("hash_id", $spt_hash_id);
     $this->db->update("surat_perintah_perjalanan_dinas");
