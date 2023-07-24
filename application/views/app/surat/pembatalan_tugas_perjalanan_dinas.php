@@ -109,7 +109,7 @@
           <tr>
             <td width="30%"></td>
             <td width="40%"></td>
-            <td width="30%" class="text-center">Banjarmasin, <?= $surat['tanggal_kegiatan'] ?></td>
+            <td width="30%" class="text-center">Banjarmasin, <?= date("d M Y", time()) ?></td>
           </tr>
           <tr>
             <td width="30%"></td>

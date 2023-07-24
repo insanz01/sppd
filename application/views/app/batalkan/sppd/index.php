@@ -44,7 +44,7 @@
                           <td><?= $b['nama_karyawan'] ?></td>
                           <td><?= $b['maksud_perjalanan_dinas'] ?></td>
                           <td>
-                            <a href="<?= base_url("batalkan/sppd/do_batal/") . $b['hash_id'] ?>" role="button" class="badge badge-sm badge-pill badge-danger">Batalkan</a>
+                            <a href="<?= base_url("batalkan/sppd/add/") . $b['hash_id'] ?>" role="button" class="badge badge-sm badge-pill badge-danger">Batalkan</a>
                           </td>
                         </tr>
                       <?php endforeach; ?>

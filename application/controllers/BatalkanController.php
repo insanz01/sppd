@@ -17,6 +17,19 @@ class BatalkanController extends CI_Controller {
     $this->load->view('templates/panel/footer');
   }
 
+  public function add($sppd_hash) {
+    $single_sppd = $this->batalkan_m->get_single_sppd($sppd_hash);
+    $data['batalkan'] = $single_sppd;
+    $data['hash_id'] = $sppd_hash;
+    // $data['karyawan'] = $this->batalkan_m->get_single_karyawan($single_sppd['nip_karyawan']);
+
+    $this->load->view('templates/panel/header');
+    $this->load->view('templates/panel/sidebar');
+    $this->load->view('templates/panel/navbar');
+    $this->load->view('app/batalkan/sppd/add', $data);
+    $this->load->view('templates/panel/footer');
+  }  
+
   public function do_batal($hash_id) {
     $data = $this->input->post();
     
@@ -35,7 +48,7 @@ class BatalkanController extends CI_Controller {
     $this->load->view('templates/panel/header');
     $this->load->view('templates/panel/sidebar');
     $this->load->view('templates/panel/navbar');
-    $this->load->view('app/batalkan/sppd/index');
+    $this->load->view('app/batalkan/sppd/riwayat', $data);
     $this->load->view('templates/panel/footer');
   }
 }
