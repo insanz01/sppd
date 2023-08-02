@@ -164,6 +164,10 @@ $route['batalkan/sppd/add/(:any)'] = "BatalkanController/add/$1";
 $route['batalkan/sppd/riwayat'] = "BatalkanController/riwayat";
 $route['batalkan/sppd/do_batal/(:any)'] = "BatalkanController/do_batal/$1";
 
+$route['permintaan/sppd'] = "PermintaanController/sppd";
+$route['permintaan/sppd/approve/(:any)'] = "PermintaanController/sppd_approve/$1";
+$route['permintaan/sppd/reject/(:any)'] = "PermintaanController/sppd_reject/$1";
+
 $route['list/penyerahan_bpd/print'] = "KwitansiController/list_penyerahan_bpd";
 
 $route["print/penyerahan_bpd/(:any)"] = "KwitansiController/print/$1";

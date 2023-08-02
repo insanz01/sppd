@@ -173,7 +173,7 @@
 
 <script>
   const getDetailKaryawan = async (nip) => {
-    return await axios.get(`http://localhost/sppd/api/karyawan/${nip}`).then(res => res.data);
+    return await axios.get(`<?= base_url() ?>api/karyawan/${nip}`).then(res => res.data);
   }
   const getKaryawanName = async (target) => {
     const nip = target.value;
