@@ -168,6 +168,10 @@ $route['permintaan/sppd'] = "PermintaanController/sppd";
 $route['permintaan/sppd/approve/(:any)'] = "PermintaanController/sppd_approve/$1";
 $route['permintaan/sppd/reject/(:any)'] = "PermintaanController/sppd_reject/$1";
 
+$route['pengganti'] = "PenggantiController/index";
+$route['pengganti/add'] = "PenggantiController/add";
+$route['pengganti/do_add'] = "PenggantiController/do_add";
+
 $route['list/penyerahan_bpd/print'] = "KwitansiController/list_penyerahan_bpd";
 
 $route["print/penyerahan_bpd/(:any)"] = "KwitansiController/print/$1";

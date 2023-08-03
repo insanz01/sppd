@@ -37,6 +37,8 @@ class PermintaanController extends CI_Controller {
     $this->load->library('upload', $config);
 
     $alasan = $this->input->post('alasan');
+
+    $id = $this->input->post("hash_id");
     
     $data = [
       "hash_id" => $id,

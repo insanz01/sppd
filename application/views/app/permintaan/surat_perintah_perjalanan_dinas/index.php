@@ -44,8 +44,8 @@
                       <td><?= $b['tempat_tujuan'] ?></td>
                       <td><?= $b['lama_dinas'] ?></td>
                       <td>
-                        <a href="<?= base_url('permintaan/sppd/approve/') . $b['id'] ?>" class="badge badge-sm badge-info badge-pill">setuju</a>
-                        <a href="<?= base_url('permintaan/sppd/reject/') . $b['id'] ?>" class="badge badge-sm badge-danger badge-pill">tolak</a>
+                        <a href="<?= base_url('permintaan/sppd/approve/') . $b['hash_id'] ?>" class="badge badge-sm badge-info badge-pill">setuju</a>
+                        <a href="#!" class="badge badge-sm badge-danger badge-pill" data-toggle="modal" data-target="#rejectModal" onclick="showTolak(this)" data-id="<?= $b['hash_id'] ?>">tolak</a>
                         <!-- <a href="#!" class="badge badge-sm badge-danger badge-pill"  data-toggle="modal" data-target="#hapusModal" data-id="<?= $b['id'] ?>" onclick="hapusData(this)">hapus</a> -->
                       </td>
                     </tr>
@@ -59,3 +59,46 @@
     </div>
   </section>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="filterModal" tabindex="-1" aria-labelledby="filterModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="filterModalLabel">Tolak SPPD</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="<?= base_url("permintaan/sppd/reject") ?>" method="post" enctype="multipart/form-data">
+        <input type="hidden" id="id-hapus" name="hash_id">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="alasan">Alasan</label>
+            <textarea name="alasan" id="alasan" class="form-control" cols="30" rows="10"></textarea>
+          </div>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="userfile">Upload File</label>
+            <textarea name="userfile" id="userfile" class="form-control" cols="30" rows="10"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+          <button type="submit" class="btn btn-primary">Tolak</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+
+  const showTolak = (target) => {
+    const id = target.getAttribute("data-id");
+
+    document.getElementById("id-hapus").value = id;
+  }
+
+</script>
