@@ -173,6 +173,8 @@ $route['pengganti'] = "PenggantiController/index";
 $route['pengganti/add'] = "PenggantiController/add";
 $route['pengganti/do_add'] = "PenggantiController/do_add";
 
+$route['penolakan'] = "PenolakanController/index";
+
 $route['list/penyerahan_bpd/print'] = "KwitansiController/list_penyerahan_bpd";
 
 $route["print/penyerahan_bpd/(:any)"] = "KwitansiController/print/$1";
