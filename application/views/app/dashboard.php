@@ -102,15 +102,67 @@
       </div>
 
       <div class="row">
-        <div class="col-5 mx-auto">
+        <!-- <div class="col-5 mx-auto">
           <div id="map"></div>
+        </div> -->
+        <div class="col-12 mx-auto">
+          <canvas id="myChart"></canvas>
         </div>
       </div>
     </div>
   </section>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <script>
+  const getChartJabatan = async () => {
+    return await axios.get(`<?= base_url('api/jabatan/chart') ?>`).then(res => res.data);
+  }
+
+  window.addEventListener('load', async () => {
+    const ctx = document.getElementById('myChart');
+
+    let labels = [''];
+    let data = [''];
+
+    const result = await getChartJabatan();
+
+    if(result.success) {
+      result.data.forEach(res => {
+        console.log(res);
+        labels.push(res.jabatan);
+        data.push(res.jumlah);
+      })
+    }
+ 
+    labels.push('');
+    data.push('');
+    
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        // labels: ['', 'Blue', 'Yellow', 'Green', 'Purple', ''],
+        labels: labels,
+        datasets: [{
+          label: '# of Jabatan',
+          // data: [0, 19, 3, 5, 2, 0],
+          data: data,
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  });
+</script>
+
+<!-- <script>
   window.addEventListener('load', () => {
     var map = L.map('map').setView([-3.3089402, 114.6136443], 17);
   
@@ -121,4 +173,4 @@
 
     var marker = L.marker([-3.3089402, 114.6136443]).addTo(map);
   })
-</script>
+</script> -->

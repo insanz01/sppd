@@ -20,4 +20,10 @@ class HelperModel extends CI_Model {
   public function get_biaya_pesawat($asal, $tujuan) {
     return $this->db->get_where("biaya_pesawat", ['kota_asal' => $asal, 'kota_tujuan' => $tujuan])->row_array();
   }
+
+  public function get_all_jabatan() {
+    $query = "SELECT LOWER(jabatan) as jabatan, COUNT(*) as jumlah FROM surat_perintah_perjalanan_dinas GROUP BY jabatan";
+
+    return $this->db->query($query)->result_array();
+  }
 }

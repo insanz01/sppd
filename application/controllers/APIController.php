@@ -8,6 +8,17 @@ class APIController extends CI_Controller {
     $this->load->model("HelperModel", "helper_m");
   }
 
+  public function chart_jabatan() {
+    $jabatan = $this->helper_m->get_all_jabatan();
+
+    $data = [
+      "data" => $jabatan,
+      "success" => true
+    ];
+
+    echo json_encode($data, JSON_PRETTY_PRINT);
+  }
+
   public function karyawan_by_NIP($nip) {
     if($nip != "") {
       $karyawan = $this->karyawan_m->get_by_NIP($nip);
