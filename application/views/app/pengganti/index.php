@@ -58,10 +58,6 @@
                             <a href="<?= base_url("surat/bpd/") . $laporan['hash_id'] ?>" class="badge badge-info badge-sm badge-pill">
                               Lihat
                             </a>
-                            <?php if($laporan['status'] == "initial"): ?>
-                              <a href="<?= base_url('pengajuan/bpd/') . $laporan['hash_id'] . '/terima' ?>" class="badge badge-sm badge-success badge-pill">Terima</a>
-                              <a href="<?= base_url('pengajuan/bpd/') . $laporan['hash_id'] . '/tolak' ?>" class="badge badge-sm badge-danger badge-pill">Tolak</a>
-                            <?php endif; ?>
                           </td>
                         </tr>
                       <?php endforeach; ?>

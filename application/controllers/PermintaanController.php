@@ -42,11 +42,12 @@ class PermintaanController extends CI_Controller {
     
     $data = [
       "hash_id" => $id,
-      "alasan" => $alasan
+      "alasan" => $alasan,
+      "file" => ""
     ];
 
     // file upload
-    if ( ! $this->upload->do_upload('userfile'))
+    if ($this->upload->do_upload('userfile'))
     {
       $file = array('upload_data' => $this->upload->data());
 

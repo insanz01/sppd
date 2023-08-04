@@ -61,17 +61,17 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="filterModal" tabindex="-1" aria-labelledby="filterModalLabel" aria-hidden="true">
+<div class="modal fade" id="rejectModal" tabindex="-1" aria-labelledby="rejectModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="filterModalLabel">Tolak SPPD</h5>
+        <h5 class="modal-title" id="rejectModalLabel">Tolak SPPD</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="<?= base_url("permintaan/sppd/reject") ?>" method="post" enctype="multipart/form-data">
-        <input type="hidden" id="id-hapus" name="hash_id">
+      <form id="reject-form" action="<?= base_url("permintaan/sppd/reject") ?>" method="post" enctype="multipart/form-data">
+        <input type="hidden" id="id-tolak" name="hash_id">
         <div class="modal-body">
           <div class="form-group">
             <label for="alasan">Alasan</label>
@@ -80,8 +80,8 @@
         </div>
         <div class="modal-body">
           <div class="form-group">
-            <label for="userfile">Upload File</label>
-            <textarea name="userfile" id="userfile" class="form-control" cols="30" rows="10"></textarea>
+            <label for="userfile">Upload File (Berkas Pendukung)</label>
+            <input type="file" class="form-control" name="userfile" id="userfile">
           </div>
         </div>
         <div class="modal-footer">
@@ -98,7 +98,8 @@
   const showTolak = (target) => {
     const id = target.getAttribute("data-id");
 
-    document.getElementById("id-hapus").value = id;
+    document.getElementById("id-tolak").value = id;
+    document.getElementById("reject-form").setAttribute("action", `<?= base_url("permintaan/sppd/reject/") ?>${id}`)
   }
 
 </script>
