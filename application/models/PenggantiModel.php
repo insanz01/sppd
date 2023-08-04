@@ -12,4 +12,8 @@ class PenggantiModel extends CI_Model {
   public function insert_pengganti($data) {
     return $this->db->insert("pengganti_surat_perintah_perjalanan_dinas", $data);
   }
+
+  public function get_all_sppd() {
+    return $this->db->get("surat_perintah_perjalanan_dinas")->result_array();
+  }
 }

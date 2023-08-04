@@ -18,10 +18,12 @@ class PenggantiController extends CI_Controller {
   }
 
   public function add() {
+    $data['SPPD'] = $this->pengganti_m->get_all_sppd();
+
     $this->load->view('templates/panel/header');
     $this->load->view('templates/panel/sidebar');
     $this->load->view('templates/panel/navbar');
-    $this->load->view('app/pengganti/add');
+    $this->load->view('app/pengganti/add', $data);
     $this->load->view('templates/panel/footer');
   }
 
