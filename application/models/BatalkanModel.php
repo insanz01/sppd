@@ -15,7 +15,7 @@ class BatalkanModel extends CI_Model {
     }
 
     $tahun = date("Y", time());
-    $bulan = date("m", time());
+    $bulan = intval(date("m", time()));
 
     $bulan_romawi = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"];
     $next_number = (string)($nomor_id + 1);
@@ -23,12 +23,12 @@ class BatalkanModel extends CI_Model {
     
     $nomor = "";
     for($i = 0; $i < (3 - $next_number); $i++) {
-      $nomor += "0";
+      $nomor .= (string)"0";
     }
 
-    $nomor += $next_number;
+    $nomor .= $next_number;
 
-    return "06.$nomor/DKP3-KB/$bulan_rowawi[$bulan]/$tahun";
+    return "06.$nomor/DKP3-KB/$bulan_romawi[$bulan]/$tahun";
   }
 
   public function get_all_sppd() {
