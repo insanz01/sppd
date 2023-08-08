@@ -40,7 +40,15 @@
                 </div>
                 <div class="form-group">
                   <label for="perihal">Perihal</label>
-                  <input type="text" name="perihal" class="form-control" id="perihal" required>
+                  <select name="perihal" id="perihal" class="form-control">
+                    <option value=""></option>
+                    <?php foreach($SPPD as $s): ?>
+                      <option value="<?= $s['maksud_perjalanan_dinas'] ?>">
+                        <?= $s['maksud_perjalanan_dinas'] ?>
+                      </option>
+                    <?php endforeach; ?>
+                  </select>
+                  <!-- <input type="text" name="perihal" class="form-control" id="perihal" required> -->
                 </div>
 
                 <div class="form-group">

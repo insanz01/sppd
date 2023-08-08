@@ -127,10 +127,12 @@ class PengajuanController extends CI_Controller {
   }
 
   public function laporan_perjalanan_dinas() {
+    $data['SPPD'] = $this->laporan_m->get_all_surat_perintah_perjalanan_dinas_existing("laporan_perjalanan_dinas");
+
     $this->load->view('templates/panel/header');
     $this->load->view('templates/panel/sidebar');
     $this->load->view('templates/panel/navbar');
-    $this->load->view("app/pengajuan/laporan_perjalanan_dinas");
+    $this->load->view("app/pengajuan/laporan_perjalanan_dinas", $data);
     $this->load->view('templates/panel/footer');
   }
 
