@@ -121,6 +121,19 @@ class LaporanModel extends CI_Model {
     return $this->db->query($query)->result_array();
   }
 
+  public function get_all_surat_perintah_perjalanan_dinas_existing($source = "surat_perintah_tugas") {
+    $attrName = "nomor_sppd";
+    if($source == "surat_perintah_tugas") {
+      $attrName = "nomor_sppd";
+    } else if($source == "biaya_perjalanan_dinas") {
+      $attrName = "nomor_SPPD";
+    }
+
+    $query = "SELECT * FROM surat_perintah_perjalanan_dinas WHERE nomor_SPPD NOT IN (SELECT $attrName FROM $source)";
+    
+    return $this->db->query($query)->result_array();
+  }
+
   public function get_single_surat_perintah_perjalanan_dinas($hash_id) {
     $query = "SELECT * FROM surat_perintah_perjalanan_dinas WHERE hash_id = '$hash_id'";
 
