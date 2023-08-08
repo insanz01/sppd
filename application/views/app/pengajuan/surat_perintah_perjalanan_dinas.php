@@ -179,7 +179,12 @@
     const nip = target.value;
     const karyawan = await getDetailKaryawan(nip).then(res => res.data);
 
+    console.log(karyawan);
+
     document.getElementById('nama_karyawan').value = karyawan.nama
+    document.getElementById('pangkat').value = "pegawai";
+    document.getElementById('golongan').value = karyawan.golongan;
+    document.getElementById('jabatan').value = karyawan.jabatan;
   }
   const checkBiayaPesawat = async (data) => {
     console.log(data);
