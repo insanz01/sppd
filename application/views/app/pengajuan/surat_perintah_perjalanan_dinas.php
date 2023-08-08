@@ -95,7 +95,7 @@
                 </div>
                 <div class="form-group">
                   <label for="beban_anggaran_instansi">Beban Anggaran (Instansi)</label>
-                  <input type="text" name="beban_anggaran_instansi" class="form-control" id="beban_anggaran_instansi" required>
+                  <input type="text" name="beban_anggaran_instansi" class="form-control" id="beban_anggaran_instansi" value="Dinas Kesehatan Pangan, Pertanian dan Perikanan Kota Banjarmasin" required>
                 </div>
                 <div class="form-group">
                   <label for="beban_anggaran_mata_anggaran">Mata Anggaran</label>

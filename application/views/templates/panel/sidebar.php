@@ -163,6 +163,24 @@
                   <p>SPPD</p>
                 </a>
               </li>
+
+              <li class="nav-item">
+                <a href="<?= base_url('pengganti') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon ml-3"></i>
+                  <p>
+                    PENGGANTI SPPD
+                  </p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="<?= base_url('penolakan') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon ml-3"></i>
+                  <p>
+                    PENOLAKAN SPPD
+                  </p>
+                </a>
+              </li>
               <!-- <li class="nav-item">
                 <a href="<?= base_url('pengajuan/lpd') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon ml-3"></i>
@@ -170,24 +188,6 @@
                 </a>
               </li> -->
             </ul>
-          </li>
-
-          <li class="nav-item">
-            <a href="<?= base_url('pengganti') ?>" class="nav-link">
-              <i class="nav-icon fas fa-book"></i>
-              <p>
-                PENGGANTI SPPD
-              </p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="<?= base_url('penolakan') ?>" class="nav-link">
-              <i class="nav-icon fas fa-book"></i>
-              <p>
-                PENOLAKAN SPPD
-              </p>
-            </a>
           </li>
 
           <li class="nav-item has-treeview">
