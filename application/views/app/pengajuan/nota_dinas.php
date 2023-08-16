@@ -34,12 +34,13 @@
                   <label for="dari">Dari : </label>
                   <input type="text" class="form-control" name="dari" id="dari">
                 </div>
+                <input type="hidden" id="nomor_SPPD" name="nomor_SPPD">
                 <div class="form-group">
                   <label for="nomor_SPPD">Nomor SPPD</label>
-                  <select name="nomor_SPPD" id="nomor_SPPD" required class="form-control" onchange="pilihSPPD(this)">
+                  <select name="hash_id" id="hash_id" required class="form-control" onchange="pilihSPPD(this)">
                     <option value="">- PILIH -</option>
                     <?php foreach($SPPD as $sppd): ?>
-                      <option value="<?= $sppd['nomor_SPPD'] ?>">
+                      <option value="<?= $sppd['hash_id'] ?>">
                         <?= $sppd['nomor_SPPD'] ?>
                       </option>
                     <?php endforeach; ?>
@@ -84,12 +85,12 @@
 </div>
 
 <script>
-  const getDataSPPD = async (nomorSPPD) => {
-    return await axios.get(`<?= base_url() ?>api/sppd/${nomorSPPD}`).then(res => res.data);
+  const getDataSPPD = async (hash_id) => {
+    return await axios.get(`<?= base_url() ?>api/sppd/${hash_id}`).then(res => res.data);
   }
 
-  const getDataSPT = async (nomorSPPD) => {
-    return await axios.get(`<?= base_url() ?>api/spt/${nomorSPPD}`).then(res => res.data);
+  const getDataSPT = async (hash_id) => {
+    return await axios.get(`<?= base_url() ?>api/spt/${hash_id}`).then(res => res.data);
   }
 
   const setValue = (target, val) => {
@@ -101,9 +102,18 @@
   }
 
   const pilihSPPD = async (target) => {
-    const nomorSPPD = target.value;
-    const resultSPPD = await getDataSPPD(nomorSPPD);
-    const resultSPT = await getDataSPT(nomorSPPD);
+    const hash_id = target.value;
+
+    var selectElement = document.getElementById('hash_id');
+    var selectedOption = selectElement.options[selectElement.selectedIndex];
+    var label = selectedOption.label;
+
+    setValue("nomor_SPPD", label);
+
+    console.log('label', label);
+
+    const resultSPPD = await getDataSPPD(hash_id);
+    const resultSPT = await getDataSPT(hash_id);
 
     if(resultSPPD.success) {
       setValue("tanggal", resultSPPD.data.created_at);

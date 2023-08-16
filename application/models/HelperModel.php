@@ -9,8 +9,16 @@ class HelperModel extends CI_Model {
     return $this->db->get_where("surat_perintah_perjalanan_dinas", ['nomor_SPPD' => $nomor_SPPD])->row_array();
   }
 
+  public function get_detail_sppd_by_hash($hash_id) {
+    return $this->db->get_where("surat_perintah_perjalanan_dinas", ['hash_id' => $hash_id])->row_array();
+  }
+
   public function get_detail_spt($nomor_SPPD) {
     return $this->db->get_where("surat_perintah_tugas", ['nomor_SPPD' => $nomor_SPPD])->row_array();
+  }
+
+  public function get_detail_spt_by_hash($hash_id) {
+    return $this->db->get_where("surat_perintah_tugas", ['hash_id' => $hash_id])->row_array();
   }
 
   public function get_all_asal_pesawat() {

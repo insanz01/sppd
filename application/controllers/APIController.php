@@ -20,8 +20,8 @@ class APIController extends CI_Controller {
     echo json_encode($data, JSON_PRETTY_PRINT);
   }
 
-  public function sppd($nomor_SPPD) {
-    $sppd = $this->helper_m->get_detail_sppd($nomor_SPPD);
+  public function sppd($hash_id) {
+    $sppd = $this->helper_m->get_detail_sppd_by_hash($hash_id);
 
     $data = [
       "data" => $sppd,
@@ -31,8 +31,10 @@ class APIController extends CI_Controller {
     echo json_encode($data, JSON_PRETTY_PRINT);
   }
 
-  public function spt($nomor_SPPD) {
-    $spt = $this->helper_m->get_detail_spt($nomor_SPPD);
+  public function spt($hash_id) {
+    $sppd = $this->helper_m->get_detail_sppd_by_hash($hash_id);
+
+    $spt = $this->helper_m->get_detail_spt($sppd['nomor_SPPD']);
 
     $data = [
       "data" => $spt,
