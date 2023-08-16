@@ -19,7 +19,7 @@ class BatalkanModel extends CI_Model {
 
     $bulan_romawi = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"];
     $next_number = (string)($nomor_id + 1);
-    strlen($next_number);
+    $lenNumber = strlen($next_number);
     
     $nomor = "";
     for($i = 0; $i < (3 - $next_number); $i++) {

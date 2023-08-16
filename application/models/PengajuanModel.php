@@ -15,15 +15,14 @@ class PengajuanModel extends CI_Model {
     }
 
     $tahun = date("Y", time());
-    $bulan = date("m", time());
-    $bulan = (int)$bulan;
+    $bulan = intval(date("m", time()));
 
     $bulan_romawi = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"];
     $next_number = (string)($nomor_id + 1);
-    strlen($next_number);
+    $lenNumber = strlen($next_number);
     
     $nomor = "";
-    for($i = 0; $i < (3 - $next_number); $i++) {
+    for($i = 0; $i < (3 - $lenNumber); $i++) {
       $nomor .= "0";
     }
 
