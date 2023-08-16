@@ -69,6 +69,8 @@ class PengajuanController extends CI_Controller {
   public function add_surat_perintah_perjalanan_dinas() {
     $data = $this->input->post();
 
+    $data['status'] = 0;
+
     $hash_id = $this->pengajuan_m->insert_surat_perintah_perjalanan_dinas($data);
     if($hash_id) {
       redirect('surat/sppd/' . $hash_id);
