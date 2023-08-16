@@ -96,12 +96,37 @@
     return await axios.get(`<?= base_url() ?>api/karyawan/${NIP}`).then(res => res.data);
   }
 
+  const getBiaya = async (target, name) => {
+    return await axios.get(`<?= base_url() ?>api/biaya/${target}/${name}`).then(res => res.data);
+  }
+
   const setValue = (target, val) => {
     document.getElementById(target).value = val;
   }
 
   const setInnerHTML = (target, val) => {
     document.getElementById(target).innerHTML = val;
+  }
+
+  const rincianBiaya = async (data) => {
+    const biayaHotel = await getBiaya("hotel", data.tempat_tujuan);
+    const biayaPesawat = await getBiaya("pesawat", data.tujuan_satu);
+    const biayaHarian = await getBiaya("harian", data.tempat_tujuan);
+    const biayaTaxi = await getBiaya("taxi", data.tempat_tujuan);
+    const biayaSewa = await getBiaya("sewa", data.tempat_tujuan);
+
+    let totalBiaya = parseInt(biayaHotel.data.besaran);
+    totalBiaya += parseInt(biayaHarian.data.besaran);
+    totalBiaya += parseInt(biayaTaxi.data.besaran);
+    totalBiaya += parseInt(biayaSewa.data.besaran);
+
+    if(data.kelas_penerbangan == "BISNIS") {
+      totalBiaya += parseInt(biayaPesawat.data.kelas_bisnis);
+    } else {
+      totalBiaya += parseInt(biayaPesawat.data.kelas_ekonomi);
+    }
+
+    setValue("jumlah_biaya", totalBiaya);
   }
 
   const pilihSPPD = async (target) => {
@@ -117,6 +142,8 @@
 
     const resultSPPD = await getDataSPPD(hash_id);
 
+    console.log("SPPD", resultSPPD);
+
     if(resultSPPD.success) {
       const NIP = resultSPPD.data.nip_karyawan;
 
@@ -127,8 +154,10 @@
       console.log("user_id", karyawan.data.user_id);
 
       setValue("user_id", karyawan.data.user_id);
+
+      await rincianBiaya(resultSPPD.data);
       
-      if(karyawan.status) {
+      if(karyawan.success) {
         console.log("user_id", karyawan.data.user_id);
       }
     }

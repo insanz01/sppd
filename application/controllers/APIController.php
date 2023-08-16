@@ -20,6 +20,61 @@ class APIController extends CI_Controller {
     echo json_encode($data, JSON_PRETTY_PRINT);
   }
 
+  public function biaya_sewa($provinsi) {
+    $biaya = $this->helper_m->get_biaya_sewa($provinsi);
+
+    $data = [
+      "data" => $biaya,
+      "success" => true
+    ];
+
+    echo json_encode($data, JSON_PRETTY_PRINT);
+  }
+
+  public function biaya_taxi($provinsi) {
+    $biaya = $this->helper_m->get_biaya_taxi($provinsi);
+
+    $data = [
+      "data" => $biaya,
+      "success" => true
+    ];
+
+    echo json_encode($data, JSON_PRETTY_PRINT);
+  }
+
+  public function biaya_harian($provinsi) {
+    $biaya = $this->helper_m->get_biaya_harian($provinsi);
+
+    $data = [
+      "data" => $biaya,
+      "success" => true
+    ];
+
+    echo json_encode($data, JSON_PRETTY_PRINT);
+  }
+
+  public function biaya_pesawat($kabupaten) {
+    $biaya = $this->helper_m->get_biaya_pesawat($kabupaten);
+
+    $data = [
+      "data" => $biaya,
+      "success" => true
+    ];
+
+    echo json_encode($data, JSON_PRETTY_PRINT);
+  }
+
+  public function biaya_hotel($provinsi) {
+    $biaya = $this->helper_m->get_biaya_hotel($provinsi);
+
+    $data = [
+      "data" => $biaya,
+      "success" => true
+    ];
+
+    echo json_encode($data, JSON_PRETTY_PRINT);
+  }
+
   public function sppd($hash_id) {
     $sppd = $this->helper_m->get_detail_sppd_by_hash($hash_id);
 
@@ -100,7 +155,7 @@ class APIController extends CI_Controller {
 
       echo json_encode($data, JSON_PRETTY_PRINT);
     } else {
-      $perjalanan = $this->helper_m->get_biaya_pesawat($asal, $tujuan);
+      $perjalanan = $this->helper_m->get_biaya_pesawat_v2($asal, $tujuan);
 
       $biaya = 0;
       if($kelas == "EKONOMI") {

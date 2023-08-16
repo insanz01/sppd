@@ -133,6 +133,13 @@ $route['api/spt/(:any)'] = 'APIController/spt/$1';
 $route['api/provinsi'] = 'APIController/provinsi';
 $route['api/kabupaten/(:any)'] = 'APIController/kabupaten/$1';
 
+$route['api/biaya/hotel/(:any)'] = "APIController/biaya_hotel/$1";
+$route['api/biaya/pesawat/(:any)'] = "APIController/biaya_pesawat/$1";
+$route['api/biaya/harian/(:any)'] = "APIController/biaya_harian/$1";
+$route['api/biaya/taxi/(:any)'] = "APIController/biaya_taxi/$1";
+$route['api/biaya/sewa/(:any)'] = "APIController/biaya_sewa/$1";
+
+
 $route['bulk/lpd/print'] = "SuratController/bulk_laporan_perjalanan_dinas";
 $route['bulk/sppd/print'] = "SuratController/bulk_surat_perintah_perjalanan_dinas";
 $route['bulk/spt/print'] = "SuratController/bulk_surat_perintah_tugas";
