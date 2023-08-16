@@ -26,7 +26,7 @@
           <div class="card">
             <div class="card-body">
               <form action="<?= base_url('pengajuan/add_spt') ?>" method="post">
-                <div class="form-group">
+                <!-- <div class="form-group">
                   <label for="nomor_sppd">Nomor SPPD</label>
                   <select name="nomor_sppd" id="nomor_sppd" required class="form-control">
                     <option value="">- PILIH -</option>
@@ -36,8 +36,7 @@
                       </option>
                     <?php endforeach; ?>
                   </select>
-                  <!-- <input type="text" name="nomor_sppd" class="form-control" id="nomor_sppd" required> -->
-                </div>
+                </div> -->
                 <div class="form-group">
                   <label for="nip_karyawan">NIP Karyawan (Yang diperintah)</label>
                   <select name="nip_karyawan" id="nip_karyawan" class="form-control" onchange="getKaryawanName(this)">

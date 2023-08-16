@@ -42,7 +42,7 @@
     </div>
     
     <h1 class="text-center">SURAT PERINTAH TUGAS</h1>
-    <h4 class="text-center">SPPD NOMOR : <?= $surat['nomor_sppd']; ?></h4>
+    <h4 class="text-center">SPPD NOMOR : <?= $surat['nomor_SPPD']; ?></h4>
 
     <div class="row mt-4">
       <div class="col-9 mx-auto">

@@ -43,6 +43,7 @@ class PengajuanModel extends CI_Model {
     $hash_id = password_hash(time(), PASSWORD_DEFAULT);
 
     $data['hash_id'] = base64_encode($hash_id);
+    $data['nomor_SPPD'] = $this->generate_nomor_SPPD();
 
     $this->db->insert('surat_perintah_tugas', $data);
     return $data['hash_id'];
@@ -65,7 +66,7 @@ class PengajuanModel extends CI_Model {
   }
 
   private function generate_nomor_SPPD() {
-    $query = "SELECT id FROM surat_perintah_perjalanan_dinas ORDER BY id DESC LIMIT 1";
+    $query = "SELECT id FROM surat_perintah_tugas ORDER BY id DESC LIMIT 1";
     $exist_sppd = $this->db->query($query)->row_array();
 
     $nomor_id = 0;
@@ -94,7 +95,7 @@ class PengajuanModel extends CI_Model {
     $hash_id = password_hash(time(), PASSWORD_DEFAULT);
 
     $data['hash_id'] = base64_encode($hash_id);
-    $data['nomor_SPPD'] = $this->generate_nomor_SPPD();
+    // $data['nomor_SPPD'] = $this->generate_nomor_SPPD();
 
     $this->db->insert('surat_perintah_perjalanan_dinas', $data);
     return $data['hash_id'];
