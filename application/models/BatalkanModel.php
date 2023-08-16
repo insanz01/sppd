@@ -32,7 +32,7 @@ class BatalkanModel extends CI_Model {
   }
 
   public function get_all_sppd() {
-    return $this->db->get_where("surat_perintah_perjalanan_dinas", ["status" => 1])->result_array();
+    return $this->db->get_where("surat_perintah_perjalanan_dinas", ["status" => -1])->result_array();
   }
   
   public function get_single_sppd($hash_sppd) {
@@ -40,11 +40,31 @@ class BatalkanModel extends CI_Model {
   }
 
   public function get_all_pembatalan_sppd() {
-    return $this->db->get_where("surat_perintah_perjalanan_dinas", ["status" => -1])->result_array();
+    $batalkan = $this->db->get("batalkan_perintah_tugas")->result_array();
+
+    $results = [];
+
+    foreach($batalkan as $b) {
+      $sppd = $this->db->get_where("surat_perintah_perjalanan_dinas", ["status" => -1, "hash_id" => $b['sppd_hash']])->row_array();
+
+      array_push($results, $sppd);
+    }
+
+    return $results;
   }
   
   public function get_all_pembatalan_sppd_with_NIP($NIP) {
-    return $this->db->get_where("surat_perintah_perjalanan_dinas", ["status" => -1, "nip_karyawan" => $NIP])->result_array();
+    $batalkan = $this->db->get_where("batalkan_perintah_tugas", ["nip_pegawai" => $NIP])->result_array();
+
+    $results = [];
+
+    foreach($batalkan as $b) {
+      $sppd = $this->db->get_where("surat_perintah_perjalanan_dinas", ["status" => -1, "hash_id" => $b['sppd_hash']])->row_array();
+
+      array_push($results, $sppd);
+    }
+
+    return $results;
   }
 
   public function batalkan_perintah_tugas($data, $sppd_hash_id) {
