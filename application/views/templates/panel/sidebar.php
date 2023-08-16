@@ -312,6 +312,12 @@
                   <p>Taxi</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="<?= base_url('biaya/transportasi') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon ml-3"></i>
+                  <p>Sewa Transportasi</p>
+                </a>
+              </li>
             </ul>
           </li>
 
@@ -328,6 +334,12 @@
                 <a href="<?= base_url('biaya/harian') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon ml-3"></i>
                   <p>Uang Harian</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('biaya/hotel') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon ml-3"></i>
+                  <p>Biaya Hotel</p>
                 </a>
               </li>
               <!-- <li class="nav-item">
