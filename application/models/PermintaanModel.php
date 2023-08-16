@@ -23,6 +23,12 @@ class PermintaanModel extends CI_Model {
     $this->db->set("status", -1);
     $this->db->where("hash_id", $data['hash_id']);
     $this->db->update("surat_perintah_perjalanan_dinas");
+
+    $sppd = $this->db->get_where("surat_perintah_perjalanan_dinas", ["hash_id" => $data['hash_id']])->row_array();
+
+    $this->db->set("status", -1);
+    $this->db->where("nomor_SPPD", $sppd['nomor_SPPD']);
+    $this->db->update("surat_perintah_tugas");
     
     return $this->db->insert("tolak_surat_perintah_perjalanan_dinas", $data);
   }

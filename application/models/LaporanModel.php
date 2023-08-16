@@ -137,6 +137,7 @@ class LaporanModel extends CI_Model {
 
   public function get_all_surat_perintah_perjalanan_dinas_existing($source = "surat_perintah_tugas") {
     $sourceTable = "surat_perintah_tugas";
+    $additionalQuery = "";
 
     $attrName = "nomor_SPPD";
     $attrTarget = "nomor_SPPD";
@@ -144,6 +145,7 @@ class LaporanModel extends CI_Model {
       $attrName = "nomor_SPPD";
     } else if($source == "biaya_perjalanan_dinas") {
       $attrName = "nomor_SPPD";
+      $additionalQuery = " AND status != -1";
     } else if($source == "laporan_perjalanan_dinas") {
       $attrName = "perihal";
       $attrTarget = "maksud_perjalanan_dinas";
@@ -154,7 +156,7 @@ class LaporanModel extends CI_Model {
       $sourceTable = "surat_perintah_perjalanan_dinas";
     }
 
-    $query = "SELECT * FROM $sourceTable WHERE $attrTarget NOT IN (SELECT $attrName FROM $source)";
+    $query = "SELECT * FROM $sourceTable WHERE $attrTarget NOT IN (SELECT $attrName FROM $source) $additionalQuery";
     
     return $this->db->query($query)->result_array();
   }
