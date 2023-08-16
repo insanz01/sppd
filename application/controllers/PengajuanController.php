@@ -300,9 +300,11 @@ class PengajuanController extends CI_Controller {
     $acceptance_sppd = [];
 
     foreach($all_SPPD as $sppd) {
-      if($sppd['nip_karyawan'] == $this->session->userdata("SESS_SPPD_NIP")) {
-        array_push($acceptance_sppd, $sppd);
-      }
+      // if($sppd['nip_karyawan'] == $this->session->userdata("SESS_SPPD_NIP")) {
+      //   array_push($acceptance_sppd, $sppd);
+      // }
+      // $sppd['user_id'] = 
+      array_push($acceptance_sppd, $sppd);
     }
 
     $data['SPPD'] = $acceptance_sppd;

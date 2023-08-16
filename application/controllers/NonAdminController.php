@@ -6,11 +6,14 @@ class NonAdminController extends CI_Controller {
 
     $this->load->model('PengajuanModel', 'pengajuan_m');
     $this->load->model('LaporanModel', 'laporan_m');
+    $this->load->model("HelperModel", "helper_m");
   }
 
   public function biaya_perjalanan_dinas() {
     $data['file_template'] = "dokumen/template_bpd.xlsx";
     $data['SPPD'] = $this->laporan_m->get_all_surat_perintah_perjalanan_dinas_existing("biaya_perjalanan_dinas");
+    
+    $data['karyawan'] = $this->helper_m->get_all_karyawan();
 
     $this->load->view('templates/panel/header');
     $this->load->view('templates/panel/sidebar');
@@ -42,9 +45,10 @@ class NonAdminController extends CI_Controller {
   }
 
   public function add_biaya_perjalanan_dinas() {
-    $data = [
-      'user_id' => $this->session->userdata('SESS_SPPD_USERID')
-    ];
+    // $data = [
+    //   'user_id' => $this->session->userdata('SESS_SPPD_USERID')
+    // ];
+    $data = $this->input->post();
 
     $config['upload_path']          = 'uploads/documents/';
     $config['allowed_types']        = 'docx|doc|xlsx|xls|pdf';

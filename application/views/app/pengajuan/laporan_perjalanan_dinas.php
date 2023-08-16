@@ -44,7 +44,7 @@
                     <option value=""></option>
                     <?php foreach($SPPD as $s): ?>
                       <option value="<?= $s['maksud_perjalanan_dinas'] ?>">
-                        <?= $s['maksud_perjalanan_dinas'] ?>
+                        <?= $s['maksud_perjalanan_dinas'] ?> - [<?= $s['nomor_SPPD'] ?>]
                       </option>
                     <?php endforeach; ?>
                   </select>

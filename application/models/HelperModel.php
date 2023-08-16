@@ -5,6 +5,10 @@ class HelperModel extends CI_Model {
     parent::__construct();
   }
 
+  public function get_all_karyawan() {
+    return $this->db->get("karyawan")->result_array();
+  }
+
   public function get_detail_sppd($nomor_SPPD) {
     return $this->db->get_where("surat_perintah_perjalanan_dinas", ['nomor_SPPD' => $nomor_SPPD])->row_array();
   }

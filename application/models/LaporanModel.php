@@ -133,6 +133,7 @@ class LaporanModel extends CI_Model {
     } else if($source == "laporan_perjalanan_dinas") {
       $attrName = "perihal";
       $attrTarget = "maksud_perjalanan_dinas";
+      $sourceTable = "surat_perintah_perjalanan_dinas";
     } else if($source == "surat_perintah_perjalanan_dinas") {
       $attrName = "nomor_SPPD";
     } else if($source == "nota_dinas") {

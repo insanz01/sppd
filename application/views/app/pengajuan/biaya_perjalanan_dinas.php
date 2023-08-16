@@ -26,12 +26,14 @@
           <div class="card">
             <div class="card-body">
               <form action="<?= base_url('pengajuan/add_bpd') ?>" method="post" enctype="multipart/form-data">
+                <input type="hidden" id="nomor_SPPD" name="nomor_SPPD">
+                <input type="hidden" id="user_id" name="user_id">
                 <div class="form-group">
                   <label for="nomor_SPPD">Nomor SPPD</label>
-                  <select name="nomor_SPPD" class="form-control" id="nomor_SPPD" required>
+                  <select name="hash_id" class="form-control" id="hash_id" required onchange="pilihSPPD(this)">
                     <option value="">- PILIH -</option>
                     <?php foreach($SPPD as $sppd): ?>
-                      <option value="<?= $sppd['nomor_SPPD'] ?>"><?= $sppd['nomor_SPPD'] ?> | [ <?= $sppd['maksud_perjalanan_dinas'] ?> ]</option>
+                      <option value="<?= $sppd['hash_id'] ?>"><?= $sppd['nomor_SPPD'] ?> | [ <?= $sppd['maksud_perjalanan_dinas'] ?> ]</option>
                     <?php endforeach; ?>
                   </select>
                   <!-- <input type="text" name="nomor_SPPD" class="form-control" id="nomor_SPPD" required> -->
@@ -86,7 +88,50 @@
 </div>
 
 <script>
-  // const getNameOfMember = () => {
+  const getDataSPPD = async (hash_id) => {
+    return await axios.get(`<?= base_url() ?>api/sppd/${hash_id}`).then(res => res.data);
+  }
 
-  // }
+  const getDataKaryawan = async (NIP) => {
+    return await axios.get(`<?= base_url() ?>api/karyawan/${NIP}`).then(res => res.data);
+  }
+
+  const setValue = (target, val) => {
+    document.getElementById(target).value = val;
+  }
+
+  const setInnerHTML = (target, val) => {
+    document.getElementById(target).innerHTML = val;
+  }
+
+  const pilihSPPD = async (target) => {
+    const hash_id = target.value;
+
+    var selectElement = document.getElementById('hash_id');
+    var selectedOption = selectElement.options[selectElement.selectedIndex];
+    var label = selectedOption.label;
+
+    setValue("nomor_SPPD", label);
+
+    console.log('label', label);
+
+    const resultSPPD = await getDataSPPD(hash_id);
+
+    if(resultSPPD.success) {
+      const NIP = resultSPPD.data.nip_karyawan;
+
+      const karyawan = await getDataKaryawan(NIP);
+
+      console.log(karyawan);
+
+      console.log("user_id", karyawan.data.user_id);
+
+      setValue("user_id", karyawan.data.user_id);
+      
+      if(karyawan.status) {
+        console.log("user_id", karyawan.data.user_id);
+      }
+    }
+
+  }
 </script>
