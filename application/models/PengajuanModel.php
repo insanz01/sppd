@@ -5,6 +5,33 @@ class PengajuanModel extends CI_Model {
     parent::__construct();
   }
 
+  private function generate_nomor_SPPD() {
+    $query = "SELECT id FROM surat_perintah_tugas ORDER BY id DESC LIMIT 1";
+    $exist_sppd = $this->db->query($query)->row_array();
+
+    $nomor_id = 0;
+    if($exist_sppd) {
+      $nomor_id = $exist_sppd['id'];
+    }
+
+    $tahun = date("Y", time());
+    $bulan = date("m", time());
+    $bulan = (int)$bulan;
+
+    $bulan_romawi = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"];
+    $next_number = (string)($nomor_id + 1);
+    strlen($next_number);
+    
+    $nomor = "";
+    for($i = 0; $i < (3 - $next_number); $i++) {
+      $nomor .= "0";
+    }
+
+    $nomor .= $next_number;
+
+    return "12.$nomor/DKP3-KB/$bulan_romawi[$bulan]/$tahun";
+  }
+
   public function insert_laporan_perjalanan_dinas($data) {
     $hash_id = password_hash(time(), PASSWORD_DEFAULT);
 
@@ -63,32 +90,6 @@ class PengajuanModel extends CI_Model {
 
   public function delete_surat_perintah_tugas($hash_id) {
     return $this->db->delete('surat_perintah_tugas', ['hash_id' => $hash_id]);
-  }
-
-  private function generate_nomor_SPPD() {
-    $query = "SELECT id FROM surat_perintah_tugas ORDER BY id DESC LIMIT 1";
-    $exist_sppd = $this->db->query($query)->row_array();
-
-    $nomor_id = 0;
-    if($exist_sppd) {
-      $nomor_id = $exist_sppd['id'];
-    }
-
-    $tahun = date("Y", time());
-    $bulan = date("m", time());
-
-    $bulan_romawi = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"];
-    $next_number = (string)($nomor_id + 1);
-    strlen($next_number);
-    
-    $nomor = "";
-    for($i = 0; $i < (3 - $next_number); $i++) {
-      $nomor += "0";
-    }
-
-    $nomor += $next_number;
-
-    return "12.$nomor/DKP3-KB/$bulan_rowawi[$bulan]/$tahun";
   }
   
   public function insert_surat_perintah_perjalanan_dinas($data) {

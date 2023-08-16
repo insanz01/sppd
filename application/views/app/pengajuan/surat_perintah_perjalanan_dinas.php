@@ -31,6 +31,17 @@
                   <input type="text" name="author" class="form-control" id="author" required>
                 </div>
                 <div class="form-group">
+                  <label for="nomor_sppd">Nomor SPPD</label>
+                  <select name="nomor_sppd" id="nomor_sppd" required class="form-control">
+                    <option value="">- PILIH -</option>
+                    <?php foreach($SPPD as $sppd): ?>
+                      <option value="<?= $sppd['nomor_SPPD'] ?>">
+                        <?= $sppd['nomor_SPPD'] ?>
+                      </option>
+                    <?php endforeach; ?>
+                  </select>
+                </div>
+                <div class="form-group">
                   <label for="nip_karyawan">NIP Karyawan</label>
                   <select name="nip_karyawan" id="nip_karyawan" class="form-control" onchange="getKaryawanName(this)">
                     <option value="">- PILIH - </option>
