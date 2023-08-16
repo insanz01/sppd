@@ -32,7 +32,9 @@ class BatalkanModel extends CI_Model {
   }
 
   public function get_all_sppd() {
-    return $this->db->get_where("surat_perintah_perjalanan_dinas", ["status" => -1])->result_array();
+    $query = "SELECT * FROM surat_perintah_perjalanan_dinas WHERE status = -1 AND hash_id NOT IN (SELECT sppd_hash FROM batalkan_perintah_tugas)";
+
+    return $this->db->query($query)->result_array();
   }
   
   public function get_single_sppd($hash_sppd) {
