@@ -5,6 +5,7 @@ class BiayaController extends CI_Controller {
     parent::__construct();
 
     $this->load->model("BiayaModel", "biaya_m");
+    $this->load->model("RegionalModel", "regional_m");
   }
 
   public function list_biaya_pesawat() {
@@ -18,10 +19,12 @@ class BiayaController extends CI_Controller {
   }
 
   public function add_biaya_pesawat() {
+    $data['kabupaten'] = $this->regional_m->get_all_kabupaten();
+
     $this->load->view('templates/panel/header');
     $this->load->view('templates/panel/sidebar');
     $this->load->view('templates/panel/navbar');
-    $this->load->view('app/biaya/pesawat/add');
+    $this->load->view('app/biaya/pesawat/add', $data);
     $this->load->view('templates/panel/footer');
   }
 
@@ -38,6 +41,7 @@ class BiayaController extends CI_Controller {
   }
 
   public function edit_biaya_pesawat($id) {
+    $data['kabupaten'] = $this->regional_m->get_all_kabupaten();
     $data['biaya'] = $this->biaya_m->get_single_biaya_pesawat($id);
     $data['id'] = $id;
 
@@ -83,10 +87,12 @@ class BiayaController extends CI_Controller {
   }
 
   public function add_biaya_taxi() {
+    $data['provinsi'] = $this->regional_m->get_all_provinsi();
+
     $this->load->view('templates/panel/header');
     $this->load->view('templates/panel/sidebar');
     $this->load->view('templates/panel/navbar');
-    $this->load->view('app/biaya/taxi/add');
+    $this->load->view('app/biaya/taxi/add', $data);
     $this->load->view('templates/panel/footer');
   }
 
@@ -103,6 +109,7 @@ class BiayaController extends CI_Controller {
   }
 
   public function edit_biaya_taxi($id) {
+    $data['provinsi'] = $this->regional_m->get_all_provinsi();
     $data['biaya'] = $this->biaya_m->get_single_biaya_taxi($id);
     $data['id'] = $id;
 
@@ -148,10 +155,12 @@ class BiayaController extends CI_Controller {
   }
 
   public function add_biaya_harian() {
+    $data['provinsi'] = $this->regional_m->get_all_provinsi();
+
     $this->load->view('templates/panel/header');
     $this->load->view('templates/panel/sidebar');
     $this->load->view('templates/panel/navbar');
-    $this->load->view('app/biaya/harian/add');
+    $this->load->view('app/biaya/harian/add', $data);
     $this->load->view('templates/panel/footer');
   }
 
@@ -168,6 +177,7 @@ class BiayaController extends CI_Controller {
   }
 
   public function edit_biaya_harian($id) {
+    $data['provinsi'] = $this->regional_m->get_all_provinsi();
     $data['biaya'] = $this->biaya_m->get_single_biaya_harian($id);
     $data['id'] = $id;
 

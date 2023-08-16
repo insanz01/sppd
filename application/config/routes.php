@@ -119,6 +119,9 @@ $route['api/karyawan/(:any)'] = 'APIController/karyawan_by_NIP/$1';
 $route['api/anggaran/(:any)/(:any)/(:any)'] = "APIController/beban_anggaran_pesawat/$1/$2/$3";
 $route['api/jabatan/chart'] = 'APIController/chart_jabatan';
 
+$route['api/provinsi'] = 'APIController/provinsi';
+$route['api/kabupaten/(:any)'] = 'APIController/kabupaten/$1';
+
 $route['bulk/lpd/print'] = "SuratController/bulk_laporan_perjalanan_dinas";
 $route['bulk/sppd/print'] = "SuratController/bulk_surat_perintah_perjalanan_dinas";
 $route['bulk/spt/print'] = "SuratController/bulk_surat_perintah_tugas";

@@ -28,11 +28,19 @@
               <form action="<?= base_url('biaya/pesawat/do_add') ?>" method="post">
                 <div class="form-group">
                   <label for="kota_asal">Kota Asal</label>
-                  <input type="text" name="kota_asal" class="form-control" id="kota_asal" value="Banjarmasin" required>
+                  <input type="text" name="kota_asal" class="form-control" id="kota_asal" value="KOTA BANJARMASIN" required>
                 </div>
                 <div class="form-group">
                   <label for="kota_tujuan">Kota Tujuan</label>
-                  <input type="text" name="kota_tujuan" class="form-control" id="kota_tujuan" required>
+                  <input type="text" class="form-control" id="kota_tujuan" name="kota_tujuan" list="kabupatenOptions">
+
+                  <datalist id="kabupatenOptions">
+                    <?php foreach($kabupaten as $k): ?>
+                      <option value="<?= $k['name'] ?>">
+                    <?php endforeach; ?>
+                  </datalist>
+                  
+                  <!-- <input type="text" name="kota_tujuan" class="form-control" id="kota_tujuan" required> -->
                 </div>
 
                 <div class="form-group">

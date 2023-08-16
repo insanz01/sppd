@@ -28,7 +28,14 @@
               <form action="<?= base_url('biaya/harian/do_add') ?>" method="post">
                 <div class="form-group">
                   <label for="nama_provinsi">Nama Provinsi</label>
-                  <input type="text" name="nama_provinsi" class="form-control" id="nama_provinsi" value="Kalimantan Selatan" required>
+                  <select name="nama_provinsi" id="nama_provinsi" class="form-control">
+                    <?php foreach($provinsi as $p): ?>
+                      <option value="<?= $p['name'] ?>">
+                        <?= $p['name'] ?>
+                      </option>
+                    <?php endforeach; ?>
+                  </select>
+                  <!-- <input type="text" name="nama_provinsi" class="form-control" id="nama_provinsi" value="Kalimantan Selatan" required> -->
                 </div>
                 <div class="form-group">
                   <label for="satuan">Satuan</label>

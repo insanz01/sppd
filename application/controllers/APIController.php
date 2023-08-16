@@ -6,6 +6,7 @@ class APIController extends CI_Controller {
 
     $this->load->model("KaryawanModel", "karyawan_m");
     $this->load->model("HelperModel", "helper_m");
+    $this->load->model("RegionalModel", "regional_m");
   }
 
   public function chart_jabatan() {
@@ -13,6 +14,32 @@ class APIController extends CI_Controller {
 
     $data = [
       "data" => $jabatan,
+      "success" => true
+    ];
+
+    echo json_encode($data, JSON_PRETTY_PRINT);
+  }
+
+  public function provinsi() {
+    $provinsi = $this->regional_m->get_all_provinsi();
+
+    $data = [
+      "data" => $provinsi,
+      "success" => true
+    ];
+
+    echo json_encode($data, JSON_PRETTY_PRINT);
+  }
+
+  public function kabupaten($id_provinsi = null) {
+    $kabupaten = $this->regional_m->get_all_kabupaten();
+
+    if($id) {
+      $kabupaten = $this->regional_m->get_all_kabupaten_by_provinsi_id($id_provinsi);
+    }
+
+    $data = [
+      "data" => $kabupaten,
       "success" => true
     ];
 
