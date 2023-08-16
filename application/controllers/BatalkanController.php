@@ -51,4 +51,16 @@ class BatalkanController extends CI_Controller {
     $this->load->view('app/batalkan/sppd/riwayat', $data);
     $this->load->view('templates/panel/footer');
   }
+
+  public function riwayat_na() {
+    $NIP = $this->session->userdata("SESS_SPPD_NIP");
+    
+    $data['batalkan'] = $this->batalkan_m->get_all_pembatalan_sppd_with_NIP($NIP);
+
+    $this->load->view('templates/panel/header');
+    $this->load->view('templates/panel/sidebar');
+    $this->load->view('templates/panel/navbar');
+    $this->load->view('app/batalkan/sppd/riwayat', $data);
+    $this->load->view('templates/panel/footer');
+  }
 }

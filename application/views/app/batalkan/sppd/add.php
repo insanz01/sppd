@@ -5,7 +5,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Tambah Biaya Perjalanan Dinas</h1>
+          <h1 class="m-0 text-dark">Batalkan Perjalanan Dinas</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <!-- <ol class="breadcrumb float-sm-right">
@@ -40,24 +40,24 @@
                 </div>
                 <div class="form-group">
                   <label for="SKPD_pegawai">SKPD Pegawai</label>
-                  <input type="text" name="SKPD_pegawai" class="form-control" id="SKPD_pegawai" required>
+                  <input type="text" name="SKPD_pegawai" class="form-control" id="SKPD_pegawai" value="Dinas Ketahanan Pangan, Pertanian dan Perikanan" required>
                 </div>
 
                 <div class="form-group">
                   <label for="nip_petugas">NIP Petugas</label>
-                  <input type="text" name="nip_petugas" class="form-control" id="nip_petugas" required>
+                  <input type="text" name="nip_petugas" class="form-control" id="nip_petugas" value="19650328.198803.1.009" required>
                 </div>
                 <div class="form-group">
                   <label for="nama_petugas">Nama Petugas</label>
-                  <input type="text" name="nama_petugas" class="form-control" id="nama_petugas" required>
+                  <input type="text" name="nama_petugas" class="form-control" id="nama_petugas" value="Ir. M. Makhmud, MS" required>
                 </div>
                 <div class="form-group">
                   <label for="jabatan_petugas">Jabatan Petugas</label>
-                  <input type="text" name="jabatan_petugas" class="form-control" id="jabatan_petugas" required>
+                  <input type="text" name="jabatan_petugas" class="form-control" id="jabatan_petugas" value="Pembina Utama Muda" required>
                 </div>
                 <div class="form-group">
                   <label for="SKPD_petugas">SKPD Petugas</label>
-                  <input type="text" name="SKPD_petugas" class="form-control" id="SKPD_petugas" required>
+                  <input type="text" name="SKPD_petugas" class="form-control" id="SKPD_petugas" value="Dinas Ketahanan Pangan, Pertanian dan Perikanan" required>
                 </div>
 
                 <div class="form-group">

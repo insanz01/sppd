@@ -191,6 +191,7 @@ $route['batalkan/sppd'] = "BatalkanController/index";
 $route['batalkan/sppd/add/(:any)'] = "BatalkanController/add/$1";
 $route['batalkan/sppd/riwayat'] = "BatalkanController/riwayat";
 $route['batalkan/sppd/do_batal/(:any)'] = "BatalkanController/do_batal/$1";
+$route['batalkan/sppd/riwayat_na'] = "BatalkanController/riwayat_na";
 
 $route['permintaan/sppd'] = "PermintaanController/sppd";
 $route['permintaan/sppd/approve/(:any)'] = "PermintaanController/sppd_approve/$1";

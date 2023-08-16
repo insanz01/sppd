@@ -42,6 +42,10 @@ class BatalkanModel extends CI_Model {
   public function get_all_pembatalan_sppd() {
     return $this->db->get_where("surat_perintah_perjalanan_dinas", ["status" => -1])->result_array();
   }
+  
+  public function get_all_pembatalan_sppd_with_NIP($NIP) {
+    return $this->db->get_where("surat_perintah_perjalanan_dinas", ["status" => -1, "nip_karyawan" => $NIP])->result_array();
+  }
 
   public function batalkan_perintah_tugas($data, $sppd_hash_id) {
     $this->db->set("status", -1);

@@ -172,7 +172,7 @@ class PengajuanModel extends CI_Model {
   }
 
   public function get_surat_pembatalan_tugas_perjalanan_dinas($hash_id) {
-    return $this->db->get('batalkan_perintah_tugas', ['sppd_hash' => $hash_id])->row_array();
+    return $this->db->get_where('batalkan_perintah_tugas', ['sppd_hash' => $hash_id])->row_array();
   }
 
   // bulk

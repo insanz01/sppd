@@ -126,12 +126,12 @@
           <tr>
             <td width="30%"></td>
             <td width="40%"></td>
-            <td width="30%" class="text-center">Ir. M. Makhmud, MS</td>
+            <td width="30%" class="text-center">Plt. BUPATI KABUPATEN BANJAR</td>
           </tr>
           <tr>
             <td width="30%"></td>
             <td width="40%"></td>
-            <td width="30%" class="text-center">NIP. 19650328 198803 1 009</td>
+            <td width="30%" class="text-center">H. Saidi Mansyur, S.I. Kom</td>
           </tr>
         </table>
       </div>

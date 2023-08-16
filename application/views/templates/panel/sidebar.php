@@ -83,6 +83,12 @@
             </ul>
           </li>
           <li class="nav-item">
+            <a href="<?= base_url('batalkan/sppd/riwayat_na') ?>" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p>RIWAYAT PEMBATALAN</p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="<?= base_url('permintaan/sppd') ?>" class="nav-link">
               <i class="nav-icon fas fa-envelope"></i>
               <p>
@@ -136,7 +142,7 @@
               <li class="nav-item">
                 <a href="<?= base_url('karyawan') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon ml-3"></i>
-                  <p>Pegawai</p>
+                  <p>PEGAWAI</p>
                 </a>
               </li>
             </ul>
