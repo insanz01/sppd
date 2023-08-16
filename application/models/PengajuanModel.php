@@ -193,6 +193,16 @@ class PengajuanModel extends CI_Model {
   }
 
   // list
+  public function get_list_nota_dinas($filter) {
+    if($filter['filter_awal'] && $filter['filter_akhir']) {
+      $query = "SELECT * FROM nota_dinas WHERE DATE(created_at) BETWEEN '$filter[filter_awal]' AND '$filter[filter_akhir]' OR DATE(created_at) = '$filter[filter_awal]' OR DATE(created_at) = '$filter[filter_akhir]'";
+
+      return $this->db->query($query)->result_array();
+    }
+
+    return $this->db->get_where('nota_dinas')->result_array();
+  }
+
   public function get_list_laporan_perjalanan_dinas($filter) {
     if($filter['filter_awal'] && $filter['filter_akhir']) {
       $query = "SELECT * FROM laporan_perjalanan_dinas WHERE DATE(created_at) BETWEEN '$filter[filter_awal]' AND '$filter[filter_akhir]' OR DATE(created_at) = '$filter[filter_awal]' OR DATE(created_at) = '$filter[filter_akhir]'";

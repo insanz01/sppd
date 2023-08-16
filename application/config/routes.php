@@ -107,6 +107,7 @@ $route['surat/nd/(:any)'] = "SuratController/nota_dinas/$1";
 $route['laporan/sppd'] = "LaporanController/surat_perintah_perjalanan_dinas";
 $route['laporan/lpd'] = "LaporanController/laporan_perjalanan_dinas";
 $route['laporan/bpd'] = "LaporanController/biaya_perjalanan_dinas";
+$route['laporan/nd'] = "LaporanController/nota_dinas";
 
 $route['laporan/spt'] = "LaporanController/surat_perintah_tugas";
 
@@ -141,6 +142,7 @@ $route['list/lpd/print'] = "SuratController/list_laporan_perjalanan_dinas";
 $route['list/sppd/print'] = "SuratController/list_surat_perintah_perjalanan_dinas";
 $route['list/spt/print'] = "SuratController/list_surat_perintah_tugas";
 $route['list/bpd/print'] = "SuratController/list_biaya_perjalanan_dinas";
+$route['list/nd/print'] = "SuratController/list_nota_dinas";
 
 $route['biaya/pesawat'] = "BiayaController/list_biaya_pesawat";
 $route['biaya/pesawat/add'] = "BiayaController/add_biaya_pesawat";

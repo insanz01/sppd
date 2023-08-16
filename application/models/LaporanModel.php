@@ -19,6 +19,9 @@ class LaporanModel extends CI_Model {
       case "biaya_perjalanan_dinas":
         return $this->get_all_biaya_perjalanan_dinas();
         break;
+      case "nota_dinas":
+        return $this->get_all_nota_dinas();
+        break;
     }
   }
 
@@ -87,6 +90,9 @@ class LaporanModel extends CI_Model {
       case "biaya_perjalanan_dinas":
         return $this->get_all_biaya_perjalanan_dinas_by_user_filter($filter);
         break;
+      case "nota_dinas":
+        return $this->get_all_nota_dinas_filter($filter);
+        break;
     }
   }
 
@@ -113,6 +119,14 @@ class LaporanModel extends CI_Model {
     }
 
     return $results;
+  }
+
+  public function get_all_nota_dinas() {
+    $query = "SELECT * FROM nota_dinas";
+
+    $nd = $this->db->query($query)->result_array();
+
+    return $nd;
   }
 
   public function get_all_surat_perintah_perjalanan_dinas() {
@@ -355,6 +369,12 @@ class LaporanModel extends CI_Model {
   }
 
   // FILTER
+  public function get_all_nota_dinas_filter($filter) {
+    $query = "SELECT * FROM nota_dinas WHERE DATE(created_at) BETWEEN '$filter[filter_awal]' AND '$filter[filter_akhir]' OR DATE(created_at) = '$filter[filter_awal]' OR DATE(created_at) = '$filter[filter_akhir]'";
+
+    return $this->db->query($query)->result_array();
+  }
+
   public function get_all_biaya_perjalanan_dinas_filter($filter) {
     $query = "SELECT * FROM biaya_perjalanan_dinas WHERE DATE(created_at) BETWEEN '$filter[filter_awal]' AND '$filter[filter_akhir]' OR DATE(created_at) = '$filter[filter_awal]' OR DATE(created_at) = '$filter[filter_akhir]'";
 

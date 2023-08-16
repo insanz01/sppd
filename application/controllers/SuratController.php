@@ -197,4 +197,18 @@ class SuratController extends CI_Controller {
 
     $this->load->view("app/list_print/biaya_perjalanan_dinas", $data);
   }
+
+  public function list_nota_dinas() {
+    $filter_awal = $this->session->userdata("FILTER_AWAL");
+    $filter_akhir = $this->session->userdata("FILTER_AKHIR");
+
+    $filter = [
+      'filter_awal' => $filter_awal,
+      'filter_akhir' => $filter_akhir
+    ];
+
+    $data['all_surat'] = $this->pengajuan_m->get_list_nota_dinas($filter);
+
+    $this->load->view("app/list_print/nota_dinas", $data);
+  }
 }

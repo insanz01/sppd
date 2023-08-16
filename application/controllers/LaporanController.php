@@ -106,4 +106,29 @@ class LaporanController extends CI_Controller {
     $this->load->view('app/laporan/biaya_perjalanan_dinas', $data);
     $this->load->view('templates/panel/footer');
   }
+
+  public function nota_dinas() {
+    $data['reports'] = $this->laporan_m->get_all_reports('nota_dinas');
+    
+    $filter_awal = $this->input->post('tanggal_awal');
+    $filter_akhir = $this->input->post('tanggal_akhir');
+    
+    if($filter_awal && $filter_akhir) {
+      $filter = [
+        'filter_awal' => $filter_awal,
+        'filter_akhir' => $filter_akhir
+      ];
+
+      $this->session->set_userdata("FILTER_AWAL", $filter_awal);
+      $this->session->set_userdata("FILTER_AKHIR", $filter_akhir);
+
+      $data['reports'] = $this->laporan_m->get_all_reports_filter('nota_dinas', $filter);
+    }
+
+    $this->load->view('templates/panel/header');
+    $this->load->view('templates/panel/sidebar');
+    $this->load->view('templates/panel/navbar');
+    $this->load->view('app/laporan/nota_dinas', $data);
+    $this->load->view('templates/panel/footer');
+  }
 }
