@@ -32,6 +32,7 @@
                   <th>Maksud Perjalanan Dinas</th>
                   <th>Tempat Tujuan</th>
                   <th>Lama Dinas</th>
+                  <th>Status</th>
                   <th>Aksi</th>
                 </thead>
                 <tbody>
@@ -43,6 +44,15 @@
                       <td><?= $b['maksud_perjalanan_dinas'] ?></td>
                       <td><?= $b['tempat_tujuan'] ?></td>
                       <td><?= $b['lama_dinas'] ?></td>
+                      <td>
+                        <?php if($b['status'] == -1): ?>
+                          Diterima
+                        <?php elseif($b['status'] == 1): ?>
+                          Ditolak
+                        <?php else: ?>
+                          Menunggu Konfirmasi
+                        <?php endif; ?>
+                      </td>
                       <td>
                         <a href="<?= base_url('permintaan/sppd/approve/') . $b['hash_id'] ?>" class="badge badge-sm badge-info badge-pill">setuju</a>
                         <a href="#!" class="badge badge-sm badge-danger badge-pill" data-toggle="modal" data-target="#rejectModal" onclick="showTolak(this)" data-id="<?= $b['hash_id'] ?>">tolak</a>

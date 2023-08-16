@@ -29,7 +29,9 @@
 
               <a href="<?= base_url("list/penyerahan_bpd/print") ?>" class="btn btn-primary mb-2" role="button" target="_blank">CETAK SEMUA</a>
 
-              <a href="<?= base_url('kwitansi/add') ?>" class="btn btn-primary float-right mb-2">TAMBAH PENYERAHAN BPD</a>
+              <?php if($this->session->userdata("SESS_SPPD_ROLEID") == 2): ?>
+                <a href="<?= base_url('kwitansi/add') ?>" class="btn btn-primary float-right mb-2">TAMBAH PENYERAHAN BPD</a>
+              <?php endif; ?>
             </div>
             <div class="col-12">
               <div class="card">
