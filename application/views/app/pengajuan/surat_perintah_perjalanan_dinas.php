@@ -235,7 +235,7 @@
       const result = await checkBiayaPesawat(data);
 
       if(result.success) {
-        document.getElementById("beban_anggaran_instansi").value = result.data.biaya;
+        // document.getElementById("beban_anggaran_instansi").value = result.data.biaya;
       }
     }
     

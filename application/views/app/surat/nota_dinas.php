@@ -94,7 +94,7 @@
         <table class="table custom-table" style="width: 100%">
           <tr>
             <td width="10%">Nama / NIP</td>
-            <td width="90%"><?= $makhluk['nama']; ?> / <?= $makhluk['NIP'] ?></td>
+            <td width="90%"><?= $makhluk['nama_karyawan']; ?> / <?= $makhluk['NIP'] ?></td>
           </tr>
           <tr>
             <td width="10%">Pangkat / Gol</td>
