@@ -97,6 +97,7 @@
   }
 
   const getBiaya = async (target, name) => {
+    name = name.replace(" ", "_");
     return await axios.get(`<?= base_url() ?>api/biaya/${target}/${name}`).then(res => res.data);
   }
 
@@ -126,6 +127,7 @@
       totalBiaya += parseInt(biayaPesawat.data.kelas_ekonomi);
     }
 
+    setValue("perincian_biaya", "HOTEL, PESAWAT, TAXI, UANG SEWA DAN UANG HARIAN")
     setValue("jumlah_biaya", totalBiaya);
   }
 

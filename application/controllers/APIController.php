@@ -21,6 +21,8 @@ class APIController extends CI_Controller {
   }
 
   public function biaya_sewa($provinsi) {
+    $provinsi = str_replace("_", " ", $provinsi);
+
     $biaya = $this->helper_m->get_biaya_sewa($provinsi);
 
     $data = [
@@ -32,6 +34,8 @@ class APIController extends CI_Controller {
   }
 
   public function biaya_taxi($provinsi) {
+    $provinsi = str_replace("_", " ", $provinsi);
+
     $biaya = $this->helper_m->get_biaya_taxi($provinsi);
 
     $data = [
@@ -43,6 +47,8 @@ class APIController extends CI_Controller {
   }
 
   public function biaya_harian($provinsi) {
+    $provinsi = str_replace("_", " ", $provinsi);
+
     $biaya = $this->helper_m->get_biaya_harian($provinsi);
 
     $data = [
@@ -54,6 +60,8 @@ class APIController extends CI_Controller {
   }
 
   public function biaya_pesawat($kabupaten) {
+    $kabupaten = str_replace("_", " ", $kabupaten);
+
     $biaya = $this->helper_m->get_biaya_pesawat($kabupaten);
 
     $data = [
@@ -65,6 +73,8 @@ class APIController extends CI_Controller {
   }
 
   public function biaya_hotel($provinsi) {
+    $provinsi = str_replace("_", " ", $provinsi);
+
     $biaya = $this->helper_m->get_biaya_hotel($provinsi);
 
     $data = [

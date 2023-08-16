@@ -13,7 +13,7 @@ class HelperModel extends CI_Model {
     return $this->db->get_where("uang_hotel_perjalanan_dinas", ["nama_provinsi" => $provinsi])->row_array();
   }
 
-  public function get_biaya_pesawat($kabupaten, $kelas) {
+  public function get_biaya_pesawat($kabupaten) {
     return $this->db->get_where("biaya_pesawat", ["kota_tujuan" => $kabupaten])->row_array();
   }
 
