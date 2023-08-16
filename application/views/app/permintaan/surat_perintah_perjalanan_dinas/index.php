@@ -46,16 +46,19 @@
                       <td><?= $b['lama_dinas'] ?></td>
                       <td>
                         <?php if($b['status'] == -1): ?>
-                          Diterima
-                        <?php elseif($b['status'] == 1): ?>
                           Ditolak
+                        <?php elseif($b['status'] == 1): ?>
+                          Diterima
                         <?php else: ?>
                           Menunggu Konfirmasi
                         <?php endif; ?>
                       </td>
                       <td>
-                        <a href="<?= base_url('permintaan/sppd/approve/') . $b['hash_id'] ?>" class="badge badge-sm badge-info badge-pill">setuju</a>
-                        <a href="#!" class="badge badge-sm badge-danger badge-pill" data-toggle="modal" data-target="#rejectModal" onclick="showTolak(this)" data-id="<?= $b['hash_id'] ?>">tolak</a>
+                        <?php if($b['status'] == 0): ?>
+                          <a href="<?= base_url('permintaan/sppd/approve/') . $b['hash_id'] ?>" class="badge badge-sm badge-info badge-pill">setuju</a>
+                          
+                          <a href="#!" class="badge badge-sm badge-danger badge-pill" data-toggle="modal" data-target="#rejectModal" onclick="showTolak(this)" data-id="<?= $b['hash_id'] ?>">tolak</a>
+                        <?php endif; ?>
                         <!-- <a href="#!" class="badge badge-sm badge-danger badge-pill"  data-toggle="modal" data-target="#hapusModal" data-id="<?= $b['id'] ?>" onclick="hapusData(this)">hapus</a> -->
                       </td>
                     </tr>

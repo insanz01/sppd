@@ -320,11 +320,12 @@ class PengajuanController extends CI_Controller {
     $data = $this->input->post();
     $data['user_id'] = $this->session->userdata("SESS_SPPD_USERID");
     $karyawan = $this->karyawan_m->get_single_karyawan_by_user_id($data['user_id']);
+
     $data['NIP_karyawan'] = $karyawan['NIP'];
     $data['nama_karyawan'] = $karyawan['nama'];
 
     $config['upload_path']          = 'uploads/documents/';
-    $config['allowed_types']        = 'jpg|jpeg|png';
+    $config['allowed_types']        = 'jpg|jpeg|png|pdf';
 
     $this->load->library('upload', $config);
 
