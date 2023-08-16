@@ -156,6 +156,20 @@ $route['biaya/taxi/edit/(:any)'] = "BiayaController/edit_biaya_taxi/$1";
 $route['biaya/taxi/do_edit/(:any)'] = "BiayaController/do_edit_biaya_taxi/$1";
 $route['biaya/taxi/delete'] = "BiayaController/delete_biaya_taxi";
 
+$route['biaya/hotel'] = "BiayaController/list_biaya_hotel";
+$route['biaya/hotel/add'] = "BiayaController/add_biaya_hotel";
+$route['biaya/hotel/do_add'] = "BiayaController/do_add_biaya_hotel";
+$route['biaya/hotel/edit/(:any)'] = "BiayaController/edit_biaya_hotel/$1";
+$route['biaya/hotel/do_edit/(:any)'] = "BiayaController/do_edit_biaya_hotel/$1";
+$route['biaya/hotel/delete'] = "BiayaController/delete_biaya_hotel";
+
+$route['biaya/transportasi'] = "BiayaController/list_biaya_transportasi";
+$route['biaya/transportasi/add'] = "BiayaController/add_biaya_transportasi";
+$route['biaya/transportasi/do_add'] = "BiayaController/do_add_biaya_transportasi";
+$route['biaya/transportasi/edit/(:any)'] = "BiayaController/edit_biaya_transportasi/$1";
+$route['biaya/transportasi/do_edit/(:any)'] = "BiayaController/do_edit_biaya_transportasi/$1";
+$route['biaya/transportasi/delete'] = "BiayaController/delete_biaya_transportasi";
+
 $route['biaya/harian'] = "BiayaController/list_biaya_harian";
 $route['biaya/harian/add'] = "BiayaController/add_biaya_harian";
 $route['biaya/harian/do_add'] = "BiayaController/do_add_biaya_harian";

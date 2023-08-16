@@ -276,5 +276,143 @@ class BiayaController extends CI_Controller {
 
     redirect("biaya/harian_dki");
   }
+
+  // hotel
+  public function list_biaya_hotel() {
+    $data['biaya'] = $this->biaya_m->get_all_biaya_hotel();
+
+    $this->load->view('templates/panel/header');
+    $this->load->view('templates/panel/sidebar');
+    $this->load->view('templates/panel/navbar');
+    $this->load->view('app/biaya/hotel/index', $data);
+    $this->load->view('templates/panel/footer');
+  }
+
+  public function add_biaya_hotel() {
+    $data['provinsi'] = $this->regional_m->get_all_provinsi();
+
+    $this->load->view('templates/panel/header');
+    $this->load->view('templates/panel/sidebar');
+    $this->load->view('templates/panel/navbar');
+    $this->load->view('app/biaya/hotel/add', $data);
+    $this->load->view('templates/panel/footer');
+  }
+
+  public function do_add_biaya_hotel() {
+    $data = $this->input->post();
+
+    if($this->biaya_m->add_biaya_hotel($data)) {
+      $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Berhasil menambahkan data</div>');
+    } else {
+      $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">Gagal menambahkan data</div>');
+    }
+
+    redirect("biaya/hotel");
+  }
+
+  public function edit_biaya_hotel($id) {
+    $data['provinsi'] = $this->regional_m->get_all_provinsi();
+    $data['biaya'] = $this->biaya_m->get_single_biaya_hotel($id);
+    $data['id'] = $id;
+
+    $this->load->view('templates/panel/header');
+    $this->load->view('templates/panel/sidebar');
+    $this->load->view('templates/panel/navbar');
+    $this->load->view('app/biaya/hotel/edit', $data);
+    $this->load->view('templates/panel/footer');
+  }
+
+  public function do_edit_biaya_hotel($id) {
+    $data = $this->input->post();
+
+    if($this->biaya_m->edit_biaya_hotel($data, $id)) {
+      $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Berhasil mengubah data</div>');
+    } else {
+      $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">Gagal mengubah data</div>');
+    }
+
+    redirect("biaya/hotel");
+  }
+
+  public function delete_biaya_hotel() {
+    $id = $this->input->post('id');
+
+    if($this->biaya_m->delete_biaya_hotel($id)) {
+      $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Berhasil menghapus data</div>');
+    } else {
+      $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">Gagal menghapus data</div>');
+    }
+
+    redirect("biaya/hotel");
+  }
+
+  // transportasi
+  public function list_biaya_transportasi() {
+    $data['biaya'] = $this->biaya_m->get_all_biaya_transportasi();
+
+    $this->load->view('templates/panel/header');
+    $this->load->view('templates/panel/sidebar');
+    $this->load->view('templates/panel/navbar');
+    $this->load->view('app/biaya/transportasi/index', $data);
+    $this->load->view('templates/panel/footer');
+  }
+
+  public function add_biaya_transportasi() {
+    $data['provinsi'] = $this->regional_m->get_all_provinsi();
+
+    $this->load->view('templates/panel/header');
+    $this->load->view('templates/panel/sidebar');
+    $this->load->view('templates/panel/navbar');
+    $this->load->view('app/biaya/transportasi/add', $data);
+    $this->load->view('templates/panel/footer');
+  }
+
+  public function do_add_biaya_transportasi() {
+    $data = $this->input->post();
+
+    if($this->biaya_m->add_biaya_transportasi($data)) {
+      $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Berhasil menambahkan data</div>');
+    } else {
+      $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">Gagal menambahkan data</div>');
+    }
+
+    redirect("biaya/transportasi");
+  }
+
+  public function edit_biaya_transportasi($id) {
+    $data['provinsi'] = $this->regional_m->get_all_provinsi();
+    $data['biaya'] = $this->biaya_m->get_single_biaya_transportasi($id);
+    $data['id'] = $id;
+
+    $this->load->view('templates/panel/header');
+    $this->load->view('templates/panel/sidebar');
+    $this->load->view('templates/panel/navbar');
+    $this->load->view('app/biaya/transportasi/edit', $data);
+    $this->load->view('templates/panel/footer');
+  }
+
+  public function do_edit_biaya_transportasi($id) {
+    $data = $this->input->post();
+
+    if($this->biaya_m->edit_biaya_transportasi($data, $id)) {
+      $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Berhasil mengubah data</div>');
+    } else {
+      $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">Gagal mengubah data</div>');
+    }
+
+    redirect("biaya/transportasi");
+  }
+
+  public function delete_biaya_transportasi() {
+    $id = $this->input->post('id');
+
+    if($this->biaya_m->delete_biaya_transportasi($id)) {
+      $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Berhasil menghapus data</div>');
+    } else {
+      $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">Gagal menghapus data</div>');
+    }
+
+    redirect("biaya/transportasi");
+  }
 }
 
