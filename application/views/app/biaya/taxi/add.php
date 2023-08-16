@@ -29,6 +29,7 @@
                 <div class="form-group">
                   <label for="nama_provinsi">Nama Provinsi</label>
                   <select name="nama_provinsi" id="nama_provinsi" class="form-control">
+                    <option value="">- PILIH -</option>
                     <?php foreach($provinsi as $p): ?>
                       <option value="<?= $p['name'] ?>">
                         <?= $p['name'] ?>

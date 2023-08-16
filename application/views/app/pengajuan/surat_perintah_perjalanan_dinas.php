@@ -86,11 +86,20 @@
                 </div>
                 <div class="form-group">
                   <label for="tempat_berangkat">Tempat Berangkat</label>
-                  <input type="text" name="tempat_berangkat" class="form-control" id="tempat_berangkat" required>
+                  <input type="text" name="tempat_berangkat" class="form-control" id="tempat_berangkat" value="KOTA BANJARMASIN" required>
                 </div>
                 <div class="form-group">
-                  <label for="tempat_tujuan">Tempat Tujuan</label>
-                  <input type="text" name="tempat_tujuan" class="form-control" id="tempat_tujuan" required>
+                  <label for="tempat_tujuan">Tempat Tujuan (Provinsi)</label>
+                  
+                  <select name="tempat_tujuan" id="tempat_tujuan" class="form-control">
+                    <option value="">- PILIH -</option>
+                    <?php foreach($provinsi as $p): ?>
+                      <option value="<?= $p['name'] ?>">
+                        <?= $p['name'] ?>
+                      </option>
+                    <?php endforeach; ?>
+                  </select>
+                  <!-- <input type="text" name="tempat_tujuan" class="form-control" id="tempat_tujuan" required> -->
                 </div>
                 <div class="form-group">
                   <label for="lama_dinas">Lama Dinas</label>
@@ -115,6 +124,15 @@
                 <div class="form-group">
                   <label for="keterangan">Keterangan Lainnya</label>
                   <textarea name="keterangan" id="keterangan" class="form-control" cols="30" rows="10"></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="kelas_penerbangan">Kelas Penerbangan</label>
+                  <select name="kelas_penerbangan" id="kelas_penerbangan" class="form-control">
+                    <option value=""></option>
+                    <option value="EKONOMI">Ekonomi</option>
+                    <option value="BISNIS">Bisnis</option>
+                  </select>
                 </div>
 
                 <div class="form-group">
