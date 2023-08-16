@@ -75,6 +75,59 @@ class PengajuanController extends CI_Controller {
     }
   }
 
+  public function nota_dinas() {
+    $data['SPPD'] = $this->laporan_m->get_all_surat_perintah_perjalanan_dinas_existing("nota_dinas");
+
+    $this->load->view('templates/panel/header');
+    $this->load->view('templates/panel/sidebar');
+    $this->load->view('templates/panel/navbar');
+    $this->load->view("app/pengajuan/nota_dinas", $data);
+    $this->load->view('templates/panel/footer');
+  }
+
+  public function edit_nota_dinas($hash_id) {
+    $data['laporan'] = $this->get_nota_dinas($hash_id);
+    $data['hash_id'] = $hash_id;
+
+    $this->load->view('templates/panel/header');
+    $this->load->view('templates/panel/sidebar');
+    $this->load->view('templates/panel/navbar');
+    $this->load->view("app/pengajuan/edit_nota_dinas", $data);
+    $this->load->view('templates/panel/footer');
+  }
+
+  public function do_edit_nota_dinas($hash_id) {
+    $data = $this->input->post();
+
+    if($this->pengajuan_m->edit_nota_dinas($data, $hash_id)) {
+      $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Berhasil mengubah data</div>');
+    } else {
+      $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">Gagal mengubah data</div>');
+    }
+
+    redirect('laporan/nd');
+  }
+
+  public function delete_nota_dinas($hash_id) {
+    // $hash_id = $this->input->post('hash_id');
+    if($this->pengajuan_m->delete_nota_dinas($hash_id)) {
+      $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Berhasil menghapus data</div>');
+    } else {
+      $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">Gagal menghapus data</div>');
+    }
+
+    redirect('laporan/nd');
+  }
+
+  public function add_nota_dinas() {
+    $data = $this->input->post();
+
+    $hash_id = $this->pengajuan_m->insert_nota_dinas($data);
+    if($hash_id) {
+      redirect('surat/nd/' . $hash_id);
+    }
+  }
+
   public function surat_perintah_tugas() {
     $data['SPPD'] = $this->laporan_m->get_all_surat_perintah_perjalanan_dinas_existing("surat_perintah_tugas");
 

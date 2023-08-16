@@ -85,6 +85,13 @@ $route['pengajuan/do_edit_lpd/(:any)'] = "PengajuanController/do_edit_laporan_pe
 $route['pengajuan/delete_lpd/(:any)'] = "PengajuanController/delete_laporan_perjalanan_dinas/$1";
 $route['pengajuan/lpd/(:any)/(:any)'] = "PengajuanController/status_laporan_perjalanan_dinas/$1/$2";
 
+$route['pengajuan/nd'] = "PengajuanController/nota_dinas";
+$route['pengajuan/add_nd'] = "PengajuanController/add_nota_dinas";
+$route['pengajuan/edit_nd/(:any)'] = "PengajuanController/edit_nota_dinas/$1";
+$route['pengajuan/do_edit_nd/(:any)'] = "PengajuanController/do_edit_nota_dinas/$1";
+$route['pengajuan/delete_nd/(:any)'] = "PengajuanController/delete_nota_dinas/$1";
+$route['pengajuan/nd/(:any)/(:any)'] = "PengajuanController/status_nota_dinas/$1/$2";
+
 $route['pengajuan/add_bpd'] = "PengajuanController/add_biaya_perjalanan_dinas";
 $route['pengajuan/delete_bpd/(:any)'] = "PengajuanController/delete_biaya_perjalanan_dinas/$1";
 $route['pengajuan/bpd/(:any)/(:any)'] = "PengajuanController/status_biaya_perjalanan_dinas/$1/$2";
@@ -95,6 +102,7 @@ $route['surat/spt/(:any)'] = "SuratController/surat_perintah_tugas/$1";
 $route['surat/lpd/(:any)'] = "SuratController/laporan_perjalanan_dinas/$1";
 $route['surat/bpd/(:any)'] = "SuratController/biaya_perjalanan_dinas/$1";
 $route['surat/ptpd/(:any)'] = "SuratController/pembatalan_tugas_perjalanan_dinas/$1";
+$route['surat/nd/(:any)'] = "SuratController/nota_dinas/$1";
 
 $route['laporan/sppd'] = "LaporanController/surat_perintah_perjalanan_dinas";
 $route['laporan/lpd'] = "LaporanController/laporan_perjalanan_dinas";
@@ -118,6 +126,8 @@ $route['kwitansi/delete/(:any)'] = "KwitansiController/delete/$1";
 $route['api/karyawan/(:any)'] = 'APIController/karyawan_by_NIP/$1';
 $route['api/anggaran/(:any)/(:any)/(:any)'] = "APIController/beban_anggaran_pesawat/$1/$2/$3";
 $route['api/jabatan/chart'] = 'APIController/chart_jabatan';
+$route['api/sppd/(:any)'] = 'APIController/sppd/$1';
+$route['api/spt/(:any)'] = 'APIController/spt/$1';
 
 $route['api/provinsi'] = 'APIController/provinsi';
 $route['api/kabupaten/(:any)'] = 'APIController/kabupaten/$1';

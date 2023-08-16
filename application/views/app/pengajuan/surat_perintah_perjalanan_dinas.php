@@ -31,8 +31,8 @@
                   <input type="text" name="author" class="form-control" id="author" required>
                 </div>
                 <div class="form-group">
-                  <label for="nomor_sppd">Nomor SPPD</label>
-                  <select name="nomor_sppd" id="nomor_sppd" required class="form-control">
+                  <label for="nomor_SPPD">Nomor SPPD</label>
+                  <select name="nomor_SPPD" id="nomor_SPPD" required class="form-control">
                     <option value="">- PILIH -</option>
                     <?php foreach($SPPD as $sppd): ?>
                       <option value="<?= $sppd['nomor_SPPD'] ?>">

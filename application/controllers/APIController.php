@@ -20,6 +20,28 @@ class APIController extends CI_Controller {
     echo json_encode($data, JSON_PRETTY_PRINT);
   }
 
+  public function sppd($nomor_SPPD) {
+    $sppd = $this->helper_m->get_detail_sppd($nomor_SPPD);
+
+    $data = [
+      "data" => $sppd,
+      "success" => true
+    ];
+
+    echo json_encode($data, JSON_PRETTY_PRINT);
+  }
+
+  public function spt($nomor_SPPD) {
+    $spt = $this->helper_m->get_detail_spt($nomor_SPPD);
+
+    $data = [
+      "data" => $spt,
+      "success" => true
+    ];
+
+    echo json_encode($data, JSON_PRETTY_PRINT);
+  }
+
   public function provinsi() {
     $provinsi = $this->regional_m->get_all_provinsi();
 

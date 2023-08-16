@@ -91,6 +91,31 @@ class PengajuanModel extends CI_Model {
   public function delete_surat_perintah_tugas($hash_id) {
     return $this->db->delete('surat_perintah_tugas', ['hash_id' => $hash_id]);
   }
+
+  public function insert_nota_dinas($data) {
+    $hash_id = password_hash(time(), PASSWORD_DEFAULT);
+
+    $data['hash_id'] = base64_encode($hash_id);
+
+    $this->db->insert("nota_dinas", $data);
+    return $data['hash_id'];
+  }
+
+  public function get_nota_dinas($hash_id) {
+    return $this->db->get_where('nota_dinas', ['hash_id' => $hash_id])->row_array();
+  }
+
+  public function edit_nota_dinas($data, $hash_id) {
+    $this->db->set($data);
+    $this->db->where('hash_id', $hash_id);
+    $this->db->update('nota_dinas');
+
+    return $this->db->affected_rows();
+  }
+
+  public function delete_nota_dinas($hash_id) {
+    return $this->db->delete('nota_dinas', ["hash_id" => $hash_id]);
+  }
   
   public function insert_surat_perintah_perjalanan_dinas($data) {
     $hash_id = password_hash(time(), PASSWORD_DEFAULT);

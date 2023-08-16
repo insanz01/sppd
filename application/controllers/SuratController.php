@@ -10,6 +10,7 @@ class SuratController extends CI_Controller {
     }
 
     $this->load->model("PengajuanModel", "pengajuan_m");
+    $this->load->model("HelperModel", "helper_m");
   }
 
   public function surat_perintah_perjalanan_dinas($hash_id) {
@@ -63,6 +64,18 @@ class SuratController extends CI_Controller {
     $data['surat'] = $this->pengajuan_m->get_surat_perintah_tugas($hash_id);
 
     $this->load->view("app/surat/surat_perintah_tugas", $data);
+  }
+
+  public function nota_dinas($hash_id) {
+    $surat = $this->pengajuan_m->get_nota_dinas($hash_id);
+    $nomor_SPPD = $surat['nomor_SPPD'];
+
+    $makhluk = $this->helper_m->get_detail_sppd($nomor_SPPD);
+
+    $data['surat'] = $surat;
+    $data['makhluk'] = $makhluk;
+
+    $this->load->view("app/surat/nota_dinas", $data);
   }
 
   public function pembatalan_tugas_perjalanan_dinas($hash_id) {

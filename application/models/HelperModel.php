@@ -5,6 +5,14 @@ class HelperModel extends CI_Model {
     parent::__construct();
   }
 
+  public function get_detail_sppd($nomor_SPPD) {
+    return $this->db->get_where("surat_perintah_perjalanan_dinas", ['nomor_SPPD' => $nomor_SPPD])->row_array();
+  }
+
+  public function get_detail_spt($nomor_SPPD) {
+    return $this->db->get_where("surat_perintah_tugas", ['nomor_SPPD' => $nomor_SPPD])->row_array();
+  }
+
   public function get_all_asal_pesawat() {
     $query = "SELECT DISTINCT kota_asal FROM biaya_pesawat ORDER BY kota_asal ASC";
 
