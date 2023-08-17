@@ -27,10 +27,20 @@
             <div class="col-12 my-3">
               <div class="card">
                 <div class="card-body">
-                  <h3><?= $info['nama'] ?></h3>
-                  <h4><?= $info['NIP'] ?></h4>
-
-                  <small class="text-danger">*klik pada badge poin untuk merubah</small>
+                  <div class="row">
+                    <div class="col-6">
+                      <h3><?= $info['nama'] ?></h3>
+                      <h4><?= $info['NIP'] ?></h4>
+    
+                      <small class="text-danger"><sup>*</sup>klik pada badge poin untuk merubah</small>
+                    </div>
+                    <div class="col-6">
+                      <a href="<?= base_url("print/kinerja/detail/") . $info['NIP'] ?>" target="_blank" class="btn btn-info float-right">
+                        <i class="fas fa-fw fa-print"></i>
+                        Cetak
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

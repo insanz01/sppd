@@ -60,4 +60,10 @@ class OthersController extends CI_Controller {
 
     $this->load->view("app/print/pengganti_sppd", $data);
   }
+
+  public function print_kinerja_detail($NIP) {
+    $data['all_surat'] = $this->other_m->get_all_kinerja_detail($NIP);
+
+    $this->load->view("app/print/kinerja_detail", $data);
+  }
 }

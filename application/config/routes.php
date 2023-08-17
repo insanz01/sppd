@@ -228,4 +228,6 @@ $route["print/biaya/harian"] = "OthersController/print_biaya_harian";
 $route['print/penolakan'] = "OthersController/print_penolakan";
 $route['print/pengganti'] = "OthersController/print_pengganti";
 
+$route['print/kinerja/detail/(:any)'] = "OthersController/print_kinerja_detail/$1";
+
 $route['print/karyawan'] = "OthersController/print_karyawan";
