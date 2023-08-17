@@ -55,7 +55,7 @@
                           <td><?= $laporan['nip_karyawan_pengganti'] ?></td>
                           <td><?= $laporan['nama_karyawan_pengganti'] ?></td>
                           <td>
-                            <a href="<?= base_url("surat/bpd/") . $laporan['hash_id'] ?>" class="badge badge-info badge-sm badge-pill">
+                            <a href="<?= base_url("pengganti/print/") . $laporan['hash_id'] ?>" class="badge badge-info badge-sm badge-pill">
                               Lihat
                             </a>
                           </td>

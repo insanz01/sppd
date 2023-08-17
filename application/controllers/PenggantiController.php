@@ -59,6 +59,6 @@ class PenggantiController extends CI_Controller {
   public function print($hash_id) {
     $data['surat'] = $this->pengganti_m->get_single_pengganti($hash_id);
 
-    $this->load->view("app/pengganti/print", $data);   
+    $this->load->view("app/surat/pengganti_surat_perintah_perjalanan_dinas", $data);   
   }
 }
