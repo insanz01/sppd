@@ -195,6 +195,7 @@ $route['biaya/harian_dki/delete'] = "BiayaController/delete_biaya_harian_dki";
 
 $route['kinerja'] = "KinerjaController/index";
 $route['kinerja/detail/(:any)'] = "KinerjaController/detail/$1";
+$route['kinerja/update/skor'] = "KinerjaController/update_skor";
 
 $route['batalkan/sppd'] = "BatalkanController/index";
 $route['batalkan/sppd/add/(:any)'] = "BatalkanController/add/$1";

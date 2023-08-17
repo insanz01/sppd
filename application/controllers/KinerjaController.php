@@ -28,4 +28,16 @@ class KinerjaController extends CI_Controller {
     $this->load->view('app/kinerja/pegawai/detail', $data);
     $this->load->view('templates/panel/footer');
   }
+
+  public function update_skor() {
+    $data = $this->input->post();
+    
+    if($this->kinerja_m->update_skor($data['hash_id'], $data['skor'])) {
+      $this->session->set_flashdata("pesan", "<div class='alert alert-success' role='alert'>Berhasil mengubah skor!</div>");
+    } else {
+      $this->session->set_flashdata("pesan", "<div class='alert alert-danger' role='alert'>Gagal mengubah skor!</div>");
+    }
+
+    redirect("kinerja/detail/" . $data['NIP']);
+  }
 }
