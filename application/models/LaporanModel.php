@@ -154,6 +154,8 @@ class LaporanModel extends CI_Model {
       $attrName = "nomor_SPPD";
     } else if($source == "nota_dinas") {
       $sourceTable = "surat_perintah_perjalanan_dinas";
+    } else if($source == "pengganti_surat_perintah_perjalanan_dinas") {
+      $sourceTable = "surat_perintah_perjalanan_dinas";
     }
 
     $query = "SELECT * FROM $sourceTable WHERE $attrTarget NOT IN (SELECT $attrName FROM $source) $additionalQuery";

@@ -25,6 +25,12 @@
         <div class="col-12">
           <div class="row">
             <div class="col-12">
+              <a href="<?= base_url("print/riwayat/penolakan") ?>" target="_blank" class="btn btn-info float-right mb-2">
+                <i class="fas fa-fw fa-print"></i>
+                Print
+              </a>
+            </div>
+            <div class="col-12">
               <div class="card">
                 <div class="card-body">
                   <table class="table custom-table">

@@ -5,6 +5,7 @@ class PenggantiController extends CI_Controller {
     parent::__construct();
 
     $this->load->model("PenggantiModel", "pengganti_m");
+    $this->load->model("LaporanModel", "laporan_m");
   }
 
   public function index() {
@@ -18,7 +19,8 @@ class PenggantiController extends CI_Controller {
   }
 
   public function add() {
-    $data['SPPD'] = $this->pengganti_m->get_all_sppd();
+    // $data['SPPD'] = $this->pengganti_m->get_all_sppd();
+    $data['SPPD'] = $this->laporan_m->get_all_surat_perintah_perjalanan_dinas_existing("pengganti_surat_perintah_perjalanan_dinas");
 
     $this->load->view('templates/panel/header');
     $this->load->view('templates/panel/sidebar');
@@ -52,5 +54,11 @@ class PenggantiController extends CI_Controller {
     }
 
     redirect("pengganti");
+  }
+
+  public function print($hash_id) {
+    $data['surat'] = $this->pengganti_m->get_single_pengganti($hash_id);
+
+    $this->load->view("app/pengganti/print", $data);   
   }
 }

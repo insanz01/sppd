@@ -34,4 +34,10 @@ class OthersModel extends CI_Model {
 
     return $this->db->query($query)->result_array();
   }
+
+  public function get_riwayat_penolakan() {
+    $query = "SELECT * FROM batalkan_perintah_tugas";
+
+    return $this->db->query($query)->result_array();
+  }
 }

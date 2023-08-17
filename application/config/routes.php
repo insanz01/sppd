@@ -209,12 +209,15 @@ $route['permintaan/sppd/reject/(:any)'] = "PermintaanController/sppd_reject/$1";
 $route['pengganti'] = "PenggantiController/index";
 $route['pengganti/add'] = "PenggantiController/add";
 $route['pengganti/do_add'] = "PenggantiController/do_add";
+$route['pengganti/print/(:any)'] = "PenggantiController/print/$1";
 
 $route['penolakan'] = "PenolakanController/index";
 
 $route['list/penyerahan_bpd/print'] = "KwitansiController/list_penyerahan_bpd";
 
 $route["print/penyerahan_bpd/(:any)"] = "KwitansiController/print/$1";
+$route['print/riwayat/penolakan'] = "OthersController/print_riwayat_penolakan";
+
 $route["print/biaya/pesawat"] = "OthersController/print_biaya_pesawat";
 $route["print/biaya/hotel"] = "OthersController/print_biaya_hotel";
 $route["print/biaya/taxi"] = "OthersController/print_biaya_taxi";
