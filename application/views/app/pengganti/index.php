@@ -28,6 +28,11 @@
               <!-- <button type="button" class="btn btn-primary mb-2" data-toggle="modal" data-target="#filterModal">FILTER LAPORAN</button> -->
               <!-- <a href="<?= base_url("list/bpd/print") ?>" class="btn btn-primary mb-2" role="button" target="_blank">CETAK SEMUA</a> -->
               <a href="<?= base_url("pengganti/add") ?>" class="btn btn-success float-right mb-2" role="button">TAMBAH DATA</a>
+
+              <a href="<?= base_url("print/pengganti") ?>" target="_blank" class="btn btn-info float-right mx-1 mb-2">
+                <i class="fas fa-fw fa-print"></i>
+                Print
+              </a>
             </div>
             <div class="col-12">
               <div class="card">
