@@ -20,6 +20,7 @@ class AppController extends CI_Controller
     $data['total_lpd'] = $this->app_m->get_total_laporan_perjalanan_dinas();
     $data['total_sppd'] = $this->app_m->get_total_surat_perintah_perjalanan_dinas();
     $data['total_spt'] = $this->app_m->get_total_surat_perintah_tugas();
+    $data['total_npd'] = $this->app_m->get_total_nota_dinas();
 
     $this->load->view('templates/panel/header');
     $this->load->view('templates/panel/sidebar');

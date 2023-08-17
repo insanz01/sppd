@@ -11,6 +11,12 @@ class AppModel extends CI_Model {
     return COUNT($pegawai);
   }
 
+  public function get_total_nota_dinas() {
+    $data = $this->db->get('nota_dinas')->result_array();
+
+    return COUNT($data);
+  }
+
   public function get_total_biaya_perjalanan_dinas() {
     $data = $this->db->get('biaya_perjalanan_dinas')->result_array();
 
