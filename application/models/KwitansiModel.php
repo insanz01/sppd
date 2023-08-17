@@ -11,7 +11,7 @@ class KwitansiModel extends CI_Model {
   }
 
   public function get_all_kwitansi() {
-    $query = "SELECT kw.id, kw.file, kw.user_id, k.NIP, k.nama, k.email, k.nomor_hp, sppd.nomor_SPPD FROM karyawan k JOIN kwitansi kw ON k.user_id = kw.user_id JOIN surat_perintah_perjalanan_dinas sppd ON sppd.nip_karyawan = k.NIP ORDER BY kw.created_at DESC";
+    $query = "SELECT kw.id, kw.file, kw.user_id, k.NIP, k.nama, k.email, k.nomor_hp, sppd.nomor_SPPD FROM kwitansi kw LEFT JOIN karyawan k ON kw.user_id = k.user_id JOIN surat_perintah_perjalanan_dinas sppd ON sppd.nomor_SPPD = kw.nomor_SPPD ORDER BY kw.created_at DESC";
 
     return $this->db->query($query)->result_array();
   }
