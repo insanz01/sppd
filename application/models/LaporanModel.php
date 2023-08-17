@@ -145,7 +145,7 @@ class LaporanModel extends CI_Model {
       $attrName = "nomor_SPPD";
     } else if($source == "biaya_perjalanan_dinas") {
       $attrName = "nomor_SPPD";
-      $additionalQuery = " AND status != -1";
+      $additionalQuery = " AND status <> -1";
     } else if($source == "laporan_perjalanan_dinas") {
       $attrName = "perihal";
       $attrTarget = "maksud_perjalanan_dinas";

@@ -33,7 +33,7 @@
                   <select name="hash_id" class="form-control" id="hash_id" required onchange="pilihSPPD(this)">
                     <option value="">- PILIH -</option>
                     <?php foreach($SPPD as $sppd): ?>
-                      <option value="<?= $sppd['hash_id'] ?>"><?= $sppd['nomor_SPPD'] ?> | [ <?= $sppd['maksud_perjalanan_dinas'] ?> ]</option>
+                      <option value="<?= $sppd['hash_id'] ?>"><?= $sppd['nomor_SPPD'] ?> | [ <?= $sppd['tujuan'] ?> ]</option>
                     <?php endforeach; ?>
                   </select>
                   <!-- <input type="text" name="nomor_SPPD" class="form-control" id="nomor_SPPD" required> -->
@@ -136,7 +136,7 @@
 
     var selectElement = document.getElementById('hash_id');
     var selectedOption = selectElement.options[selectElement.selectedIndex];
-    var label = selectedOption.label;
+    var label = selectedOption.value;
 
     setValue("nomor_SPPD", label);
 

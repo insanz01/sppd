@@ -298,7 +298,9 @@ class PengajuanController extends CI_Controller {
   // }
 
   public function biaya_perjalanan_dinas() {
-    $all_SPPD = $this->laporan_m->get_all_surat_perintah_perjalanan_dinas();
+    // $all_SPPD = $this->laporan_m->get_all_surat_perintah_perjalanan_dinas();
+    $all_SPPD = $this->laporan_m->get_all_surat_perintah_perjalanan_dinas_existing("biaya_perjalanan_dinas");
+    
     $acceptance_sppd = [];
 
     foreach($all_SPPD as $sppd) {
