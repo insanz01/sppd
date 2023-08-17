@@ -65,8 +65,8 @@
             <td><?= $nomor++ ?></td>
             <td><?= $surat['kota_asal'] ?></td>
             <td><?= $surat['kota_tujuan'] ?></td>
-            <td><?= $surat['kelas_ekonomi'] ?></td>
-            <td><?= $surat['kelas_bisnis'] ?></td>
+            <td><?= number_format($surat['kelas_ekonomi'], 0, '.', '.') ?></td>
+            <td><?= number_format($surat['kelas_bisnis'], 0, '.', '.') ?></td>
           </tr>
         <?php endforeach; ?>
       </tbody>

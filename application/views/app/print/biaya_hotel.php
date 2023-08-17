@@ -64,7 +64,7 @@
             <td><?= $nomor++ ?></td>
             <td><?= $surat['nama_provinsi'] ?></td>
             <td><?= $surat['satuan'] ?></td>
-            <td><?= $surat['besaran'] ?></td>
+            <td><?= number_format($surat['besaran'], 0, '.', '.') ?></td>
           </tr>
         <?php endforeach; ?>
       </tbody>
