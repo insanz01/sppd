@@ -26,6 +26,10 @@
           <div class="row">
             <div class="col-12">
               <a href="<?= base_url('biaya/harian/add') ?>" class="btn btn-primary float-right mb-2">TAMBAH DATA UANG HARIAN</a>
+              <a href="<?= base_url("print/biaya/harian") ?>" target="_blank" class="btn btn-info float-right mx-1 mb-2">
+                <i class="fas fa-fw fa-print"></i>
+                Print
+              </a>
             </div>
             <div class="col-12">
               <div class="card">

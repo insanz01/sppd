@@ -215,3 +215,8 @@ $route['penolakan'] = "PenolakanController/index";
 $route['list/penyerahan_bpd/print'] = "KwitansiController/list_penyerahan_bpd";
 
 $route["print/penyerahan_bpd/(:any)"] = "KwitansiController/print/$1";
+$route["print/biaya/pesawat"] = "OthersController/print_biaya_pesawat";
+$route["print/biaya/hotel"] = "OthersController/print_biaya_hotel";
+$route["print/biaya/taxi"] = "OthersController/print_biaya_taxi";
+$route["print/biaya/sewa"] = "OthersController/print_biaya_sewa";
+$route["print/biaya/harian"] = "OthersController/print_biaya_harian";
