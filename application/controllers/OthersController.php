@@ -42,4 +42,10 @@ class OthersController extends CI_Controller {
 
     $this->load->view("app/print/riwayat_penolakan", $data);
   }
+
+  public function print_karyawan() {
+    $data['all_surat'] = $this->other_m->get_all_karyawan();
+
+    $this->load->view("app/print/karyawan", $data);
+  }
 }

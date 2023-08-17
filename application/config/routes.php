@@ -224,3 +224,5 @@ $route["print/biaya/hotel"] = "OthersController/print_biaya_hotel";
 $route["print/biaya/taxi"] = "OthersController/print_biaya_taxi";
 $route["print/biaya/sewa"] = "OthersController/print_biaya_sewa";
 $route["print/biaya/harian"] = "OthersController/print_biaya_harian";
+
+$route['print/karyawan'] = "OthersController/print_karyawan";

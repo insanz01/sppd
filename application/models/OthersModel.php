@@ -40,4 +40,10 @@ class OthersModel extends CI_Model {
 
     return $this->db->query($query)->result_array();
   }
+
+  public function get_all_karyawan() {
+    $query = "SELECT * FROM karyawan";
+
+    return $this->db->query($query)->result_array();
+  }
 }

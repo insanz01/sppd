@@ -26,6 +26,11 @@
           <div class="row">
             <div class="col-12">
               <a href="<?= base_url('karyawan/add') ?>" class="btn btn-primary float-right mb-2">TAMBAH KARYAWAN</a>
+
+              <a href="<?= base_url("print/karyawan") ?>" class="btn btn-info float-right mb-2 mx-1">
+                <i class="fas fa-fw fa-print"></i>
+                Print
+              </a>
             </div>
             <div class="col-12">
               <div class="card">
