@@ -52,6 +52,8 @@ class OthersController extends CI_Controller {
   public function print_penolakan() {
     $data['all_surat'] = $this->other_m->get_all_penolakan();
 
+    var_dump($data['all_surat']);
+
     $this->load->view("app/print/penolakan", $data);
   }
 
