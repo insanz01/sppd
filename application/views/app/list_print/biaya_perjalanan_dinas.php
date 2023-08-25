@@ -72,6 +72,40 @@
       </tbody>
     </table>
 
+    <div class="row mt-5">
+      <div class="col-9 mx-auto">
+        <table class="no-border" style="width: 100%">
+          <tr>
+            <td width="30%"></td>
+            <td width="40%"></td>
+            <td width="30%" class="text-center">Banjarmasin, <?= date("d M Y", time()) ?></td>
+          </tr>
+          <tr>
+            <td width="30%"></td>
+            <td width="40%"></td>
+            <td width="30%" class="text-center">Kepala Dinas Ketahanan Pangan, Pertanian dan Perikanan Kota Banjarmasin</td>
+          </tr>
+          <tr>
+            <td width="30%"></td>
+            <td width="40%"></td>
+            <td width="30%"></td>
+          </tr>
+        </table>
+        <table class="no-border mt-5" style="width: 100%">
+          <tr>
+            <td width="30%"></td>
+            <td width="40%"></td>
+            <td width="30%" class="text-center">Ir. M. Makhmud, MS</td>
+          </tr>
+          <tr>
+            <td width="30%"></td>
+            <td width="40%"></td>
+            <td width="30%" class="text-center">NIP. 19650328 198803 1 009</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
