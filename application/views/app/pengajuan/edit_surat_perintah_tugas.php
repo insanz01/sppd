@@ -28,8 +28,8 @@
               <form action="<?= base_url('pengajuan/do_edit_spt/') . $hash_id ?>" method="post">
                 <input type="hidden" name="hash_id" value="<?= $hash_id ?>">
                 <div class="form-group">
-                  <label for="nomor_sppd">Nomor SPPD</label>
-                  <input type="text" name="nomor_sppd" class="form-control" id="nomor_sppd" value="<?= $laporan['nomor_sppd'] ?>" required>
+                  <label for="nomor_SPPD">Nomor SPPD</label>
+                  <input type="text" name="nomor_SPPD" class="form-control" id="nomor_SPPD" value="<?= $laporan['nomor_SPPD'] ?>" required>
                 </div>
                 <div class="form-group">
                   <label for="nip_karyawan">NIP Karyawan (Yang diperintah)</label>
