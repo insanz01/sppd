@@ -378,4 +378,14 @@ class PengajuanController extends CI_Controller {
 
     redirect('laporan/bpd');
   }
+
+  // public function delete_biaya_perjalanan_dinas($hash_id) {
+  //   if($this->pengajuan_m->delete_biaya_perjalanan_dinas($hash_id)) {
+  //     $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Berhasil mengubah data</div>');
+  //   } else {
+  //     $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">Gagal mengubah data</div>');
+  //   }
+
+  //   redirect('laporan/bpd');
+  // }
 }
