@@ -159,6 +159,7 @@
       console.log("user_id", karyawan.data.user_id);
 
       setValue("user_id", karyawan.data.user_id);
+      setValue("nomor_SPPD", resultSPPD.data.spt.nomor_SPPD);
 
       await rincianBiaya(resultSPPD.data.sppd);
       
