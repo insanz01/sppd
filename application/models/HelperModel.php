@@ -35,6 +35,7 @@ class HelperModel extends CI_Model {
 
   public function get_detail_sppd_by_hash($hash_id) {
     return $this->db->get_where("surat_perintah_perjalanan_dinas", ['hash_id' => $hash_id])->row_array();
+    // return $this->db->get_where("surat_perintah_tugas", ['hash_id' => $hash_id])->row_array();
   }
 
   public function get_detail_spt($nomor_SPPD) {

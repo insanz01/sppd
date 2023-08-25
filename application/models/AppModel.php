@@ -12,7 +12,9 @@ class AppModel extends CI_Model {
   }
 
   public function get_total_nota_dinas() {
-    $data = $this->db->get('nota_dinas')->result_array();
+    $query = "SELECT * FROM nota_dinas WHERE deleted_at is NULL";
+
+    $data = $this->db->query($query)->result_array();
 
     return COUNT($data);
   }

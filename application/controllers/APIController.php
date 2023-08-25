@@ -86,10 +86,15 @@ class APIController extends CI_Controller {
   }
 
   public function sppd($hash_id) {
-    $sppd = $this->helper_m->get_detail_sppd_by_hash($hash_id);
+    $spt = $this->helper_m->get_detail_spt_by_hash($hash_id);
 
+    $sppd = $this->helper_m->get_detail_sppd($spt['nomor_SPPD']);
+    
     $data = [
-      "data" => $sppd,
+      "data" => [
+        "sppd" => $sppd,
+        "spt" => $spt
+      ],
       "success" => true
     ];
 

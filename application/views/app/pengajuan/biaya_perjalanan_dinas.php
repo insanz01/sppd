@@ -89,6 +89,7 @@
 
 <script>
   const getDataSPPD = async (hash_id) => {
+    console.log('url', `<?= base_url() ?>api/sppd/${hash_id}`)
     return await axios.get(`<?= base_url() ?>api/sppd/${hash_id}`).then(res => res.data);
   }
 
@@ -142,12 +143,14 @@
 
     console.log('label', label);
 
+    console.log("hash_id", hash_id);
+
     const resultSPPD = await getDataSPPD(hash_id);
 
     console.log("SPPD", resultSPPD);
 
     if(resultSPPD.success) {
-      const NIP = resultSPPD.data.nip_karyawan;
+      const NIP = resultSPPD.data.spt.nip_karyawan;
 
       const karyawan = await getDataKaryawan(NIP);
 
@@ -157,7 +160,7 @@
 
       setValue("user_id", karyawan.data.user_id);
 
-      await rincianBiaya(resultSPPD.data);
+      await rincianBiaya(resultSPPD.data.sppd);
       
       if(karyawan.success) {
         console.log("user_id", karyawan.data.user_id);
